@@ -53,7 +53,7 @@ const ADDONS = [
     api: "Theme API 2.9.0 (Playnite 10+)",
     license: "GPL-3.0",
     icon: "assets/img/penumbra-icon.png",
-    banner: "assets/img/dawn-grid.jpg",
+    banner: "assets/img/thumbs/dawn-grid-thumb.jpg",
     screenshots: [
       "assets/img/dawn-grid.jpg",
       "assets/img/dawn-details.jpg"
@@ -87,7 +87,7 @@ const ADDONS = [
     api: "Theme API 2.9.0 (Playnite 10+)",
     license: "GPL-3.0",
     icon: "assets/img/penumbra-icon.png",
-    banner: "assets/img/night-main.png",
+    banner: "assets/img/thumbs/night-main-thumb.png",
     screenshots: [
       "assets/img/night-main.png",
       "assets/img/night-grid.png"
@@ -121,7 +121,7 @@ const ADDONS = [
     api: "Theme API 2.9.0 (Playnite 10+)",
     license: "GPL-3.0",
     icon: "assets/img/penumbra-icon.png",
-    banner: "assets/img/blur-main.png",
+    banner: "assets/img/thumbs/blur-main-thumb.png",
     screenshots: [
       "assets/img/blur-main.png",
       "assets/img/blur-details.png"
@@ -205,6 +205,7 @@ const toastContainer = document.getElementById("toastContainer");
 document.addEventListener("DOMContentLoaded", () => {
   renderCatalog();
   setupEventListeners();
+  setupSmoothAnchorLinks();
   setupKeyboardShortcuts();
 });
 
@@ -244,7 +245,7 @@ function createCardHTML(item) {
   return `
     <article class="addon-card" data-id="${item.id}">
       <div class="card-banner">
-        <img src="${item.banner}" alt="${item.name} Banner" loading="lazy">
+        <img src="${item.banner}" alt="${item.name} Banner" loading="lazy" decoding="async">
         <div class="card-banner-overlay"></div>
         <div class="card-badges">
           <span class="badge-tag ${badgeClass}">${item.typeLabel}</span>
@@ -578,4 +579,21 @@ function showToast(message, icon = "fa-circle-check") {
     toast.style.transition = "all 0.3s ease";
     setTimeout(() => toast.remove(), 300);
   }, 3500);
+}
+
+function setupSmoothAnchorLinks() {
+  // Smooth scroll for nav anchor links only (prevents wheel scroll interception)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').slice(1);
+      if (!targetId) return;
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        // Close mobile nav if open
+        if (mainNav) mainNav.classList.remove('open');
+      }
+    });
+  });
 }
