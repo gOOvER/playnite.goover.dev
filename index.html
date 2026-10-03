@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>playnite.goover.dev — Playnite Themes & Plugins by gOOvER</title>
+  <meta name="description" content="Discover, download, and 1-click install premium Playnite themes and high-performance plugins crafted by gOOvER. Penumbra Themes, DuplicateHiderNG, Star Citizen Library, and more.">
+  <meta name="keywords" content="Playnite, Playnite Themes, Playnite Plugins, Penumbra Theme, DuplicateHiderNG, Star Citizen Library, PC Gaming, Game Launcher">
+  <meta name="author" content="gOOvER">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://playnite.goover.dev/">
+  <meta property="og:title" content="playnite.goover.dev — Playnite Themes & Plugins by gOOvER">
+  <meta property="og:description" content="Handcrafted, ultra-polished themes & performance-focused plugins built for Playnite 10+.">
+  <meta property="og:image" content="assets/img/logo.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/img/logo.jpg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="playnite-theme">
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow glow-top-left"></div>
+  <div class="ambient-glow glow-top-right"></div>
+  <div class="ambient-glow glow-bottom-center"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#" class="brand-identity">
+        <div class="brand-logo-wrapper">
+          <img src="assets/img/logo.jpg" alt="playnite.goover.dev Logo" class="brand-logo" width="44" height="44">
+          <span class="logo-glow-ring"></span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">playnite<span class="accent">.goover.dev</span></span>
+          <span class="brand-sub">Themes & Extensions Hub</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="mainNav">
+        <a href="#catalog" class="nav-link active"><i class="fa-solid fa-shapes"></i> Showcase</a>
+        <a href="#how-to-install" class="nav-link"><i class="fa-solid fa-download"></i> How to Install</a>
+        <a href="#support" class="nav-link"><i class="fa-solid fa-mug-hot"></i> Donate</a>
+        <a href="https://github.com/gOOvER" target="_blank" rel="noopener noreferrer" class="nav-link external">
+          <i class="fa-brands fa-github"></i> GitHub <i class="fa-solid fa-arrow-up-right-from-square mini-icon"></i>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://ko-fi.com/goover" target="_blank" rel="noopener noreferrer" class="btn btn-kofi-header">
+          <i class="fa-solid fa-heart"></i>
+          <span>Support on Ko-fi</span>
+        </a>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Playnite 10+ Ready • Open Source • Verified Add-ons</span>
+      </div>
+      <h1 class="hero-title">
+        Elevate Your <span class="gradient-text">Playnite</span> Experience
+      </h1>
+      <p class="hero-subtitle">
+        Curated showcase and direct hosting for next-generation Playnite desktop & fullscreen themes, smart library deduplication, and game integration plugins.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#catalog" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-gamepad"></i>
+          <span>Explore Add-ons</span>
+        </a>
+        <a href="#how-to-install" class="btn btn-secondary btn-lg">
+          <i class="fa-solid fa-bolt"></i>
+          <span>1-Click Install Guide</span>
+        </a>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="metrics-strip">
+        <div class="metric-item">
+          <span class="metric-val">5+</span>
+          <span class="metric-label">Themes & Plugins</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-val">100%</span>
+          <span class="metric-label">Free & Open Source</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-val">8px</span>
+          <span class="metric-label">Penumbra Rounded Contours</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-val">Direct</span>
+          <span class="metric-label">Package Hosting (.pext / .pthm)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <section class="catalog-section" id="catalog">
+    <div class="container">
+      <!-- Toolbar / Playnite Style Bar -->
+      <div class="catalog-toolbar">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">
+            <i class="fa-solid fa-layer-group"></i> All <span class="count-pill">5</span>
+          </button>
+          <button class="filter-tab" data-filter="theme-desktop">
+            <i class="fa-solid fa-display"></i> Desktop Themes <span class="count-pill">2</span>
+          </button>
+          <button class="filter-tab" data-filter="theme-fullscreen">
+            <i class="fa-solid fa-tv"></i> Fullscreen Themes <span class="count-pill">1</span>
+          </button>
+          <button class="filter-tab" data-filter="plugin">
+            <i class="fa-solid fa-puzzle-piece"></i> Plugins <span class="count-pill">1</span>
+          </button>
+          <button class="filter-tab" data-filter="library">
+            <i class="fa-solid fa-book-bookmark"></i> Libraries <span class="count-pill">1</span>
+          </button>
+        </div>
+
+        <div class="toolbar-search-wrapper">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search themes & plugins... (Ctrl+K)" autocomplete="off">
+            <button id="searchClear" class="search-clear" aria-label="Clear Search"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="view-toggles">
+            <button class="view-btn active" id="viewGrid" title="Grid View" aria-label="Grid View">
+              <i class="fa-solid fa-border-all"></i>
+            </button>
+            <button class="view-btn" id="viewList" title="Detailed List View" aria-label="Detailed List View">
+              <i class="fa-solid fa-list-ul"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Items Grid -->
+      <div class="items-grid" id="itemsGrid">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Install Guide Section -->
+  <section class="guide-section" id="how-to-install">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-circle-info"></i> Easy Setup</span>
+        <h2 class="section-title">How to Install in Playnite</h2>
+        <p class="section-subtitle">Choose the method that works best for you — from instant 1-click browser integration to manual package drops.</p>
+      </div>
+
+      <div class="guide-cards">
+        <div class="guide-card featured">
+          <div class="guide-step-num">01</div>
+          <div class="guide-card-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>1-Click Browser Install</h3>
+          <p class="guide-badge-recommend">Recommended • Instant</p>
+          <p>Click the orange <strong>"Install in Playnite"</strong> button on any item card. Your browser will prompt to open Playnite via its native <code>playnite://</code> protocol.</p>
+          <ul class="guide-steps-list">
+            <li><i class="fa-solid fa-check"></i> Click "Install in Playnite"</li>
+            <li><i class="fa-solid fa-check"></i> Allow browser to open Playnite</li>
+            <li><i class="fa-solid fa-check"></i> Confirm installation dialog inside Playnite</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step-num">02</div>
+          <div class="guide-card-icon"><i class="fa-solid fa-server"></i></div>
+          <h3>Direct Package Download</h3>
+          <p class="guide-badge-offline">Offline • Self-Hosted</p>
+          <p>Every add-on is hosted directly on this domain. Download the <code>.pext</code> (plugin) or <code>.pthm</code> (theme) file directly from our server.</p>
+          <ul class="guide-steps-list">
+            <li><i class="fa-solid fa-check"></i> Click "Download .pext / .pthm"</li>
+            <li><i class="fa-solid fa-check"></i> Double-click the downloaded file</li>
+            <li><i class="fa-solid fa-check"></i> Or drag & drop directly into the Playnite window</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step-num">03</div>
+          <div class="guide-card-icon"><i class="fa-solid fa-store"></i></div>
+          <h3>Playnite Addon Browser</h3>
+          <p class="guide-badge-native">Built-in • Auto-Updates</p>
+          <p>Find our verified extensions directly inside Playnite's native add-on manager with automated update notifications.</p>
+          <ul class="guide-steps-list">
+            <li><i class="fa-solid fa-check"></i> Press <kbd>F9</kbd> in Playnite to open Settings</li>
+            <li><i class="fa-solid fa-check"></i> Go to <strong>Add-ons → Browse</strong></li>
+            <li><i class="fa-solid fa-check"></i> Search for the add-on name and click Install</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support & Donation Section -->
+  <section class="support-section" id="support">
+    <div class="container">
+      <div class="support-box">
+        <div class="support-content">
+          <span class="section-tag"><i class="fa-solid fa-heart"></i> Community Backing</span>
+          <h2 class="support-title">Support Continued Development</h2>
+          <p class="support-text">
+            All themes and plugins on <strong>playnite.goover.dev</strong> are completely free, open-source, and created in spare time. 
+            If DuplicateHiderNG cleans up your 2,000+ game library, or Penumbra transforms your couch gaming setup, consider supporting continued maintenance, new features, and Playnite 11 testing with a coffee!
+          </p>
+
+          <div class="support-actions">
+            <a href="https://ko-fi.com/goover" target="_blank" rel="noopener noreferrer" class="btn btn-kofi-large">
+              <i class="fa-solid fa-mug-hot"></i>
+              <span>Buy gOOvER a Coffee on Ko-fi</span>
+            </a>
+            <a href="https://github.com/gOOvER" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fa-brands fa-github"></i>
+              <span>Follow on GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="support-graphic">
+          <div class="kofi-card-preview">
+            <div class="kofi-header">
+              <i class="fa-solid fa-cup-straw-swoosh kofi-cup-icon"></i>
+              <div>
+                <h4>Support @gOOvER</h4>
+                <span>playnite.goover.dev</span>
+              </div>
+            </div>
+            <p class="kofi-desc">"Fueling the next milestones: fast-path artwork pipelines, telemetry integrations, and zero-config game libraries."</p>
+            <div class="kofi-perks">
+              <div class="perk-item"><i class="fa-solid fa-circle-check"></i> 100% goes toward project development</div>
+              <div class="perk-item"><i class="fa-solid fa-circle-check"></i> Early access testing feedback</div>
+              <div class="perk-item"><i class="fa-solid fa-circle-check"></i> Feature request priority consideration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="brand-identity">
+          <img src="assets/img/logo.jpg" alt="Logo" class="brand-logo" width="36" height="36">
+          <span class="brand-name">playnite<span class="accent">.goover.dev</span></span>
+        </div>
+        <p class="footer-desc">
+          Official showcase and package hosting repository for Playnite themes and plugins maintained by <strong>gOOvER</strong>.
+        </p>
+        <p class="footer-disclaimer">
+          Playnite is an open-source video game library manager created by <a href="https://github.com/JosefNemec" target="_blank" rel="noopener noreferrer">Josef Nemec</a>. This website and its add-ons are independent community projects.
+        </p>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4>Extensions</h4>
+        <ul>
+          <li><a href="#" class="quick-filter-link" data-target="goover_DuplicateHiderNG_Plugin">DuplicateHiderNG</a></li>
+          <li><a href="#" class="quick-filter-link" data-target="Penumbra_Dawn_Theme">Penumbra Dawn</a></li>
+          <li><a href="#" class="quick-filter-link" data-target="Penumbra_Night_Theme">Penumbra Night</a></li>
+          <li><a href="#" class="quick-filter-link" data-target="Penumbra_Blur_Theme">Penumbra Blur</a></li>
+          <li><a href="#" class="quick-filter-link" data-target="StarCitizenLibrary_d2146b15-4cfc-40cc-93dd-1297e2e0aa49">RSI Star Citizen Library</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4>Ecosystem & Links</h4>
+        <ul>
+          <li><a href="https://playnite.link/" target="_blank" rel="noopener noreferrer">Official Playnite Website <i class="fa-solid fa-arrow-up-right-from-square mini-icon"></i></a></li>
+          <li><a href="https://playnite.link/forum/" target="_blank" rel="noopener noreferrer">Playnite Forums <i class="fa-solid fa-arrow-up-right-from-square mini-icon"></i></a></li>
+          <li><a href="https://github.com/JosefNemec/PlayniteAddonDatabase" target="_blank" rel="noopener noreferrer">Playnite Addon Database <i class="fa-solid fa-arrow-up-right-from-square mini-icon"></i></a></li>
+          <li><a href="https://github.com/gOOvER" target="_blank" rel="noopener noreferrer">gOOvER GitHub Profile <i class="fa-solid fa-arrow-up-right-from-square mini-icon"></i></a></li>
+          <li><a href="https://ko-fi.com/goover" target="_blank" rel="noopener noreferrer">Ko-fi Support Page <i class="fa-solid fa-arrow-up-right-from-square mini-icon"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <span>&copy; 2026 <strong>gOOvER</strong> • MIT & AGPL-3.0 Licensed Open Source Software</span>
+        <span>Crafted with <i class="fa-solid fa-heart accent"></i> for the Playnite Community</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Details Modal / Dialog -->
+  <div class="modal-overlay" id="detailsModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="modalClose" aria-label="Close dialog"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content" id="modalContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
