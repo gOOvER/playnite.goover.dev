@@ -407,6 +407,44 @@ const ADDONS = [
       "v0.1.0 — Initial preview release"
     ],
     docId: "starcitizen-companion"
+  },
+  {
+    id: "goover_QuickSearchNG_Plugin",
+    name: "QuickSearch-NG",
+    tagline: "Instant fuzzy-search window for games, commands, ITAD deals, and extension actions",
+    category: "plugin",
+    typeLabel: "Generic Plugin",
+    version: "1.0.0",
+    releaseDate: "2026-10-06",
+    api: "Playnite SDK 6.18.0 (API 6.2.0+)",
+    license: "MIT License",
+    icon: "assets/img/quicksearch-icon.png",
+    banner: "assets/img/quicksearch-banner.png",
+    screenshots: [
+      "assets/img/quicksearch-banner.png"
+    ],
+    file: "downloads/goover_QuickSearchNG_Plugin_1_0_0.pext",
+    fileSize: "12.4 MB",
+    githubUrl: "https://github.com/gOOvER/Playnite-QuickSearch",
+    addonDbUrl: "https://github.com/gOOvER/Playnite-QuickSearch",
+    description: "QuickSearch-NG introduces a super-fast, fuzzy-matching global search window to Playnite. Launch games, run commands, trigger extension actions, search prices on IsThereAnyDeal or CheapShark, and inspect rich details without touching the mouse. Modernized with SDK-style net462 architecture and backward-compatible settings migration.",
+    features: [
+      "Instant hotkey access: customizable in-app (Ctrl+F) and global shortcuts",
+      "Fast fuzzy matching with configurable search threshold and acronym search (e.g. csgo, aoeii)",
+      "Command prompt integration: type '>' to access Playnite settings, power states, or extension commands",
+      "IsThereAnyDeal & CheapShark price search with customizable threshold and overrides",
+      "Interactive Game Details preview with cover art, synopsis, and ExtraMetadata support",
+      "Seamless backward-compatible settings migration from legacy felixkmh QuickSearch",
+      "Modernized SDK-style project targeting .NET 4.6.2 and Playnite SDK 6.18.0"
+    ],
+    changelog: [
+      "v1.0.0 — Rebranded to QuickSearch-NG by gOOvER",
+      "Modernized SDK-style projects targeting .NET Framework 4.6.2",
+      "Updated to latest PlayniteSDK 6.18.0",
+      "Directly integrated submodules with clean dependency tree and PowerShell build script",
+      "Added automatic migration from legacy felixkmh_QuickSearch_Plugin settings"
+    ],
+    docId: "quicksearch-ng"
   }
 ];
 
@@ -1245,6 +1283,66 @@ const DOCS_DATA = {
             <li><strong>Wipe Shader Cache:</strong> Quickly clears DirectX and Vulkan shaders to fix micro-stutters and lighting artifacts after major game patches.</li>
             <li><strong>USER Folder Backup &amp; Restore:</strong> Preserves your custom control binds, HOTAS curves, and graphics overrides before major game wipes.</li>
           </ul>
+        `
+      }
+    ]
+  },
+
+  "quicksearch-ng": {
+    id: "quicksearch-ng",
+    name: "QuickSearch-NG",
+    category: "NG Plugins",
+    badge: "Generic Plugin",
+    icon: "assets/img/quicksearch-icon.png",
+    version: "1.0.0",
+    downloadFile: "downloads/goover_QuickSearchNG_Plugin_1_0_0.pext",
+    addonId: "goover_QuickSearchNG_Plugin",
+    githubUrl: "https://github.com/gOOvER/Playnite-QuickSearch",
+    tagline: "Instant fuzzy-search window for games, commands, ITAD deals, and extension actions",
+    specs: [
+      { label: "Target Application", value: "Playnite 10+" },
+      { label: "SDK Version", value: "Playnite SDK 6.18.0 (.NET 4.6.2)" },
+      { label: "License", value: "MIT License" },
+      { label: "Default Shortcuts", value: "Ctrl+F (Local) / Ctrl+Alt+F (Global)" }
+    ],
+    sections: [
+      {
+        title: "🔍 1. Instant Global Search at Your Fingertips",
+        content: `
+          <p><strong>QuickSearch-NG</strong> brings spotlight/Alfred-style search efficiency to Playnite. Press <kbd>Ctrl+F</kbd> anywhere inside Playnite or configure the optional global hotkey (<kbd>Ctrl+Alt+F</kbd>) to search and launch games across your entire PC library in milliseconds.</p>
+          <div class="doc-callout callout-tip">
+            <i class="fa-solid fa-keyboard"></i>
+            <div>
+              <strong>Acronym Search:</strong> Jump instantly to games without typing full titles. Type <code>csgo</code> for <em>Counter-Strike: Global Offensive</em>, <code>aoeii</code> for <em>Age of Empires II</em>, or <code>re7</code> for <em>Resident Evil 7</em>.
+            </div>
+          </div>
+        `
+      },
+      {
+        title: "⚡ 2. Built-in Commands &amp; Extension Actions",
+        content: `
+          <p>QuickSearch-NG is much more than a game launcher. Type <code>&gt;</code> to unlock the integrated command palette:</p>
+          <ul>
+            <li><strong>Playnite Controls:</strong> Open Extensions Settings, Add-on Browser, Fullscreen Mode, or Exit Playnite.</li>
+            <li><strong>Plugin Integrations:</strong> Run actions registered by <strong>DuplicateHiderNG</strong>, <strong>GameActivityNG</strong>, or custom scripts.</li>
+            <li><strong>Filtered Search:</strong> Filter results on the fly by source, installation status, or category using <code>,</code> (OR) and <code>&amp;</code> (AND) operators.</li>
+          </ul>
+        `
+      },
+      {
+        title: "💰 3. Live Price Comparison (ITAD &amp; CheapShark)",
+        content: `
+          <p>Search for deals on unowned games directly from the search bar:</p>
+          <ul>
+            <li>Add <code>+</code> at the end of any title or search <code>itad</code> to query <strong>IsThereAnyDeal.com</strong> for historical low prices, voucher codes, and participating digital shops.</li>
+            <li>Query <strong>CheapShark</strong> for current multi-store discounts.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🔄 4. 100% Backward-Compatible Migration",
+        content: `
+          <p>Upgrading from legacy QuickSearch? QuickSearch-NG automatically checks for your existing <code>felixkmh_QuickSearch_Plugin</code> configuration on first startup, carrying over all custom hotkeys, enabled search items, and thresholds without any manual setup.</p>
         `
       }
     ]
