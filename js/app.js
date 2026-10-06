@@ -159,6 +159,81 @@ const ADDONS = [
     docId: "themeextras-ng"
   },
   {
+    id: "goover_CheckDLCNG_Plugin",
+    name: "CheckDLC-NG",
+    tagline: "Automated multi-store DLC ownership verification, Steam API sync & store metadata",
+    category: "plugin",
+    typeLabel: "Generic Plugin",
+    version: "1.0.0",
+    releaseDate: "2026-10-06",
+    api: "Playnite SDK 6.18.0 (API 6.2.0+)",
+    license: "MIT License",
+    icon: "assets/img/checkdlc-icon.png",
+    banner: "assets/img/checkdlc-banner.jpg",
+    screenshots: [
+      "assets/img/checkdlc-banner.jpg",
+      "assets/img/checkdlc-settings.jpg"
+    ],
+    file: "downloads/goover_CheckDLCNG_Plugin_1_0_0.pext",
+    fileSize: "4.50 MB",
+    githubUrl: "https://github.com/gOOvER/playnite-checkdlc-plugin",
+    addonDbUrl: "https://github.com/gOOvER/playnite-checkdlc-plugin",
+    description: "CheckDLC-NG checks and synchronizes downloadable content (DLC) across your digital gaming libraries (Steam, GOG, Epic, etc.). Rebranded and completely modernized by gOOvER with official Steam API integration, SteamKit2 authentication, thread-safe asynchronous checking, and seamless Penumbra theme custom cards.",
+    features: [
+      "Automated multi-store DLC discovery and ownership verification (Steam, GOG, Epic)",
+      "SteamKit2 integration and authenticated Steam Web API syncing for hidden & free DLCs",
+      "Custom Game Details DLC view card with direct store links, prices, and install status",
+      "Tagging support: automatically tag games with [DLC] Owned, [DLC] Missing, or [DLC] None",
+      "Bulk DLC scanning on library update or individual game context menu actions",
+      "Integrated Penumbra theme custom controls and rounded card styling"
+    ],
+    changelog: [
+      "v1.0.0 — Rebranded to CheckDLC-NG by gOOvER",
+      "Modernized SDK-style project targeting .NET 4.6.2 and Playnite SDK 6.18.0",
+      "Added official SteamKit2 & Web API integration with safe async token caching",
+      "Integrated Common library submodules with hardened error handling and memory optimizations"
+    ],
+    docId: "checkdlc-ng"
+  },
+  {
+    id: "playnite-playeractivities-plugin",
+    name: "PlayerActivities-NG",
+    tagline: "Friends activity tracker, Steam & GOG community feeds, and social gaming timeline",
+    category: "plugin",
+    typeLabel: "Generic Plugin",
+    version: "1.1.1",
+    releaseDate: "2026-10-05",
+    api: "Playnite SDK 6.18.0 (API 6.2.0+)",
+    license: "MIT License",
+    icon: "assets/img/playeractivities-icon.png",
+    banner: "assets/img/playeractivities-banner.jpg",
+    screenshots: [
+      "assets/img/playeractivities-banner.jpg",
+      "assets/img/playeractivities-settings.jpg",
+      "assets/img/playeractivities-settings2.jpg"
+    ],
+    file: "downloads/playnite-playeractivities-plugin_1_1_1.pext",
+    fileSize: "2.64 MB",
+    githubUrl: "https://github.com/gOOvER/playnite-playeractivities-ng",
+    addonDbUrl: "https://github.com/gOOvER/playnite-playeractivities-ng",
+    description: "PlayerActivities-NG brings social gaming feeds and friend activities into Playnite. Tracks friend gameplay sessions, recently unlocked achievements, and status updates across Steam, GOG, and custom friends lists with an interactive timeline and Penumbra-styled activity feed.",
+    features: [
+      "Live friend activity feeds from Steam Community and GOG Galaxy",
+      "Interactive activity timeline displaying games played, achievements unlocked, and play sessions",
+      "Customizable sidebar widget and standalone view with 8px rounded card design",
+      "Configurable background update intervals and cache retention",
+      "Direct integration with GameActivityNG and Penumbra theme activity panels",
+      "Memory-optimized feed parsing and async HTTP caching with graceful error handling"
+    ],
+    changelog: [
+      "v1.1.1 — Maintained NG release by gOOvER",
+      "Integrated modernized Common libraries and hardened async network fetching",
+      "Resolved UI Dispatcher thread deadlocks during background sync",
+      "Full compatibility with Playnite 10+ and Penumbra Dawn/Night themes"
+    ],
+    docId: "playeractivities-ng"
+  },
+  {
     id: "Penumbra_Dawn_Theme",
     name: "Penumbra Dawn",
     tagline: "Modern dual-palette desktop theme with 8px rounded contours and dynamic media",
@@ -298,6 +373,40 @@ const ADDONS = [
       "Added AutomaticPlayController and log telemetry parser"
     ],
     docId: "starcitizen-library"
+  },
+  {
+    id: "StarCitizenCompanion_24a1d01b-6c77-42d6-a16a-428e6216e5be",
+    name: "Star Citizen Companion",
+    tagline: "In-depth Roberts Space Industries server telemetry, pilot stats, and fleet manager",
+    category: "plugin",
+    typeLabel: "Generic Plugin",
+    version: "0.1.0",
+    releaseDate: "2026-10-03",
+    api: "Playnite SDK 6.18.0 (API 6.17.0+)",
+    license: "AGPL-3.0",
+    icon: "assets/img/starcitizen-companion-icon.png",
+    banner: "assets/img/starcitizen-banner.jpg",
+    screenshots: [
+      "assets/img/starcitizen-banner.jpg"
+    ],
+    file: "downloads/StarCitizenCompanion_v0.1.0.pext",
+    fileSize: "2.54 MB",
+    githubUrl: "https://github.com/gOOvER/Playnite-StarCitizen-Companion",
+    addonDbUrl: "https://github.com/gOOvER/Playnite-StarCitizen-Companion",
+    description: "Star Citizen Companion enriches your Star Citizen installation with real-time RSI server status, Game.log parsing, ship fleet inventory, and live session stats. Works hand-in-hand with RSI Star Citizen Library to deliver a complete space sim hub inside Playnite.",
+    features: [
+      "Real-time RSI server cluster status (LIVE, PTU, EPTU, Tech Preview) and service outages",
+      "Automated Game.log telemetry extraction: pilot handle, org, server shard, session duration",
+      "Quick launch actions for USER folder management, shader cache wipe, and screenshot directory",
+      "Fleet & ship lookup integration with hangar and manufacturer database",
+      "Seamless integration with RSI Star Citizen Library plugin and Penumbra themes"
+    ],
+    changelog: [
+      "v0.1.0 — Initial public release by gOOvER",
+      "RSI server health check service with background polling",
+      "Game.log stream parser for session statistics and pilot identifiers"
+    ],
+    docId: "starcitizen-companion"
   }
 ];
 
@@ -981,6 +1090,164 @@ const DOCS_DATA = {
         `
       }
     ]
+  },
+
+  "checkdlc-ng": {
+    id: "checkdlc-ng",
+    name: "CheckDLC-NG",
+    category: "NG Plugins",
+    badge: "Generic Plugin",
+    icon: "assets/img/checkdlc-icon.png",
+    version: "1.0.0",
+    downloadFile: "downloads/goover_CheckDLCNG_Plugin_1_0_0.pext",
+    addonId: "goover_CheckDLCNG_Plugin",
+    githubUrl: "https://github.com/gOOvER/playnite-checkdlc-plugin",
+    tagline: "Automated multi-store DLC ownership verification, Steam API sync & store metadata",
+    specs: [
+      { label: "Target Application", value: "Playnite 10+ (API 6.2.0+)" },
+      { label: "Supported Stores", value: "Steam, GOG, Epic Games" },
+      { label: "License", value: "MIT License" },
+      { label: "Companion Themes", value: "Penumbra Dawn, Penumbra Night (Built-in DLC Cards)" }
+    ],
+    sections: [
+      {
+        title: "🛒 1. Overview & Multi-Store DLC Sync",
+        content: `
+          <p><strong>CheckDLC-NG</strong> automatically queries digital storefronts to determine which downloadable content (DLC), expansions, and season passes are available for your games, and verifies which ones you already own.</p>
+          <div class="doc-callout callout-tip">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div>
+              <strong>Rebranded &amp; Modernized:</strong> Rebranded to CheckDLC-NG with native .NET 4.6.2 SDK-style architecture, eliminating deadlocks, and fully optimizing SteamKit2 integration.
+            </div>
+          </div>
+        `
+      },
+      {
+        title: "🔑 2. SteamKit2 & Official Steam Web API Setup",
+        content: `
+          <p>CheckDLC-NG offers flexible Steam integration depending on your privacy needs:</p>
+          <ul>
+            <li><strong>Public Steam Web API:</strong> Checks store catalogs for publicly listed DLC packages without logging in.</li>
+            <li><strong>SteamKit2 Token Authentication:</strong> Connects to your Steam account to discover free licenses, private packages, and unlisted soundtrack/beta packages that ordinary scrapers miss.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🎨 3. Penumbra Theme Integration & Details Cards",
+        content: `
+          <p>CheckDLC-NG includes custom WPF controls tailored specifically for <strong>Penumbra Dawn</strong> and <strong>Penumbra Night</strong>. When viewing a game in the Details sidebar, a dedicated DLC card displays:</p>
+          <ul>
+            <li>Owned DLC badge with install checkmark</li>
+            <li>Unowned DLC with localized store pricing and direct store link</li>
+            <li>Release dates and package descriptions</li>
+          </ul>
+        `
+      },
+      {
+        title: "🏷️ 4. Automatic Library Tagging",
+        content: `
+          <p>Optionally tag games in your library automatically based on DLC ownership:</p>
+          <ul>
+            <li><code>[DLC] Owned</code>: The game has DLCs and at least one is owned.</li>
+            <li><code>[DLC] Missing</code>: The game has available DLCs on the store that you do not own yet.</li>
+            <li><code>[DLC] None</code>: The game has no registered DLC packages on digital stores.</li>
+          </ul>
+        `
+      }
+    ]
+  },
+
+  "playeractivities-ng": {
+    id: "playeractivities-ng",
+    name: "PlayerActivities-NG",
+    category: "NG Plugins",
+    badge: "Generic Plugin",
+    icon: "assets/img/playeractivities-icon.png",
+    version: "1.1.1",
+    downloadFile: "downloads/playnite-playeractivities-plugin_1_1_1.pext",
+    addonId: "playnite-playeractivities-plugin",
+    githubUrl: "https://github.com/gOOvER/playnite-playeractivities-ng",
+    tagline: "Friends activity tracker, Steam & GOG community feeds, and social gaming timeline",
+    specs: [
+      { label: "Target Application", value: "Playnite 10+ (API 6.2.0+)" },
+      { label: "Supported Networks", value: "Steam Community, GOG Galaxy" },
+      { label: "License", value: "MIT License" },
+      { label: "Theme Integration", value: "Penumbra Dawn &amp; Night Social Panels" }
+    ],
+    sections: [
+      {
+        title: "👥 1. Social Gaming Timeline & Feed",
+        content: `
+          <p><strong>PlayerActivities-NG</strong> brings community feeds directly into Playnite. Discover what your friends are playing, view recent achievements unlocked by friends, and follow playtime milestones in real time.</p>
+        `
+      },
+      {
+        title: "⚙️ 2. Steam & GOG Galaxy Configuration",
+        content: `
+          <p>To enable social feed synchronization:</p>
+          <ol class="doc-steps">
+            <li>Open Playnite &rarr; <strong>Main Menu &rarr; Extensions &rarr; PlayerActivities-NG Settings</strong>.</li>
+            <li>Enable <strong>Steam Community Feed</strong> and verify your public SteamID64 or vanity profile URL.</li>
+            <li>Enable <strong>GOG Galaxy Friends</strong> to synchronize GOG friend status and achievements.</li>
+            <li>Configure update intervals (default: 30 minutes) to prevent rate limits.</li>
+          </ol>
+        `
+      },
+      {
+        title: "📊 3. Interactive Sidebar & Fullscreen Widgets",
+        content: `
+          <p>Seamlessly integrates into Penumbra themes with rounded cards showing friend avatars, current game title, and session duration. Includes quick launch and store inspection shortcuts.</p>
+        `
+      }
+    ]
+  },
+
+  "starcitizen-companion": {
+    id: "starcitizen-companion",
+    name: "Star Citizen Companion",
+    category: "Game Libraries",
+    badge: "Generic Plugin",
+    icon: "assets/img/starcitizen-companion-icon.png",
+    version: "0.1.0",
+    downloadFile: "downloads/StarCitizenCompanion_v0.1.0.pext",
+    addonId: "StarCitizenCompanion_24a1d01b-6c77-42d6-a16a-428e6216e5be",
+    githubUrl: "https://github.com/gOOvER/Playnite-StarCitizen-Companion",
+    tagline: "In-depth Roberts Space Industries server telemetry, pilot stats, and fleet manager",
+    specs: [
+      { label: "Target Application", value: "Playnite 10+" },
+      { label: "Synergy", value: "Works with RSI Star Citizen Library plugin" },
+      { label: "License", value: "GNU AGPL-3.0" },
+      { label: "Telemetry", value: "Live RSI Server Status &amp; Game.log Stream Parser" }
+    ],
+    sections: [
+      {
+        title: "🛰️ 1. RSI Server Cluster Health Monitoring",
+        content: `
+          <p><strong>Star Citizen Companion</strong> monitors the health of Roberts Space Industries game services in real-time. Displays status for LIVE, PTU, EPTU, and Tech Preview channels directly inside Playnite, warning you of service outages, matchmaking degradations, or scheduled maintenance windows.</p>
+        `
+      },
+      {
+        title: "📋 2. Game.log Telemetry & Pilot Stats",
+        content: `
+          <p>Automatically monitors your active <code>Game.log</code> to extract live telemetry during and after flight sessions:</p>
+          <ul>
+            <li>Pilot Handle, Account ID, and Organization affiliation</li>
+            <li>Current server shard ID, region (US, EU, AP), and cluster instance</li>
+            <li>Session flight duration, launch timestamps, and exit code diagnostics</li>
+          </ul>
+        `
+      },
+      {
+        title: "🛠️ 3. Quick Maintenance & Shader Cleansing",
+        content: `
+          <p>Access vital maintenance operations with a single right-click in Playnite:</p>
+          <ul>
+            <li><strong>Wipe Shader Cache:</strong> Quickly clears DirectX and Vulkan shaders to fix micro-stutters and lighting artifacts after major game patches.</li>
+            <li><strong>USER Folder Backup &amp; Restore:</strong> Preserves your custom control binds, HOTAS curves, and graphics overrides before major game wipes.</li>
+          </ul>
+        `
+      }
+    ]
   }
 };
 
@@ -1022,7 +1289,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function renderCatalog() {
   const filtered = ADDONS.filter(item => {
-    const matchesCategory = currentFilter === "all" || item.category === currentFilter;
+    const matchesCategory =
+      currentFilter === "all" ||
+      item.category === currentFilter ||
+      (currentFilter === "themes" && item.category.startsWith("theme")) ||
+      (currentFilter === "theme" && item.category.startsWith("theme"));
     const matchesSearch = searchQuery === "" || 
       item.name.toLowerCase().includes(searchQuery) ||
       item.tagline.toLowerCase().includes(searchQuery) ||
@@ -1094,11 +1365,11 @@ function createCardHTML(item) {
           </div>
 
           <div class="actions-secondary-row">
-            <button class="btn btn-outline btn-sm" onclick="openDetailsModal('${item.id}')">
-              <i class="fa-solid fa-images"></i> Details
+            <button class="btn btn-outline btn-sm" onclick="openDetailsModal('${item.id}', 'overview')">
+              <i class="fa-solid fa-circle-info"></i> Details
             </button>
-            <button class="btn btn-outline btn-sm btn-guide-link" onclick="openDocTopic('${item.docId}')" title="Read full guide & documentation">
-              <i class="fa-solid fa-book-open"></i> Guide
+            <button class="btn btn-outline btn-sm btn-guide-link" onclick="openDetailsModal('${item.id}', 'docs')" title="Read integrated guide & documentation">
+              <i class="fa-solid fa-book-open"></i> Docs &amp; Guide
             </button>
             <div class="secondary-links">
               <a href="${item.githubUrl}" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
@@ -1413,13 +1684,27 @@ window.installAddon = function(addonId) {
   window.location.href = uri;
 };
 
+// Details Modal Tab State
+let currentModalTab = "overview";
+
+window.switchModalTab = function(tabName) {
+  currentModalTab = tabName;
+  document.querySelectorAll(".modal-tab-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.tab === tabName);
+  });
+  document.querySelectorAll(".modal-tab-panel").forEach(panel => {
+    panel.classList.toggle("active", panel.dataset.panel === tabName);
+  });
+};
+
 // Details Modal
-window.openDetailsModal = function(addonId) {
+window.openDetailsModal = function(addonId, initialTab = "overview") {
   const item = ADDONS.find(a => a.id === addonId);
   if (!item) return;
 
   currentModalItem = item;
   currentCarouselIndex = 0;
+  currentModalTab = initialTab;
 
   renderModalContent();
   detailsModal.classList.add("active");
@@ -1438,6 +1723,7 @@ function renderModalContent() {
   const item = currentModalItem;
   if (!item) return;
 
+  const docItem = DOCS_DATA[item.docId];
   const hasMultipleScreenshots = item.screenshots.length > 1;
 
   modalContent.innerHTML = `
@@ -1454,77 +1740,158 @@ function renderModalContent() {
       </div>
     </div>
 
-    <div class="modal-carousel-wrapper">
-      <img src="${item.screenshots[currentCarouselIndex]}" alt="Preview" class="modal-carousel-image" id="modalCarouselImg">
-      ${hasMultipleScreenshots ? `
-        <button class="carousel-nav-btn carousel-prev" onclick="prevScreenshot()" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="carousel-nav-btn carousel-next" onclick="nextScreenshot()" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
-        <div class="carousel-dots">
-          ${item.screenshots.map((_, idx) => `
-            <span class="carousel-dot ${idx === currentCarouselIndex ? 'active' : ''}" onclick="setScreenshot(${idx})"></span>
-          `).join("")}
-        </div>
-      ` : ''}
+    <!-- Modal Navigation Tabs -->
+    <div class="modal-tabs">
+      <button class="modal-tab-btn ${currentModalTab === 'overview' ? 'active' : ''}" data-tab="overview" onclick="switchModalTab('overview')">
+        <i class="fa-solid fa-circle-info"></i> Overview &amp; Media
+      </button>
+      <button class="modal-tab-btn ${currentModalTab === 'docs' ? 'active' : ''}" data-tab="docs" onclick="switchModalTab('docs')">
+        <i class="fa-solid fa-book-open"></i> Documentation &amp; Setup
+      </button>
+      <button class="modal-tab-btn ${currentModalTab === 'specs' ? 'active' : ''}" data-tab="specs" onclick="switchModalTab('specs')">
+        <i class="fa-solid fa-sliders"></i> Specifications
+      </button>
+      <button class="modal-tab-btn ${currentModalTab === 'changelog' ? 'active' : ''}" data-tab="changelog" onclick="switchModalTab('changelog')">
+        <i class="fa-solid fa-clock-rotate-left"></i> Changelog
+      </button>
     </div>
 
-    <div class="modal-details-grid">
-      <div class="modal-desc-col">
-        <h3>About this Add-on</h3>
-        <p class="modal-text">${item.description}</p>
+    <!-- TAB 1: Overview & Media -->
+    <div class="modal-tab-panel ${currentModalTab === 'overview' ? 'active' : ''}" data-panel="overview">
+      <div class="modal-carousel-wrapper">
+        <img src="${item.screenshots[currentCarouselIndex]}" alt="Preview" class="modal-carousel-image" id="modalCarouselImg">
+        ${hasMultipleScreenshots ? `
+          <button class="carousel-nav-btn carousel-prev" onclick="prevScreenshot()" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-nav-btn carousel-next" onclick="nextScreenshot()" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+          <div class="carousel-dots">
+            ${item.screenshots.map((_, idx) => `
+              <span class="carousel-dot ${idx === currentCarouselIndex ? 'active' : ''}" onclick="setScreenshot(${idx})"></span>
+            `).join("")}
+          </div>
+        ` : ''}
+      </div>
 
-        <h3 style="margin-top: 24px;">Key Features</h3>
-        <ul class="modal-features-list">
-          ${item.features.map(f => `
-            <li><i class="fa-solid fa-circle-check"></i> <span>${f}</span></li>
-          `).join("")}
-        </ul>
+      <div class="modal-details-grid">
+        <div class="modal-desc-col">
+          <h3>About this Add-on</h3>
+          <p class="modal-text">${item.description}</p>
 
-        <h3 style="margin-top: 24px;">Changelog Highlights</h3>
+          <h3 style="margin-top: 24px;">Key Features</h3>
+          <ul class="modal-features-list">
+            ${item.features.map(f => `
+              <li><i class="fa-solid fa-circle-check"></i> <span>${f}</span></li>
+            `).join("")}
+          </ul>
+        </div>
+
+        <div class="modal-sidebar-col">
+          <div class="modal-card-box">
+            <h4>Quick Actions</h4>
+            <button class="btn btn-primary btn-block" onclick="installAddon('${item.id}')">
+              <i class="fa-solid fa-bolt"></i>
+              <span>Install in Playnite</span>
+            </button>
+            <a href="${item.file}" class="btn btn-secondary btn-block" download>
+              <i class="fa-solid fa-download"></i>
+              <span>Download (${item.fileSize})</span>
+            </a>
+            <button class="btn btn-outline btn-block" onclick="switchModalTab('docs')">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Read Full Documentation</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Documentation & Setup Guide -->
+    <div class="modal-tab-panel ${currentModalTab === 'docs' ? 'active' : ''}" data-panel="docs">
+      <div class="modal-doc-wrapper">
+        <div class="modal-doc-actions">
+          <div class="modal-doc-actions-left">
+            <button class="btn btn-primary btn-sm" onclick="installAddon('${item.id}')">
+              <i class="fa-solid fa-bolt"></i> 1-Click Install in Playnite
+            </button>
+            <a href="${item.file}" class="btn btn-secondary btn-sm" download>
+              <i class="fa-solid fa-download"></i> Download Package (${item.fileSize})
+            </a>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="closeDetailsModal(); openDocTopic('${item.docId}')">
+            <i class="fa-solid fa-book-bookmark"></i> Open in Dedicated Docs Hub
+          </button>
+        </div>
+
+        ${docItem ? `
+          <div class="doc-specs-box" style="margin-top: 0;">
+            <h3><i class="fa-solid fa-microchip"></i> Technical Specifications</h3>
+            <div class="doc-specs-grid">
+              ${docItem.specs.map(s => `
+                <div class="doc-spec-item">
+                  <span class="doc-spec-label">${s.label}</span>
+                  <span class="doc-spec-val">${s.value}</span>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+
+          <div class="modal-doc-sections">
+            ${docItem.sections.map(s => `
+              <div class="modal-doc-card">
+                <h3>${s.title}</h3>
+                <div>${s.content}</div>
+              </div>
+            `).join("")}
+          </div>
+        ` : `
+          <div class="modal-doc-card">
+            <p>Documentation for ${item.name} is being prepared.</p>
+          </div>
+        `}
+      </div>
+    </div>
+
+    <!-- TAB 3: Specifications -->
+    <div class="modal-tab-panel ${currentModalTab === 'specs' ? 'active' : ''}" data-panel="specs">
+      <div class="modal-card-box">
+        <h4>Detailed Add-on Specifications</h4>
+        <dl class="modal-specs-list">
+          <div>
+            <dt>Target Application</dt>
+            <dd>Playnite 10+ (Desktop &amp; Fullscreen)</dd>
+          </div>
+          <div>
+            <dt>Integration Framework</dt>
+            <dd>${item.api}</dd>
+          </div>
+          <div>
+            <dt>License</dt>
+            <dd>${item.license}</dd>
+          </div>
+          <div>
+            <dt>Direct Package File</dt>
+            <dd><code>${item.file.split('/').pop()}</code> (${item.fileSize})</dd>
+          </div>
+          <div>
+            <dt>Release Version</dt>
+            <dd>v${item.version} (${item.releaseDate})</dd>
+          </div>
+          <div>
+            <dt>Open Source Repository</dt>
+            <dd><a href="${item.githubUrl}" target="_blank" rel="noopener noreferrer">GitHub Profile &rarr; ${item.name} <i class="fa-solid fa-arrow-up-right-from-square mini-icon"></i></a></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- TAB 4: Changelog -->
+    <div class="modal-tab-panel ${currentModalTab === 'changelog' ? 'active' : ''}" data-panel="changelog">
+      <div class="modal-card-box">
+        <h4>Release History &amp; Changelog</h4>
         <ul class="modal-changelog-list">
           ${item.changelog.map(c => `
             <li><i class="fa-solid fa-tag"></i> <span>${c}</span></li>
           `).join("")}
         </ul>
-      </div>
-
-      <div class="modal-sidebar-col">
-        <div class="modal-card-box">
-          <h4>Add-on Actions</h4>
-          <button class="btn btn-primary btn-block" onclick="installAddon('${item.id}')">
-            <i class="fa-solid fa-bolt"></i>
-            <span>Install in Playnite</span>
-          </button>
-          <a href="${item.file}" class="btn btn-secondary btn-block" download>
-            <i class="fa-solid fa-download"></i>
-            <span>Download (${item.fileSize})</span>
-          </a>
-          <button class="btn btn-outline btn-block" onclick="closeDetailsModal(); openDocTopic('${item.docId}')">
-            <i class="fa-solid fa-book-open"></i>
-            <span>View Full Guide &amp; Docs</span>
-          </button>
-        </div>
-
-        <div class="modal-card-box" style="margin-top: 16px;">
-          <h4>Specifications</h4>
-          <dl class="modal-specs-list">
-            <div>
-              <dt>Target Version</dt>
-              <dd>Playnite 10+</dd>
-            </div>
-            <div>
-              <dt>Integration API</dt>
-              <dd>${item.api}</dd>
-            </div>
-            <div>
-              <dt>Direct Package</dt>
-              <dd><code>${item.file.split('/').pop()}</code></dd>
-            </div>
-            <div>
-              <dt>Source Code</dt>
-              <dd><a href="${item.githubUrl}" target="_blank" rel="noopener noreferrer">GitHub Repo <i class="fa-solid fa-arrow-up-right-from-square mini-icon"></i></a></dd>
-            </div>
-          </dl>
-        </div>
       </div>
     </div>
   `;
