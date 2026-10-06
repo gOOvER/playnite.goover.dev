@@ -160,7 +160,7 @@ const ADDONS = [
   },
   {
     id: "goover_CheckDLCNG_Plugin",
-    name: "CheckDLC-NG",
+    name: "CheckDLCNG",
     tagline: "Automated multi-store DLC ownership verification, Steam API sync & store metadata",
     category: "plugin",
     typeLabel: "Generic Plugin",
@@ -178,7 +178,7 @@ const ADDONS = [
     fileSize: "4.50 MB",
     githubUrl: "https://github.com/gOOvER/playnite-checkdlc-plugin",
     addonDbUrl: "https://github.com/gOOvER/playnite-checkdlc-plugin",
-    description: "CheckDLC-NG checks and synchronizes downloadable content (DLC) across your digital gaming libraries (Steam, GOG, Epic, etc.). Rebranded and completely modernized by gOOvER with official Steam API integration, SteamKit2 authentication, thread-safe asynchronous checking, and seamless Penumbra theme custom cards.",
+    description: "CheckDLCNG checks and synchronizes downloadable content (DLC) across your digital gaming libraries (Steam, GOG, Epic, etc.). Rebranded and completely modernized by gOOvER with official Steam API integration, SteamKit2 authentication, thread-safe asynchronous checking, and seamless Penumbra theme custom cards.",
     features: [
       "Automated multi-store DLC discovery and ownership verification (Steam, GOG, Epic)",
       "SteamKit2 integration and authenticated Steam Web API syncing for hidden & free DLCs",
@@ -188,7 +188,7 @@ const ADDONS = [
       "Integrated Penumbra theme custom controls and rounded card styling"
     ],
     changelog: [
-      "v1.0.0 — Rebranded to CheckDLC-NG by gOOvER",
+      "v1.0.0 — Rebranded to CheckDLCNG by gOOvER",
       "Modernized SDK-style project targeting .NET 4.6.2 and Playnite SDK 6.18.0",
       "Added official SteamKit2 & Web API integration with safe async token caching",
       "Integrated Common library submodules with hardened error handling and memory optimizations"
@@ -197,7 +197,7 @@ const ADDONS = [
   },
   {
     id: "playnite-playeractivities-plugin",
-    name: "PlayerActivities-NG",
+    name: "PlayerActivitiesNG",
     tagline: "Friends activity tracker, Steam & GOG community feeds, and social gaming timeline",
     category: "plugin",
     typeLabel: "Generic Plugin",
@@ -216,7 +216,7 @@ const ADDONS = [
     fileSize: "2.64 MB",
     githubUrl: "https://github.com/gOOvER/playnite-playeractivities-ng",
     addonDbUrl: "https://github.com/gOOvER/playnite-playeractivities-ng",
-    description: "PlayerActivities-NG brings social gaming feeds and friend activities into Playnite. Tracks friend gameplay sessions, recently unlocked achievements, and status updates across Steam, GOG, and custom friends lists with an interactive timeline and Penumbra-styled activity feed.",
+    description: "PlayerActivitiesNG brings social gaming feeds and friend activities into Playnite. Tracks friend gameplay sessions, recently unlocked achievements, and status updates across Steam, GOG, and custom friends lists with an interactive timeline and Penumbra-styled activity feed.",
     features: [
       "Live friend activity feeds from Steam Community and GOG Galaxy",
       "Interactive activity timeline displaying games played, achievements unlocked, and play sessions",
@@ -410,7 +410,7 @@ const ADDONS = [
   },
   {
     id: "goover_QuickSearchNG_Plugin",
-    name: "QuickSearch-NG",
+    name: "QuickSearchNG",
     tagline: "Instant fuzzy-search window for games, commands, ITAD deals, and extension actions",
     category: "plugin",
     typeLabel: "Generic Plugin",
@@ -427,7 +427,7 @@ const ADDONS = [
     fileSize: "12.4 MB",
     githubUrl: "https://github.com/gOOvER/Playnite-QuickSearch",
     addonDbUrl: "https://github.com/gOOvER/Playnite-QuickSearch",
-    description: "QuickSearch-NG introduces a super-fast, fuzzy-matching global search window to Playnite. Launch games, run commands, trigger extension actions, search prices on IsThereAnyDeal or CheapShark, and inspect rich details without touching the mouse. Modernized with SDK-style net462 architecture and backward-compatible settings migration.",
+    description: "QuickSearchNG introduces a super-fast, fuzzy-matching global search window to Playnite. Launch games, run commands, trigger extension actions, search prices on IsThereAnyDeal or CheapShark, and inspect rich details without touching the mouse. Modernized with SDK-style net462 architecture and backward-compatible settings migration.",
     features: [
       "Instant hotkey access: customizable in-app (Ctrl+F) and global shortcuts",
       "Fast fuzzy matching with configurable search threshold and acronym search (e.g. csgo, aoeii)",
@@ -438,7 +438,7 @@ const ADDONS = [
       "Modernized SDK-style project targeting .NET 4.6.2 and Playnite SDK 6.18.0"
     ],
     changelog: [
-      "v1.0.0 — Rebranded to QuickSearch-NG by gOOvER",
+      "v1.0.0 — Rebranded to QuickSearchNG by gOOvER",
       "Modernized SDK-style projects targeting .NET Framework 4.6.2",
       "Updated to latest PlayniteSDK 6.18.0",
       "Directly integrated submodules with clean dependency tree and PowerShell build script",
@@ -1132,7 +1132,7 @@ const DOCS_DATA = {
 
   "checkdlc-ng": {
     id: "checkdlc-ng",
-    name: "CheckDLC-NG",
+    name: "CheckDLCNG",
     category: "NG Plugins",
     badge: "Generic Plugin",
     icon: "assets/img/checkdlc-icon.png",
@@ -1151,11 +1151,11 @@ const DOCS_DATA = {
       {
         title: "🛒 1. Overview & Multi-Store DLC Sync",
         content: `
-          <p><strong>CheckDLC-NG</strong> automatically queries digital storefronts to determine which downloadable content (DLC), expansions, and season passes are available for your games, and verifies which ones you already own.</p>
+          <p><strong>CheckDLCNG</strong> automatically queries digital storefronts to determine which downloadable content (DLC), expansions, and season passes are available for your games, and verifies which ones you already own.</p>
           <div class="doc-callout callout-tip">
             <i class="fa-solid fa-cart-shopping"></i>
             <div>
-              <strong>Rebranded &amp; Modernized:</strong> Rebranded to CheckDLC-NG with native .NET 4.6.2 SDK-style architecture, eliminating deadlocks, and fully optimizing SteamKit2 integration.
+              <strong>Rebranded &amp; Modernized:</strong> Rebranded to CheckDLCNG with native .NET 4.6.2 SDK-style architecture, eliminating deadlocks, and fully optimizing SteamKit2 integration.
             </div>
           </div>
         `
@@ -1163,7 +1163,7 @@ const DOCS_DATA = {
       {
         title: "🔑 2. SteamKit2 & Official Steam Web API Setup",
         content: `
-          <p>CheckDLC-NG offers flexible Steam integration depending on your privacy needs:</p>
+          <p>CheckDLCNG offers flexible Steam integration depending on your privacy needs:</p>
           <ul>
             <li><strong>Public Steam Web API:</strong> Checks store catalogs for publicly listed DLC packages without logging in.</li>
             <li><strong>SteamKit2 Token Authentication:</strong> Connects to your Steam account to discover free licenses, private packages, and unlisted soundtrack/beta packages that ordinary scrapers miss.</li>
@@ -1173,7 +1173,7 @@ const DOCS_DATA = {
       {
         title: "🎨 3. Penumbra Theme Integration & Details Cards",
         content: `
-          <p>CheckDLC-NG includes custom WPF controls tailored specifically for <strong>Penumbra Dawn</strong> and <strong>Penumbra Night</strong>. When viewing a game in the Details sidebar, a dedicated DLC card displays:</p>
+          <p>CheckDLCNG includes custom WPF controls tailored specifically for <strong>Penumbra Dawn</strong> and <strong>Penumbra Night</strong>. When viewing a game in the Details sidebar, a dedicated DLC card displays:</p>
           <ul>
             <li>Owned DLC badge with install checkmark</li>
             <li>Unowned DLC with localized store pricing and direct store link</li>
@@ -1197,7 +1197,7 @@ const DOCS_DATA = {
 
   "playeractivities-ng": {
     id: "playeractivities-ng",
-    name: "PlayerActivities-NG",
+    name: "PlayerActivitiesNG",
     category: "NG Plugins",
     badge: "Generic Plugin",
     icon: "assets/img/playeractivities-icon.png",
@@ -1216,7 +1216,7 @@ const DOCS_DATA = {
       {
         title: "👥 1. Social Gaming Timeline & Feed",
         content: `
-          <p><strong>PlayerActivities-NG</strong> brings community feeds directly into Playnite. Discover what your friends are playing, view recent achievements unlocked by friends, and follow playtime milestones in real time.</p>
+          <p><strong>PlayerActivitiesNG</strong> brings community feeds directly into Playnite. Discover what your friends are playing, view recent achievements unlocked by friends, and follow playtime milestones in real time.</p>
         `
       },
       {
@@ -1224,7 +1224,7 @@ const DOCS_DATA = {
         content: `
           <p>To enable social feed synchronization:</p>
           <ol class="doc-steps">
-            <li>Open Playnite &rarr; <strong>Main Menu &rarr; Extensions &rarr; PlayerActivities-NG Settings</strong>.</li>
+            <li>Open Playnite &rarr; <strong>Main Menu &rarr; Extensions &rarr; PlayerActivitiesNG Settings</strong>.</li>
             <li>Enable <strong>Steam Community Feed</strong> and verify your public SteamID64 or vanity profile URL.</li>
             <li>Enable <strong>GOG Galaxy Friends</strong> to synchronize GOG friend status and achievements.</li>
             <li>Configure update intervals (default: 30 minutes) to prevent rate limits.</li>
@@ -1290,7 +1290,7 @@ const DOCS_DATA = {
 
   "quicksearch-ng": {
     id: "quicksearch-ng",
-    name: "QuickSearch-NG",
+    name: "QuickSearchNG",
     category: "NG Plugins",
     badge: "Generic Plugin",
     icon: "assets/img/quicksearch-icon.png",
@@ -1309,7 +1309,7 @@ const DOCS_DATA = {
       {
         title: "🔍 1. Instant Global Search at Your Fingertips",
         content: `
-          <p><strong>QuickSearch-NG</strong> brings spotlight/Alfred-style search efficiency to Playnite. Press <kbd>Ctrl+F</kbd> anywhere inside Playnite or configure the optional global hotkey (<kbd>Ctrl+Alt+F</kbd>) to search and launch games across your entire PC library in milliseconds.</p>
+          <p><strong>QuickSearchNG</strong> brings spotlight/Alfred-style search efficiency to Playnite. Press <kbd>Ctrl+F</kbd> anywhere inside Playnite or configure the optional global hotkey (<kbd>Ctrl+Alt+F</kbd>) to search and launch games across your entire PC library in milliseconds.</p>
           <div class="doc-callout callout-tip">
             <i class="fa-solid fa-keyboard"></i>
             <div>
@@ -1321,7 +1321,7 @@ const DOCS_DATA = {
       {
         title: "⚡ 2. Built-in Commands &amp; Extension Actions",
         content: `
-          <p>QuickSearch-NG is much more than a game launcher. Type <code>&gt;</code> to unlock the integrated command palette:</p>
+          <p>QuickSearchNG is much more than a game launcher. Type <code>&gt;</code> to unlock the integrated command palette:</p>
           <ul>
             <li><strong>Playnite Controls:</strong> Open Extensions Settings, Add-on Browser, Fullscreen Mode, or Exit Playnite.</li>
             <li><strong>Plugin Integrations:</strong> Run actions registered by <strong>DuplicateHiderNG</strong>, <strong>GameActivityNG</strong>, or custom scripts.</li>
@@ -1342,7 +1342,7 @@ const DOCS_DATA = {
       {
         title: "🔄 4. 100% Backward-Compatible Migration",
         content: `
-          <p>Upgrading from legacy QuickSearch? QuickSearch-NG automatically checks for your existing <code>felixkmh_QuickSearch_Plugin</code> configuration on first startup, carrying over all custom hotkeys, enabled search items, and thresholds without any manual setup.</p>
+          <p>Upgrading from legacy QuickSearch? QuickSearchNG automatically checks for your existing <code>felixkmh_QuickSearch_Plugin</code> configuration on first startup, carrying over all custom hotkeys, enabled search items, and thresholds without any manual setup.</p>
         `
       }
     ]
