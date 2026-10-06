@@ -935,6 +935,61 @@ kbd {
   color: var(--accent-cyan);
 }
 
+/* Mission & Maintenance Callout Banner */
+.mission-callout-banner {
+  background: linear-gradient(135deg, rgba(234, 128, 36, 0.08) 0%, rgba(42, 175, 237, 0.05) 100%);
+  border: 1px solid rgba(234, 128, 36, 0.3);
+  border-radius: var(--radius-base);
+  padding: 16px 22px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.mission-callout-banner:hover {
+  border-color: rgba(234, 128, 36, 0.5);
+}
+
+.mission-callout-icon {
+  font-size: 1.35rem;
+  color: var(--accent-playnite);
+  background: rgba(234, 128, 36, 0.15);
+  border: 1px solid rgba(234, 128, 36, 0.35);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mission-callout-content {
+  flex: 1;
+}
+
+.mission-callout-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.mission-callout-content p {
+  font-size: 0.89rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.mission-callout-content strong {
+  color: var(--text-primary);
+}
+
 /* Modal Tabs Navigation */
 .modal-tabs {
   display: flex;
