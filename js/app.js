@@ -344,17 +344,17 @@ const ADDONS = [
     tagline: "Zero-configuration auto-detection & multi-channel launcher for Star Citizen",
     category: "library",
     typeLabel: "Game Library Plugin",
-    version: "0.1.0",
-    releaseDate: "2026-10-03",
-    api: "Playnite SDK 6.18.0 (API 6.17.0+)",
+    version: "1.0.0",
+    releaseDate: "2026-10-06",
+    api: "Playnite SDK 6.18.0 (API 6.2.0+)",
     license: "AGPL-3.0",
     icon: "assets/img/starcitizen-icon.png",
     banner: "assets/img/starcitizen-banner.jpg",
     screenshots: [
       "assets/img/starcitizen-banner.jpg"
     ],
-    file: "downloads/StarCitizenLibrary_v0.1.0.pext",
-    fileSize: "105 KB",
+    file: "downloads/StarCitizenLibrary_v1.0.0.pext",
+    fileSize: "35 KB",
     githubUrl: "https://github.com/gOOvER/Playnite-StarCitizen-Library",
     addonDbUrl: "https://github.com/JosefNemec/PlayniteAddonDatabase/pull/680",
     description: "A native Playnite library plugin that automatically detects, imports, and launches Star Citizen channels (LIVE, PTU, EPTU, HOTFIX, TECH-PREVIEW) without manual path configuration. Includes pilot identity extraction, server shard detection, and RSI Launcher lifecycle tracking.",
@@ -368,9 +368,9 @@ const ADDONS = [
       "Safe playtime, stats, and metadata inheritance across updates"
     ],
     changelog: [
-      "v0.1.0 — Initial public release of Roberts Space Industries library plugin",
-      "Added zero-configuration scanner and multi-channel detection",
-      "Added AutomaticPlayController and log telemetry parser"
+      "v1.0.0 — Production release milestone with multi-channel discovery",
+      "Updated to Playnite SDK 6.18.0 with automatic SSD footprint calculation",
+      "v0.1.0 — Initial preview release with zero-config scanner"
     ],
     docId: "starcitizen-library"
   },
@@ -380,16 +380,16 @@ const ADDONS = [
     tagline: "In-depth Roberts Space Industries server telemetry, pilot stats, and fleet manager",
     category: "plugin",
     typeLabel: "Generic Plugin",
-    version: "0.1.0",
-    releaseDate: "2026-10-03",
-    api: "Playnite SDK 6.18.0 (API 6.17.0+)",
+    version: "1.0.0",
+    releaseDate: "2026-10-06",
+    api: "Playnite SDK 6.18.0 (API 6.2.0+)",
     license: "AGPL-3.0",
     icon: "assets/img/starcitizen-companion-icon.png",
     banner: "assets/img/starcitizen-banner.jpg",
     screenshots: [
       "assets/img/starcitizen-banner.jpg"
     ],
-    file: "downloads/StarCitizenCompanion_v0.1.0.pext",
+    file: "downloads/StarCitizenCompanion_v1.0.0.pext",
     fileSize: "2.54 MB",
     githubUrl: "https://github.com/gOOvER/Playnite-StarCitizen-Companion",
     addonDbUrl: "https://github.com/gOOvER/Playnite-StarCitizen-Companion",
@@ -402,9 +402,9 @@ const ADDONS = [
       "Seamless integration with RSI Star Citizen Library plugin and Penumbra themes"
     ],
     changelog: [
-      "v0.1.0 — Initial public release by gOOvER",
-      "RSI server health check service with background polling",
-      "Game.log stream parser for session statistics and pilot identifiers"
+      "v1.0.0 — Production release milestone with modernized telemetry & sidebar",
+      "Updated to Playnite SDK 6.18.0 with flight debriefing storage",
+      "v0.1.0 — Initial preview release"
     ],
     docId: "starcitizen-companion"
   }
@@ -1049,8 +1049,8 @@ const DOCS_DATA = {
     category: "Game Libraries",
     badge: "Library Plugin",
     icon: "assets/img/starcitizen-icon.png",
-    version: "0.1.0",
-    downloadFile: "downloads/StarCitizenLibrary_v0.1.0.pext",
+    version: "1.0.0",
+    downloadFile: "downloads/StarCitizenLibrary_v1.0.0.pext",
     addonId: "StarCitizenLibrary_d2146b15-4cfc-40cc-93dd-1297e2e0aa49",
     githubUrl: "https://github.com/gOOvER/Playnite-StarCitizen-Library",
     tagline: "Zero-configuration auto-detection & multi-channel launcher for Star Citizen",
@@ -1208,8 +1208,8 @@ const DOCS_DATA = {
     category: "Game Libraries",
     badge: "Generic Plugin",
     icon: "assets/img/starcitizen-companion-icon.png",
-    version: "0.1.0",
-    downloadFile: "downloads/StarCitizenCompanion_v0.1.0.pext",
+    version: "1.0.0",
+    downloadFile: "downloads/StarCitizenCompanion_v1.0.0.pext",
     addonId: "StarCitizenCompanion_24a1d01b-6c77-42d6-a16a-428e6216e5be",
     githubUrl: "https://github.com/gOOvER/Playnite-StarCitizen-Companion",
     tagline: "In-depth Roberts Space Industries server telemetry, pilot stats, and fleet manager",
@@ -1292,6 +1292,8 @@ function renderCatalog() {
     const matchesCategory =
       currentFilter === "all" ||
       item.category === currentFilter ||
+      (currentFilter === "plugin" && (item.category === "plugin" || item.category === "library")) ||
+      (currentFilter === "plugins" && (item.category === "plugin" || item.category === "library")) ||
       (currentFilter === "themes" && item.category.startsWith("theme")) ||
       (currentFilter === "theme" && item.category.startsWith("theme"));
     const matchesSearch = searchQuery === "" || 
