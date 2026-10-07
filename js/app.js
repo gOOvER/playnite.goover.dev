@@ -201,8 +201,8 @@ const ADDONS = [
     tagline: "Friends activity tracker, Steam & GOG community feeds, and social gaming timeline",
     category: "plugin",
     typeLabel: "Generic Plugin",
-    version: "1.1.1",
-    releaseDate: "2026-10-05",
+    version: "1.2.0",
+    releaseDate: "2026-10-07",
     api: "Playnite SDK 6.18.0 (API 6.2.0+)",
     license: "MIT License",
     icon: "assets/img/playeractivities-icon.png",
@@ -212,8 +212,8 @@ const ADDONS = [
       "assets/img/playeractivities-settings.jpg",
       "assets/img/playeractivities-settings2.jpg"
     ],
-    file: "downloads/playnite-playeractivities-plugin_1_1_1.pext",
-    fileSize: "2.64 MB",
+    file: "downloads/playnite-playeractivities-plugin_1_2_0.pext",
+    fileSize: "1.73 MB",
     githubUrl: "https://github.com/gOOvER/playnite-playeractivities-ng",
     addonDbUrl: "https://github.com/gOOvER/playnite-playeractivities-ng",
     description: "PlayerActivitiesNG brings social gaming feeds and friend activities into Playnite. Tracks friend gameplay sessions, recently unlocked achievements, and status updates across Steam, GOG, and custom friends lists with an interactive timeline and Penumbra-styled activity feed.",
@@ -226,10 +226,12 @@ const ADDONS = [
       "Memory-optimized feed parsing and async HTTP caching with graceful error handling"
     ],
     changelog: [
-      "v1.1.1 — Maintained NG release by gOOvER",
-      "Integrated modernized Common libraries and hardened async network fetching",
-      "Resolved UI Dispatcher thread deadlocks during background sync",
-      "Full compatibility with Playnite 10+ and Penumbra Dawn/Night themes"
+      "v1.2.0 — Modern SDK-style migration & performance overhaul",
+      "Migrated to .NET 4.6.2 SDK-style architecture with PackageReference",
+      "Integrated plugincommon directly into repository",
+      "Async background migration & UI responsiveness (eliminated UI freezes)",
+      "Hardened process execution security with strict URI scheme validation",
+      "Optimized game selection query performance & SteamKit null guards"
     ],
     docId: "playeractivities-ng"
   },
@@ -1201,8 +1203,8 @@ const DOCS_DATA = {
     category: "NG Plugins",
     badge: "Generic Plugin",
     icon: "assets/img/playeractivities-icon.png",
-    version: "1.1.1",
-    downloadFile: "downloads/playnite-playeractivities-plugin_1_1_1.pext",
+    version: "1.2.0",
+    downloadFile: "downloads/playnite-playeractivities-plugin_1_2_0.pext",
     addonId: "playnite-playeractivities-plugin",
     githubUrl: "https://github.com/gOOvER/playnite-playeractivities-ng",
     tagline: "Friends activity tracker, Steam & GOG community feeds, and social gaming timeline",
