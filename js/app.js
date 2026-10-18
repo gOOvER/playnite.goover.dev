@@ -2578,14 +2578,6 @@ function renderReleaseHistory(entries, githubUrl, currentVersion, options = {}) 
           </div>
         `;
       }).join("")}
-
-      ${(options.onlyLatest && allReleases.length > 1) ? `
-        <div class="cl-overview-footer">
-          <button class="btn btn-outline btn-sm" onclick="switchModalTab('changelog')">
-            <i class="fa-solid fa-list-check"></i> View Full Release History (${allReleases.length} releases) &rarr;
-          </button>
-        </div>
-      ` : ""}
     </div>
   `;
 }

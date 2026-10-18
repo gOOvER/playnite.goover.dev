@@ -2544,12 +2544,6 @@ pre code {
   border-color: rgba(165, 94, 234, 0.6);
 }
 
-.cl-overview-footer {
-  margin-top: 14px;
-  display: flex;
-  justify-content: flex-end;
-}
-
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
