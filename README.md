@@ -11,27 +11,28 @@ Official website, showcase, and package hosting repository for Playnite themes a
 
 ## 🎨 Featured Themes & Plugins
 
-| Name | Type | Version | License | Direct Install | Direct Download |
-|---|---|---|---|---|---|
-| **[DuplicateHiderNG](https://github.com/gOOvER/Playnite-DuplicateHiderNG)** | Generic Plugin | `1.0.0` | MIT | `playnite://playnite/installaddon/goover_DuplicateHiderNG_Plugin` | [`.pext`](downloads/goover_DuplicateHiderNG_Plugin_1_0_0.pext) |
-| **[GameActivityNG](https://github.com/gOOvER/playnite-gameactivity-ng)** | Generic Plugin | `1.0.0` | MIT | `playnite://playnite/installaddon/goover_GameActivityNG_Plugin` | [`.pext`](downloads/goover_GameActivityNG_Plugin_1_0_0.pext) |
-| **[StartPageNG](https://github.com/gOOvER/Playnite-StartPage)** | Generic Plugin | `1.0.0` | MIT | `playnite://playnite/installaddon/goover_StartPageNG_Plugin` | [`.pext`](downloads/goover_StartPageNG_Plugin_1_0_0.pext) |
-| **[ThemeExtrasNG](https://github.com/gOOvER/Playnite-ThemeExtras)** | Generic Plugin | `1.0.0` | MIT | `playnite://playnite/installaddon/goover_ThemeExtrasNG_Plugin` | [`.pext`](downloads/goover_ThemeExtrasNG_Plugin_1_0_0.pext) |
-| **[CheckDLC-NG](https://github.com/gOOvER/playnite-checkdlc-plugin)** | Generic Plugin | `1.0.3` | AGPL-3.0 | `playnite://playnite/installaddon/goover_CheckDLCNG_Plugin` | [`.pext`](downloads/goover_CheckDLCNG_Plugin_1_0_3.pext) |
-| **[PlayerActivitiesNG](https://github.com/gOOvER/playnite-playeractivities-ng)** | Generic Plugin | `1.2.0` | MIT | `playnite://playnite/installaddon/playnite-playeractivities-plugin` | [`.pext`](downloads/playnite-playeractivities-plugin_1_2_0.pext) |
-| **[QuickSearchNG](https://github.com/gOOvER/Playnite-QuickSearch)** | Generic Plugin | `1.0.0` | MIT | `playnite://playnite/installaddon/goover_QuickSearchNG_Plugin` | [`.pext`](downloads/goover_QuickSearchNG_Plugin_1_0_0.pext) |
-| **[Star Citizen Companion](https://github.com/gOOvER/Playnite-StarCitizen-Companion)** | Generic Plugin | `1.0.0` | AGPL-3.0 | `playnite://playnite/installaddon/StarCitizenCompanion_24a1d01b-6c77-42d6-a16a-428e6216e5be` | [`.pext`](downloads/StarCitizenCompanion_v1.0.0.pext) |
-| **[RSI Star Citizen Library](https://github.com/gOOvER/Playnite-StarCitizen-Library)** | Game Library | `1.0.0` | AGPL-3.0 | `playnite://playnite/installaddon/StarCitizenLibrary_d2146b15-4cfc-40cc-93dd-1297e2e0aa49` | [`.pext`](downloads/StarCitizenLibrary_v1.0.0.pext) |
-| **[Penumbra Dawn](https://github.com/gOOvER/Playnite-Penumbra-Themes)** | Desktop Theme | `1.4.0` | AGPL-3.0 | `playnite://playnite/installaddon/Penumbra_Dawn_Theme` | [`.pthm`](downloads/Penumbra_Dawn_Theme_1_4_0.pthm) |
-| **[Penumbra Night](https://github.com/gOOvER/Playnite-Penumbra-Themes)** | Desktop Theme | `1.4.0` | AGPL-3.0 | `playnite://playnite/installaddon/Penumbra_Night_Theme` | [`.pthm`](downloads/Penumbra_Night_Theme_1_4_0.pthm) |
-| **[Penumbra Blur](https://github.com/gOOvER/Playnite-Penumbra-Themes)** | Fullscreen Theme | `1.4.0` | AGPL-3.0 | `playnite://playnite/installaddon/Penumbra_Blur_Theme` | [`.pthm`](downloads/Penumbra_Blur_Theme_1_4_0.pthm) |
+| Name | Type | Version | License | Package Download |
+|---|---|---|---|---|
+| **[Penumbra Dawn](https://github.com/gOOvER/Playnite-Penumbra-Themes)** | Desktop Theme | `1.4.0` | GPL-3.0 | [`.pthm` (3.18 MB)](downloads/Penumbra_Dawn_Theme_1_4_0.pthm) |
+| **[Penumbra Night](https://github.com/gOOvER/Playnite-Penumbra-Themes)** | Desktop Theme | `1.4.0` | GPL-3.0 | [`.pthm` (6.38 MB)](downloads/Penumbra_Night_Theme_1_4_0.pthm) |
+| **[Penumbra Blur](https://github.com/gOOvER/Playnite-Penumbra-Themes)** | Fullscreen Theme | `1.4.0` | GPL-3.0 | [`.pthm` (3.76 MB)](downloads/Penumbra_Blur_Theme_1_4_0.pthm) |
+| **[DuplicateHiderNG](https://github.com/gOOvER/Playnite-DuplicateHiderNG)** | Generic Plugin | `1.0.0` | MIT | [`.pext` (510 KB)](downloads/goover_DuplicateHiderNG_Plugin_1_0_0.pext) |
+| **[GameActivityNG](https://github.com/gOOvER/playnite-gameactivity-ng)** | Generic Plugin | `1.0.0` | MIT | [`.pext` (2.1 MB)](downloads/goover_GameActivityNG_Plugin_1_0_0.pext) |
+| **[StartPageNG](https://github.com/gOOvER/Playnite-StartPage)** | Generic Plugin | `1.0.0` | MIT | [`.pext` (1.1 MB)](downloads/goover_StartPageNG_Plugin_1_0_0.pext) |
+| **[ThemeExtrasNG](https://github.com/gOOvER/Playnite-ThemeExtras)** | Generic Plugin | `1.0.0` | MIT | [`.pext` (1.2 MB)](downloads/goover_ThemeExtrasNG_Plugin_1_0_0.pext) |
+| **[CheckDLC-NG](https://github.com/gOOvER/playnite-checkdlc-plugin)** | Generic Plugin | `1.0.3` | AGPL-3.0 | [`.pext` (4.5 MB)](downloads/goover_CheckDLCNG_Plugin_1_0_3.pext) |
+| **[PlayerActivitiesNG](https://github.com/gOOvER/playnite-playeractivities-ng)** | Generic Plugin | `1.2.0` | MIT | [`.pext` (1.8 MB)](downloads/playnite-playeractivities-plugin_1_2_0.pext) |
+| **[QuickSearchNG](https://github.com/gOOvER/Playnite-QuickSearch)** | Generic Plugin | `1.0.0` | MIT | [`.pext` (13 MB)](downloads/goover_QuickSearchNG_Plugin_1_0_0.pext) |
+| **[SteamGridDB Metadata NG](https://github.com/gOOvER/Playnite-SteamGridDBMetadataNG)** | Metadata Provider | `1.0.1` | MIT | [`.pext` (185 KB)](downloads/SteamGridDB_Playnite_Metadata_1_0_1.pext) |
+| **[Star Citizen Companion](https://github.com/gOOvER/Playnite-StarCitizen-Companion)** | Generic Plugin | `1.0.0` | AGPL-3.0 | [`.pext` (2.5 MB)](downloads/StarCitizenCompanion_v1.0.0.pext) |
+| **[RSI Star Citizen Library](https://github.com/gOOvER/Playnite-StarCitizen-Library)** | Game Library | `1.0.0` | AGPL-3.0 | [`.pext` (35 KB)](downloads/StarCitizenLibrary_v1.0.0.pext) |
 
 ---
 
 ## 🚀 Features
 
 - **Playnite-Inspired Design**: Dark obsidian gaming aesthetic with Playnite orange accents, frosted glassmorphism, and strict 8px rounded corners.
-- **1-Click Browser Install**: Seamless integration with Playnite's `playnite://` protocol for instant 1-click installation.
+- **Direct Package Installation**: Download production `.pext` and `.pthm` files — simply double-click or drag into Playnite to install.
 - **Self-Hosted Packages**: Direct hosting of production `.pext` and `.pthm` files for offline and direct installation.
 - **Search & Filtering**: Real-time search (`Ctrl+K`), category filters, and Grid / List view toggle.
 - **Zero Build Dependencies**: Pure HTML5, Vanilla CSS, and modern JavaScript — no heavy frameworks or runtime dependencies required.

@@ -254,7 +254,7 @@ const ADDONS = [
     file: "downloads/Penumbra_Dawn_Theme_1_4_0.pthm",
     fileSize: "3.18 MB",
     githubUrl: "https://github.com/gOOvER/Penumbra-Themes",
-    addonDbUrl: "https://playnite.link/addons.html#Penumbra_Dawn_Theme",
+    addonDbUrl: "https://github.com/gOOvER/Penumbra-Themes",
     description: "Penumbra Dawn brings a refined, harmonious light/dark dual aesthetic to Playnite Desktop. Built with a strict 8px rounded corners philosophy across every button, card, and tab header. Integrates native fast-path controls for animated covers and rotating high-res backgrounds without triggering SQLite write churn.",
     features: [
       "Strict 8px rounded corners across all panels, tabs, badges, and controls",
@@ -305,7 +305,7 @@ const ADDONS = [
     file: "downloads/Penumbra_Night_Theme_1_4_0.pthm",
     fileSize: "6.38 MB",
     githubUrl: "https://github.com/gOOvER/Penumbra-Themes",
-    addonDbUrl: "https://playnite.link/addons.html#Penumbra_Night_Theme",
+    addonDbUrl: "https://github.com/gOOvER/Penumbra-Themes",
     description: "Penumbra Night offers an uncompromising obsidian dark aesthetic tailored for high-contrast gaming setups and OLED monitors. Deeply integrated with playtime analytics, session logs, and achievement tracking, allowing you to showcase your gaming progress in a sleek visual dashboard.",
     features: [
       "Deep obsidian blacks with vibrant glowing Playnite amber and electric cyan accents",
@@ -357,7 +357,7 @@ const ADDONS = [
     file: "downloads/Penumbra_Blur_Theme_1_4_0.pthm",
     fileSize: "3.76 MB",
     githubUrl: "https://github.com/gOOvER/Penumbra-Themes",
-    addonDbUrl: "https://playnite.link/addons.html#Penumbra_Blur_Theme",
+    addonDbUrl: "https://github.com/gOOvER/Penumbra-Themes",
     description: "Designed from the ground up for living-room TVs, handheld consoles (Steam Deck, ROG Ally), and gamepad navigation. Penumbra Blur creates an immersive console atmosphere with dynamic frosted backdrop blurs that adapt smoothly to the currently selected game artwork.",
     features: [
       "Dynamic real-time backdrop blur engine adapting to active game artwork",
@@ -2344,25 +2344,14 @@ function createCardHTML(item) {
 
         <div class="card-actions">
           <div class="actions-primary-row">
-            ${(item.addonDbUrl && item.addonDbUrl.includes("playnite.link/addons.html")) ? `
-              <button class="btn btn-primary" onclick="installAddon('${item.id}')" title="1-Click Install directly in Playnite">
-                <i class="fa-solid fa-bolt"></i>
-                <span>Install in Playnite</span>
-              </button>
-              <a href="${item.file}" class="btn btn-secondary" download title="Download raw package (${item.fileSize})">
-                <i class="fa-solid fa-download"></i>
-                <span>${item.file.endsWith('.pthm') ? '.pthm' : '.pext'}</span>
-              </a>
-            ` : `
-              <a href="${item.file}" class="btn btn-primary btn-download" download title="Download and install ${item.name} (${item.fileSize})" onclick="showToast('Downloading ${item.name} (${item.fileSize})... Drop into Playnite to install!', 'fa-download')">
-                <i class="fa-solid fa-download"></i>
-                <span>Download &amp; Install</span>
-              </a>
-              <a href="${item.file}" class="btn btn-secondary" download title="Download file directly (${item.fileSize})">
-                <i class="fa-solid fa-file-arrow-down"></i>
-                <span>${item.file.endsWith('.pthm') ? '.pthm' : '.pext'}</span>
-              </a>
-            `}
+            <a href="${item.file}" class="btn btn-primary btn-download" download title="Download and install ${item.name} (${item.fileSize})" onclick="showToast('Downloading ${item.name} (${item.fileSize})... Open file or drag into Playnite to install!', 'fa-download')">
+              <i class="fa-solid fa-download"></i>
+              <span>Download &amp; Install</span>
+            </a>
+            <a href="${item.file}" class="btn btn-secondary" download title="Download raw package (${item.fileSize})">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>${item.file.endsWith('.pthm') ? '.pthm' : '.pext'}</span>
+            </a>
           </div>
 
           <div class="actions-secondary-row">
@@ -2470,15 +2459,9 @@ function renderDocContent(topicId) {
         </div>
 
         <div class="doc-actions-bar">
-          ${(matchedAddon && matchedAddon.addonDbUrl && matchedAddon.addonDbUrl.includes("playnite.link/addons.html")) ? `
-            <button class="btn btn-primary btn-sm" onclick="installAddon('${doc.addonId}')">
-              <i class="fa-solid fa-bolt"></i> 1-Click Install in Playnite
-            </button>
-          ` : `
-            <a href="${doc.downloadFile}" class="btn btn-primary btn-sm" download onclick="showToast('Downloading ${doc.name}... Drop file into Playnite to install!', 'fa-download')">
-              <i class="fa-solid fa-download"></i> Download &amp; Install Package
-            </a>
-          `}
+          <a href="${doc.downloadFile}" class="btn btn-primary btn-sm" download onclick="showToast('Downloading ${doc.name}... Open file or drag into Playnite to install!', 'fa-download')">
+            <i class="fa-solid fa-download"></i> Download &amp; Install Package
+          </a>
           <a href="${doc.downloadFile}" class="btn btn-secondary btn-sm" download>
             <i class="fa-solid fa-file-arrow-down"></i> Direct Download
           </a>
@@ -2714,26 +2697,18 @@ window.resetFilters = function() {
   renderCatalog();
 };
 
-// 1-Click Install Handler
+// Download & Install Handler
 window.installAddon = function(addonId) {
-  const item = ADDONS.find(a => a.id === addonId);
+  const item = ADDONS.find(a => a.id === addonId || a.docId === addonId);
   if (!item) return;
 
-  const isOfficial = item.addonDbUrl && item.addonDbUrl.includes("playnite.link/addons.html");
-  if (isOfficial) {
-    const uri = `playnite://playnite/installaddon/${addonId}`;
-    showToast(`Opening Playnite Installer for ${item.name}...`, "fa-bolt");
-    window.location.href = uri;
-  } else {
-    // For direct/NG packages not in the official Playnite addon store, download directly
-    const a = document.createElement("a");
-    a.href = item.file;
-    a.download = item.file.split("/").pop();
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    showToast(`Downloading ${item.name} (${item.fileSize}) — open file or drag into Playnite to install!`, "fa-download");
-  }
+  const a = document.createElement("a");
+  a.href = item.file;
+  a.download = item.file.split("/").pop();
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast(`Downloading ${item.name} (${item.fileSize}) — open file or drag into Playnite to install!`, "fa-download");
 };
 
 // Details Modal Tab State
@@ -2856,17 +2831,10 @@ function renderModalContent() {
         <div class="modal-sidebar-col">
           <div class="modal-card-box">
             <h4>Quick Actions</h4>
-            ${(item.addonDbUrl && item.addonDbUrl.includes("playnite.link/addons.html")) ? `
-              <button class="btn btn-primary btn-block" onclick="installAddon('${item.id}')">
-                <i class="fa-solid fa-bolt"></i>
-                <span>Install in Playnite</span>
-              </button>
-            ` : `
-              <a href="${item.file}" class="btn btn-primary btn-block" download onclick="showToast('Downloading ${item.name} (${item.fileSize})... Drop into Playnite to install!', 'fa-download')">
-                <i class="fa-solid fa-download"></i>
-                <span>Download &amp; Install (${item.fileSize})</span>
-              </a>
-            `}
+            <a href="${item.file}" class="btn btn-primary btn-block" download onclick="showToast('Downloading ${item.name} (${item.fileSize})... Open file or drag into Playnite to install!', 'fa-download')">
+              <i class="fa-solid fa-download"></i>
+              <span>Download &amp; Install (${item.fileSize})</span>
+            </a>
             <a href="${item.file}" class="btn btn-secondary btn-block" download>
               <i class="fa-solid fa-file-arrow-down"></i>
               <span>Download Raw File (${item.fileSize})</span>
@@ -2909,15 +2877,9 @@ function renderModalContent() {
       <div class="modal-doc-wrapper">
         <div class="modal-doc-actions">
           <div class="modal-doc-actions-left">
-            ${(item.addonDbUrl && item.addonDbUrl.includes("playnite.link/addons.html")) ? `
-              <button class="btn btn-primary btn-sm" onclick="installAddon('${item.id}')">
-                <i class="fa-solid fa-bolt"></i> 1-Click Install in Playnite
-              </button>
-            ` : `
-              <a href="${item.file}" class="btn btn-primary btn-sm" download onclick="showToast('Downloading ${item.name}... Drop file into Playnite to install!', 'fa-download')">
-                <i class="fa-solid fa-download"></i> Download &amp; Install
-              </a>
-            `}
+            <a href="${item.file}" class="btn btn-primary btn-sm" download onclick="showToast('Downloading ${item.name}... Open file or drag into Playnite to install!', 'fa-download')">
+              <i class="fa-solid fa-download"></i> Download &amp; Install
+            </a>
             <a href="${item.file}" class="btn btn-secondary btn-sm" download>
               <i class="fa-solid fa-file-arrow-down"></i> Download Package (${item.fileSize})
             </a>
