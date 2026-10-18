@@ -454,7 +454,7 @@ const ADDONS = [
     tagline: "High-resolution game covers, heroes, logos, and icons via SteamGridDB API v2",
     category: "plugin",
     typeLabel: "Metadata Provider",
-    version: "1.0.0",
+    version: "1.0.1",
     releaseDate: "2026-10-18",
     api: "Playnite SDK 6.18.0 (API 6.2.0+)",
     license: "MIT License",
@@ -463,7 +463,7 @@ const ADDONS = [
     screenshots: [
       "assets/img/steamgriddb-banner.jpg"
     ],
-    file: "downloads/SteamGridDB_Playnite_Metadata_1_0_0.pext",
+    file: "downloads/SteamGridDB_Playnite_Metadata_1_0_1.pext",
     fileSize: "185 KB",
     githubUrl: "https://github.com/gOOvER/Playnite-SteamGridDBMetadataNG",
     addonDbUrl: "https://github.com/gOOvER/Playnite-SteamGridDBMetadataNG",
@@ -1702,8 +1702,8 @@ const DOCS_DATA = {
     category: "NG Plugins",
     badge: "Metadata Provider",
     icon: "assets/img/steamgriddb-icon.png",
-    version: "1.0.0",
-    downloadFile: "downloads/SteamGridDB_Playnite_Metadata_1_0_0.pext",
+    version: "1.0.1",
+    downloadFile: "downloads/SteamGridDB_Playnite_Metadata_1_0_1.pext",
     addonId: "SteamGridDB_Playnite_Metadata",
     githubUrl: "https://github.com/gOOvER/Playnite-SteamGridDBMetadataNG",
     tagline: "High-resolution game covers, heroes, logos, and icons via SteamGridDB API v2",
