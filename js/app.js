@@ -2471,6 +2471,125 @@ function renderDocsNav() {
   docsNav.innerHTML = html;
 }
 
+
+// ==========================================================================
+// Release History & Changelog Parser and Renderer
+// ==========================================================================
+
+function parseChangelog(entries, defaultVersion = "1.0.0") {
+  const releases = [];
+  let currentRelease = null;
+
+  (entries || []).forEach(line => {
+    const str = String(line).trim();
+    if (!str) return;
+
+    const versionMatch = str.match(/^v?(\d+\.\d+(\.\d+)?)\s*(?:[—–-]\s*(.*))?$/i);
+    if (versionMatch) {
+      currentRelease = {
+        version: "v" + versionMatch[1],
+        versionRaw: versionMatch[1],
+        title: versionMatch[3] ? versionMatch[3].trim() : "",
+        items: []
+      };
+      releases.push(currentRelease);
+    } else {
+      if (!currentRelease) {
+        const rawVer = defaultVersion.replace(/^v/i, "");
+        currentRelease = {
+          version: "v" + rawVer,
+          versionRaw: rawVer,
+          title: "",
+          items: []
+        };
+        releases.push(currentRelease);
+      }
+      currentRelease.items.push(str);
+    }
+  });
+
+  return releases;
+}
+
+function formatChangelogText(text, githubUrl) {
+  if (!text) return "";
+  return text.replace(/(?:(PR\s*#?)|#)(\d+)\b/gi, (match, prPrefix, num) => {
+    const isPR = Boolean(prPrefix);
+    const label = isPR ? `PR #${num}` : `#${num}`;
+    const icon = isPR ? "fa-code-pull-request" : "fa-circle-dot";
+    const subpath = isPR ? "pull" : "issues";
+
+    if (githubUrl) {
+      return `<a href="${githubUrl}/${subpath}/${num}" target="_blank" rel="noopener noreferrer" class="cl-ref-pill ${isPR ? "cl-pr-pill" : "cl-issue-pill"}" title="View on GitHub"><i class="fa-solid ${icon}"></i> ${label}</a>`;
+    }
+    return `<span class="cl-ref-pill ${isPR ? "cl-pr-pill" : "cl-issue-pill"}"><i class="fa-solid ${icon}"></i> ${label}</span>`;
+  });
+}
+
+function getChangeBadge(text) {
+  const clean = text.trim();
+  if (/^(fix(ed|es)?|resolved|prevent(ed|ing)?|guard(ed)?|handle(d)?|patch(ed)?|hotfix)\b/i.test(clean)) {
+    return `<span class="cl-badge cl-badge-fix"><i class="fa-solid fa-wrench"></i> Fixed</span>`;
+  }
+  if (/^(add(ed|ing)?|new|support(ed|ing)?|integrat(ed|ing)?|introduc(ed|ing)?|feature)\b/i.test(clean)) {
+    return `<span class="cl-badge cl-badge-add"><i class="fa-solid fa-plus"></i> Added</span>`;
+  }
+  if (/^(optimiz(ed|ing)?|enhanc(ed|ing)?|improv(ed|ing)?|harden(ed|ing)?|moderniz(ed|ing)?|migrat(ed|ing)?|refactor(ed|ing)?|updat(ed|ing)?|replac(ed|ing)?|normalized?|made|reduced?|eliminated?|separated?)\b/i.test(clean)) {
+    return `<span class="cl-badge cl-badge-improve"><i class="fa-solid fa-bolt"></i> Improved</span>`;
+  }
+  return `<span class="cl-badge cl-badge-note"><i class="fa-solid fa-check"></i> Note</span>`;
+}
+
+function renderReleaseHistory(entries, githubUrl, currentVersion, options = {}) {
+  const allReleases = parseChangelog(entries, currentVersion);
+  if (!allReleases.length) return "";
+
+  const releases = options.onlyLatest ? [allReleases[0]] : allReleases;
+
+  return `
+    <div class="cl-timeline">
+      ${releases.map((release, idx) => {
+        const isLatest = idx === 0;
+        return `
+          <div class="cl-release-card ${isLatest ? "is-latest" : ""}">
+            <div class="cl-release-header">
+              <div class="cl-release-title-row">
+                <span class="cl-version-pill">${release.version}</span>
+                ${isLatest ? `<span class="cl-latest-pill"><i class="fa-solid fa-sparkles"></i> Current Release</span>` : ""}
+                ${release.title ? `<div class="cl-release-summary">${formatChangelogText(release.title, githubUrl)}</div>` : ""}
+              </div>
+              ${githubUrl ? `
+                <a href="${githubUrl}/releases" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-xs cl-gh-btn" title="View ${release.version} on GitHub">
+                  <i class="fa-brands fa-github"></i> <span>Releases</span>
+                </a>
+              ` : ""}
+            </div>
+
+            ${release.items.length > 0 ? `
+              <ul class="cl-changes-list">
+                ${release.items.map(item => `
+                  <li class="cl-change-row">
+                    ${getChangeBadge(item)}
+                    <span class="cl-change-text">${formatChangelogText(item, githubUrl)}</span>
+                  </li>
+                `).join("")}
+              </ul>
+            ` : ""}
+          </div>
+        `;
+      }).join("")}
+
+      ${(options.onlyLatest && allReleases.length > 1) ? `
+        <div class="cl-overview-footer">
+          <button class="btn btn-outline btn-sm" onclick="switchModalTab('changelog')">
+            <i class="fa-solid fa-list-check"></i> View Full Release History (${allReleases.length} releases) &rarr;
+          </button>
+        </div>
+      ` : ""}
+    </div>
+  `;
+}
+
 function renderDocContent(topicId) {
   if (!docsReader) return;
 
@@ -2532,23 +2651,17 @@ function renderDocContent(topicId) {
           <div class="doc-changelog-header">
             <div class="doc-changelog-title-group">
               <h2 class="doc-section-title">
-                <i class="fa-solid fa-clock-rotate-left"></i> Recent Changelog &amp; Release Notes (v${doc.version})
+                <i class="fa-solid fa-clock-rotate-left"></i> Release History &amp; Changelog
               </h2>
-              <span class="badge-version">v${doc.version}</span>
             </div>
-            <a href="${doc.githubUrl}/releases" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-              <i class="fa-solid fa-tag"></i> GitHub Releases
-            </a>
+            ${matchedAddon.githubUrl ? `
+              <a href="${matchedAddon.githubUrl}/releases" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i class="fa-brands fa-github"></i> All Releases on GitHub
+              </a>
+            ` : ''}
           </div>
-          <div class="doc-section-content">
-            <ul class="changelog-list">
-              ${matchedAddon.changelog.map(entry => `
-                <li>
-                  <i class="fa-solid fa-check"></i>
-                  <span>${entry}</span>
-                </li>
-              `).join("")}
-            </ul>
+          <div class="doc-section-content" style="padding-top: 4px;">
+            ${renderReleaseHistory(matchedAddon.changelog, matchedAddon.githubUrl, doc.version)}
           </div>
         </section>
       ` : ''}
@@ -2906,12 +3019,13 @@ function renderModalContent() {
           </ul>
 
           ${(item.changelog && item.changelog.length > 0) ? `
-            <h3 style="margin-top: 24px;"><i class="fa-solid fa-clock-rotate-left"></i> Latest Changelog (v${item.version})</h3>
-            <ul class="modal-changelog-list">
-              ${item.changelog.map(c => `
-                <li><i class="fa-solid fa-check"></i> <span>${c}</span></li>
-              `).join("")}
-            </ul>
+            <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-subtle);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <h3 style="margin: 0; font-size: 1.05rem;"><i class="fa-solid fa-clock-rotate-left"></i> Latest Release (v${item.version})</h3>
+                <button class="btn btn-outline btn-sm" onclick="switchModalTab('changelog')">Full History &rarr;</button>
+              </div>
+              ${renderReleaseHistory(item.changelog, item.githubUrl, item.version, { onlyLatest: true })}
+            </div>
           ` : ''}
 
           ${(item.supportedAddons && item.supportedAddons.length > 0) ? `
@@ -3070,12 +3184,15 @@ function renderModalContent() {
     <!-- TAB 4: Changelog -->
     <div class="modal-tab-panel ${currentModalTab === 'changelog' ? 'active' : ''}" data-panel="changelog">
       <div class="modal-card-box">
-        <h4>Release History &amp; Changelog</h4>
-        <ul class="modal-changelog-list">
-          ${item.changelog.map(c => `
-            <li><i class="fa-solid fa-tag"></i> <span>${c}</span></li>
-          `).join("")}
-        </ul>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+          <h4 style="margin: 0;"><i class="fa-solid fa-clock-rotate-left"></i> Release History &amp; Changelog</h4>
+          ${item.githubUrl ? `
+            <a href="${item.githubUrl}/releases" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-xs">
+              <i class="fa-brands fa-github"></i> View All on GitHub
+            </a>
+          ` : ''}
+        </div>
+        ${renderReleaseHistory(item.changelog, item.githubUrl, item.version)}
       </div>
     </div>
   `;
