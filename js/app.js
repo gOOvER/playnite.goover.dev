@@ -268,6 +268,22 @@ const ADDONS = [
       "Integrated fast-path ImageRotater_Cover and BackgroundChanger_PluginCoverImage",
       "Enhanced responsive grid view layout and details sidebar"
     ],
+    supportedAddons: [
+      { name: "ThemeExtrasNG", role: "5-Star ratings, dynamic platform/store banners & link favicons", badge: "Core Companion", controls: "ThemeExtras_UserRating, Banner" },
+      { name: "GameActivityNG", role: "Playtime curves, session logs & real-time hardware telemetry", badge: "Telemetry Tab", controls: "GameActivity_PluginChartTime, GameActivity_PluginChartLog" },
+      { name: "CheckDLCNG", role: "DLC ownership indicators, store cards & install badges", badge: "DLC Card", controls: "CheckDlc_PluginListDlcAll, CheckDlc_PluginButton" },
+      { name: "DuplicateHiderNG", role: "Unified library entries, source selector ribbons & floating copy button", badge: "Deduplication", controls: "DuplicateHider_SourceSelector, DuplicateHider_ContentControl" },
+      { name: "PlayniteAchievements / SuccessStory", role: "Achievement showcase, rarity ribbons & unlocked progress bars", badge: "Achievements Tab", controls: "SuccessStory_PluginList, PlayniteAchievements" },
+      { name: "HowLongToBeat", role: "Completion time progress bars and gameplay length estimates", badge: "Overview Bar", controls: "HowLongToBeat_PluginProgressBar" },
+      { name: "ExtraMetadataLoader", role: "High-res transparent game logos & automatic video trailers", badge: "Media Loader", controls: "ExtraMetadataLoader_LogoLoaderControl, VideoLoaderControl" },
+      { name: "ScreenshotsVisualizer", role: "Embedded screenshot gallery & full-screen lightbox preview", badge: "Screenshots Tab", controls: "ScreenshotsVisualizer_PluginScreenshots" },
+      { name: "ReviewViewer", role: "Aggregated critic scores and community player review snippets", badge: "Reviews Tab", controls: "ReviewViewer_ReviewsControl" },
+      { name: "CheckLocalizations", role: "Supported language flags and audio/subtitles verification", badge: "Language Flags", controls: "CheckLocalizations_PluginFlags" },
+      { name: "SystemChecker", role: "Hardware requirement checking & compatibility indicators", badge: "System Specs", controls: "SystemChecker_PluginButton" },
+      { name: "BackgroundChanger", role: "Cycling high-resolution background fanart during game selection", badge: "Dynamic Media", controls: "BackgroundChanger_PluginBackgroundImage" },
+      { name: "ImageRotater", role: "Fast-path rotating animated game covers without DB churn", badge: "Animated Media", controls: "ImageRotater_Cover, ImageRotater_Background" },
+      { name: "UniPlaySong", role: "Background soundtrack playback when selecting games", badge: "Audio Engine", controls: "UniPlaySong.a1b2c3d4-e5f6-7890" }
+    ],
     docId: "penumbra-dawn"
   },
   {
@@ -303,6 +319,23 @@ const ADDONS = [
       "Enhanced high-contrast card styling for OLED displays",
       "Updated search and filter bar visual styles"
     ],
+    supportedAddons: [
+      { name: "ThemeExtrasNG", role: "OLED-styled store & platform banners, ratings & favicons", badge: "Core Companion", controls: "ThemeExtras_UserRating, Banner" },
+      { name: "GameActivityNG", role: "True-black telemetry dashboard, session timeline & hardware curves", badge: "Telemetry Tab", controls: "GameActivity_PluginChartTime, GameActivity_PluginChartLog" },
+      { name: "CheckDLCNG", role: "DLC inventory verification with high-contrast badge styling", badge: "DLC Card", controls: "CheckDlc_PluginListDlcAll, CheckDlc_PluginButton" },
+      { name: "DuplicateHiderNG", role: "Unified multi-store copies with obsidian source selector ribbons", badge: "Deduplication", controls: "DuplicateHider_SourceSelector1, DuplicateHider_ContentControl1" },
+      { name: "PlayniteAchievements / SuccessStory", role: "Compact lists, achievement datagrid & rarity bar charts", badge: "Achievements Tab", controls: "SuccessStory_PluginList, PlayniteAchievements_AchievementDataGrid" },
+      { name: "HowLongToBeat", role: "High-contrast HLTB completion time progress bar", badge: "Overview Bar", controls: "HowLongToBeat_PluginProgressBar" },
+      { name: "ExtraMetadataLoader", role: "High-definition logos & integrated video trailer controls", badge: "Media Loader", controls: "ExtraMetadataLoader_LogoLoaderControl, VideoLoaderControl" },
+      { name: "ScreenshotsVisualizer", role: "Vertical and horizontal screenshots gallery in details tab", badge: "Screenshots Tab", controls: "ScreenshotsVisualizer_PluginScreenshots" },
+      { name: "ReviewViewer", role: "Dedicated reviews tab with critic averages and community feedback", badge: "Reviews Tab", controls: "ReviewViewer_ReviewsControl" },
+      { name: "NewsViewer", role: "Embedded community update news feed inside game overview", badge: "News Tab", controls: "NewsViewer_NewsViewerControl" },
+      { name: "CheckLocalizations", role: "Native localization flag cards and language capabilities", badge: "Language Flags", controls: "CheckLocalizations_PluginFlags" },
+      { name: "SystemChecker", role: "High-contrast hardware compatibility indicators", badge: "System Specs", controls: "SystemChecker_PluginButton" },
+      { name: "BackgroundChanger", role: "Dynamic fanart rotation matching OLED black aesthetics", badge: "Dynamic Media", controls: "BackgroundChanger_PluginBackgroundImage" },
+      { name: "ImageRotater", role: "Cover & background cycling with GPU hardware acceleration", badge: "Animated Media", controls: "ImageRotater_Cover, ImageRotater_Background" },
+      { name: "UniPlaySong", role: "Atmospheric game soundtrack audio engine", badge: "Audio Engine", controls: "UniPlaySong.a1b2c3d4-e5f6-7890" }
+    ],
     docId: "penumbra-night"
   },
   {
@@ -337,6 +370,15 @@ const ADDONS = [
       "v1.4.0 — Performance optimizations for handheld devices",
       "Smooth blur transitions and improved D-Pad navigational focus",
       "Unified 8px corner radii on all fullscreen UI panels"
+    ],
+    supportedAddons: [
+      { name: "ThemeModifier", role: "Real-time frosted glass backdrop blur & opacity slider control", badge: "Blur Engine", controls: "ThemeModifier Frosted Glass Engine" },
+      { name: "DuplicateHiderNG", role: "Controller-friendly unified multi-store source selection", badge: "Deduplication", controls: "DuplicateHider_SourceSelector" },
+      { name: "GameActivityNG", role: "Playtime summary and session details on fullscreen view", badge: "Analytics", controls: "GameActivity_PluginButton" },
+      { name: "PlayniteAchievements / SuccessStory", role: "10-foot couch achievement showcase and trophy counts", badge: "Achievements", controls: "SuccessStory_PluginCompactList" },
+      { name: "ExtraMetadataLoader", role: "Cinematic game logos and fullscreen video trailers", badge: "Logos & Videos", controls: "ExtraMetadataLoader_LogoLoaderControl" },
+      { name: "CheckDLCNG", role: "DLC inventory verification in 10-foot game details overlay", badge: "DLC Tracker", controls: "CheckDlc_PluginButton" },
+      { name: "UniPlaySong", role: "Smooth soundtrack music playback during gamepad navigation", badge: "Audio Engine", controls: "UniPlaySong.a1b2c3d4-e5f6-7890" }
     ],
     docId: "penumbra-blur"
   },
@@ -553,6 +595,126 @@ const DOCS_DATA = {
           <p>You can fine-tune grid item spacing and cover aspect ratios in Playnite's native settings:</p>
           <p>Navigate to <strong>Main Menu ➔ Settings ➔ Appearance ➔ Grid View</strong>. Recommended cover aspect ratio: <strong>2:3</strong> (Poster) or <strong>Steam Vertical</strong> (600x900).</p>
         `
+      },
+      {
+        title: "🧩 5. Supported Add-ons & Companion Integrations",
+        content: `
+          <p>Penumbra Dawn features native custom layouts and UI controls for <strong>14 community add-ons</strong>:</p>
+          <div class="supported-addons-grid">
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-star"></i> ThemeExtrasNG</span>
+                <span class="supported-addon-badge">Core Companion</span>
+              </div>
+              <p class="supported-addon-desc">Enables interactive 5-star ratings, dynamic platform/store banners, and automatic website link favicons in game overview.</p>
+              <div class="supported-addon-controls">Controls: ThemeExtras_UserRating, Banner</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-chart-line"></i> GameActivityNG</span>
+                <span class="supported-addon-badge">Telemetry Tab</span>
+              </div>
+              <p class="supported-addon-desc">Embeds full playtime telemetry curves, session logs, and hardware metrics (FPS, GPU/CPU temps) directly in the Activity tab.</p>
+              <div class="supported-addon-controls">Controls: GameActivity_PluginChartTime, GameActivity_PluginChartLog</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-box-open"></i> CheckDLCNG</span>
+                <span class="supported-addon-badge">DLC Card</span>
+              </div>
+              <p class="supported-addon-desc">Adds a dedicated DLC tab displaying owned, missing, and free DLCs with direct store links and install status.</p>
+              <div class="supported-addon-controls">Controls: CheckDlc_PluginListDlcAll, CheckDlc_PluginButton</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-copy"></i> DuplicateHiderNG</span>
+                <span class="supported-addon-badge">Deduplication</span>
+              </div>
+              <p class="supported-addon-desc">Groups multi-store duplicate games and renders sleek source selector ribbons with 8px rounded corners.</p>
+              <div class="supported-addon-controls">Controls: DuplicateHider_SourceSelector, DuplicateHider_ContentControl</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-trophy"></i> SuccessStory / Achievements</span>
+                <span class="supported-addon-badge">Achievements Tab</span>
+              </div>
+              <p class="supported-addon-desc">Renders custom achievement progress bars, rarity ribbons, unlocked icons, and an interactive achievement browser.</p>
+              <div class="supported-addon-controls">Controls: SuccessStory_PluginList, PlayniteAchievements</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-hourglass-half"></i> HowLongToBeat</span>
+                <span class="supported-addon-badge">Overview Bar</span>
+              </div>
+              <p class="supported-addon-desc">Displays Main Story, Main + Extra, and Completionist playtime estimates with custom 8px rounded progress bars.</p>
+              <div class="supported-addon-controls">Controls: HowLongToBeat_PluginProgressBar</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-film"></i> ExtraMetadataLoader</span>
+                <span class="supported-addon-badge">Media Loader</span>
+              </div>
+              <p class="supported-addon-desc">Loads transparent HD game logos into the details header and triggers video trailers on hover.</p>
+              <div class="supported-addon-controls">Controls: ExtraMetadataLoader_LogoLoaderControl, VideoLoaderControl</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-images"></i> ScreenshotsVisualizer</span>
+                <span class="supported-addon-badge">Screenshots Tab</span>
+              </div>
+              <p class="supported-addon-desc">Embeds an in-theme screenshot carousel and full-screen image viewer in the media tab.</p>
+              <div class="supported-addon-controls">Controls: ScreenshotsVisualizer_PluginScreenshots</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-comments"></i> ReviewViewer</span>
+                <span class="supported-addon-badge">Reviews Tab</span>
+              </div>
+              <p class="supported-addon-desc">Aggregates Steam, Metacritic, and OpenCritic review scores with community commentary snippets.</p>
+              <div class="supported-addon-controls">Controls: ReviewViewer_ReviewsControl</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-language"></i> CheckLocalizations</span>
+                <span class="supported-addon-badge">Language Flags</span>
+              </div>
+              <p class="supported-addon-desc">Displays native country flag badges and verified audio/interface/subtitle language matrices.</p>
+              <div class="supported-addon-controls">Controls: CheckLocalizations_PluginFlags</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-microchip"></i> SystemChecker</span>
+                <span class="supported-addon-badge">System Specs</span>
+              </div>
+              <p class="supported-addon-desc">Shows minimum and recommended PC hardware requirements with green/red pass-fail badges.</p>
+              <div class="supported-addon-controls">Controls: SystemChecker_PluginButton</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-panorama"></i> BackgroundChanger</span>
+                <span class="supported-addon-badge">Dynamic Media</span>
+              </div>
+              <p class="supported-addon-desc">Smoothly rotates high-resolution fanart backgrounds during idle browsing without database churn.</p>
+              <div class="supported-addon-controls">Controls: BackgroundChanger_PluginBackgroundImage</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-sync"></i> ImageRotater</span>
+                <span class="supported-addon-badge">Animated Media</span>
+              </div>
+              <p class="supported-addon-desc">Automatically cycles animated covers and dynamic vertical posters without writing to SQLite.</p>
+              <div class="supported-addon-controls">Controls: ImageRotater_Cover, ImageRotater_Background</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-music"></i> UniPlaySong</span>
+                <span class="supported-addon-badge">Audio Engine</span>
+              </div>
+              <p class="supported-addon-desc">Plays authentic game theme music and OST tracks in the background with play/mute controls.</p>
+              <div class="supported-addon-controls">Controls: UniPlaySong DataTrigger</div>
+            </div>
+          </div>
+        `
       }
     ]
   },
@@ -574,7 +736,8 @@ const DOCS_DATA = {
       { label: "License", value: "GNU GPL-3.0" },
       { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "OLED Contrast", value: "Obsidian Black (#07080a) with Electric Cyan Glow" },
-      { label: "Corner Radius", value: "Strict 8px on all containers, dialogs & buttons" }
+      { label: "Corner Radius", value: "Strict 8px on all containers, dialogs & buttons" },
+      { label: "Recommended Extensions", value: "GameActivityNG, ThemeExtrasNG, CheckDLCNG, DuplicateHiderNG, SuccessStory, HowLongToBeat, NewsViewer" }
     ],
     sections: [
       {
@@ -599,6 +762,134 @@ const DOCS_DATA = {
         content: `
           <p>Like its sibling themes, Penumbra Night strictly implements 8px corner curves on all interactive controls, tab headers, details panels, and flyouts, creating a tactile, console-like desktop feel.</p>
         `
+      },
+      {
+        title: "🧩 4. Supported Add-ons & OLED Integration",
+        content: `
+          <p>Penumbra Night includes tailored, high-contrast dark styling for <strong>15 community add-ons</strong>:</p>
+          <div class="supported-addons-grid">
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-chart-line"></i> GameActivityNG</span>
+                <span class="supported-addon-badge">Telemetry Tab</span>
+              </div>
+              <p class="supported-addon-desc">Full OLED dark theme styling for interactive playtime graphs, RTSS/HWiNFO hardware telemetry, and session logs.</p>
+              <div class="supported-addon-controls">Controls: GameActivity_PluginChartTime, GameActivity_PluginChartLog</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-star"></i> ThemeExtrasNG</span>
+                <span class="supported-addon-badge">Core Companion</span>
+              </div>
+              <p class="supported-addon-desc">High-contrast store & platform ribbons, 5-star ratings, and automatic link favicons.</p>
+              <div class="supported-addon-controls">Controls: ThemeExtras_UserRating, Banner</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-box-open"></i> CheckDLCNG</span>
+                <span class="supported-addon-badge">DLC Card</span>
+              </div>
+              <p class="supported-addon-desc">Dedicated DLC inventory view with ownership indicators and direct store links.</p>
+              <div class="supported-addon-controls">Controls: CheckDlc_PluginListDlcAll, CheckDlc_PluginButton</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-copy"></i> DuplicateHiderNG</span>
+                <span class="supported-addon-badge">Deduplication</span>
+              </div>
+              <p class="supported-addon-desc">Source selector ribbon and floating duplicate game switcher with OLED cyan highlights.</p>
+              <div class="supported-addon-controls">Controls: DuplicateHider_SourceSelector1, DuplicateHider_ContentControl1</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-trophy"></i> SuccessStory / Achievements</span>
+                <span class="supported-addon-badge">Achievements Tab</span>
+              </div>
+              <p class="supported-addon-desc">Achievement datagrid, rarity breakdown bar chart, and unlocked trophies showcase.</p>
+              <div class="supported-addon-controls">Controls: SuccessStory_PluginList, PlayniteAchievements_AchievementDataGrid</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-hourglass-half"></i> HowLongToBeat</span>
+                <span class="supported-addon-badge">Overview Bar</span>
+              </div>
+              <p class="supported-addon-desc">Vibrant OLED cyan/amber progress bars for Main Story and 100% completion times.</p>
+              <div class="supported-addon-controls">Controls: HowLongToBeat_PluginProgressBar</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-newspaper"></i> NewsViewer</span>
+                <span class="supported-addon-badge">News Tab</span>
+              </div>
+              <p class="supported-addon-desc">Integrated Steam & developer patch note feeds right within the game details overview.</p>
+              <div class="supported-addon-controls">Controls: NewsViewer_NewsViewerControl</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-film"></i> ExtraMetadataLoader</span>
+                <span class="supported-addon-badge">Media Loader</span>
+              </div>
+              <p class="supported-addon-desc">Transparent high-resolution game logos and cinematic video trailers.</p>
+              <div class="supported-addon-controls">Controls: ExtraMetadataLoader_LogoLoaderControl, VideoLoaderControl</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-images"></i> ScreenshotsVisualizer</span>
+                <span class="supported-addon-badge">Screenshots Tab</span>
+              </div>
+              <p class="supported-addon-desc">Vertical and horizontal screenshot galleries with full-resolution modal preview.</p>
+              <div class="supported-addon-controls">Controls: ScreenshotsVisualizer_PluginScreenshots</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-comments"></i> ReviewViewer</span>
+                <span class="supported-addon-badge">Reviews Tab</span>
+              </div>
+              <p class="supported-addon-desc">Critic score badges and player review snippets tailored for high contrast readability.</p>
+              <div class="supported-addon-controls">Controls: ReviewViewer_ReviewsControl</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-language"></i> CheckLocalizations</span>
+                <span class="supported-addon-badge">Language Flags</span>
+              </div>
+              <p class="supported-addon-desc">Language flag chips and full localized audio/subtitles details.</p>
+              <div class="supported-addon-controls">Controls: CheckLocalizations_PluginFlags</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-microchip"></i> SystemChecker</span>
+                <span class="supported-addon-badge">System Specs</span>
+              </div>
+              <p class="supported-addon-desc">Hardware compatibility checks and required PC specs indicators.</p>
+              <div class="supported-addon-controls">Controls: SystemChecker_PluginButton</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-panorama"></i> BackgroundChanger</span>
+                <span class="supported-addon-badge">Dynamic Media</span>
+              </div>
+              <p class="supported-addon-desc">True-black ambient background cycling without database lockups.</p>
+              <div class="supported-addon-controls">Controls: BackgroundChanger_PluginBackgroundImage</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-sync"></i> ImageRotater</span>
+                <span class="supported-addon-badge">Animated Media</span>
+              </div>
+              <p class="supported-addon-desc">Dynamic animated posters and alternate cover rotation with GPU acceleration.</p>
+              <div class="supported-addon-controls">Controls: ImageRotater_Cover, ImageRotater_Background</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-music"></i> UniPlaySong</span>
+                <span class="supported-addon-badge">Audio Engine</span>
+              </div>
+              <p class="supported-addon-desc">Atmospheric game soundtrack audio engine with theme playback controls.</p>
+              <div class="supported-addon-controls">Controls: UniPlaySong DataTrigger</div>
+            </div>
+          </div>
+        `
       }
     ]
   },
@@ -619,7 +910,8 @@ const DOCS_DATA = {
       { label: "Controls", value: "Full Gamepad (Xbox, DualSense, Steam Deck) & Keyboard" },
       { label: "License", value: "GNU GPL-3.0" },
       { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
-      { label: "Target Devices", value: "Living-room TVs, Steam Deck, ROG Ally, Legion Go, PC Consoles" }
+      { label: "Target Devices", value: "Living-room TVs, Steam Deck, ROG Ally, Legion Go, PC Consoles" },
+      { label: "Recommended Extensions", value: "ThemeModifier, DuplicateHiderNG, GameActivityNG, SuccessStory, ExtraMetadataLoader, CheckDLCNG" }
     ],
     sections: [
       {
@@ -649,6 +941,70 @@ const DOCS_DATA = {
             <li><kbd>Y</kbd> / <kbd>▲</kbd>: Open Game Details overlay (trailers, screenshots, synopsis)</li>
             <li><kbd>Start</kbd> / <kbd>Menu</kbd>: Quick Menu with Sleep, Minimize, and System Shutdown options</li>
           </ul>
+        `
+      },
+      {
+        title: "🧩 4. Supported Add-ons & Fullscreen Integrations",
+        content: `
+          <p>Penumbra Blur integrates seamlessly with the following companion add-ons in 10-foot fullscreen mode:</p>
+          <div class="supported-addons-grid">
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-sliders"></i> ThemeModifier</span>
+                <span class="supported-addon-badge">Blur Engine</span>
+              </div>
+              <p class="supported-addon-desc">Adjust real-time frosted glass backdrop blur intensity, dark tint opacity, and blur radius via live sliders.</p>
+              <div class="supported-addon-controls">Controls: Dynamic Backdrop Blur Engine</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-copy"></i> DuplicateHiderNG</span>
+                <span class="supported-addon-badge">Deduplication</span>
+              </div>
+              <p class="supported-addon-desc">Controller-navigable source selector for multiple digital store versions directly on the fullscreen game card.</p>
+              <div class="supported-addon-controls">Controls: DuplicateHider_SourceSelector</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-chart-line"></i> GameActivityNG</span>
+                <span class="supported-addon-badge">Analytics</span>
+              </div>
+              <p class="supported-addon-desc">Shows total playtime, last played session date, and launch count inside the fullscreen details view.</p>
+              <div class="supported-addon-controls">Controls: GameActivity_PluginButton</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-trophy"></i> PlayniteAchievements / SuccessStory</span>
+                <span class="supported-addon-badge">Achievements</span>
+              </div>
+              <p class="supported-addon-desc">Displays earned trophies, total achievement count, and completion percentage optimized for couch viewing.</p>
+              <div class="supported-addon-controls">Controls: SuccessStory_PluginCompactList</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-film"></i> ExtraMetadataLoader</span>
+                <span class="supported-addon-badge">Logos &amp; Videos</span>
+              </div>
+              <p class="supported-addon-desc">Renders large cinematic logos and automatically streams video trailers when resting on a game.</p>
+              <div class="supported-addon-controls">Controls: ExtraMetadataLoader_LogoLoaderControl</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-box-open"></i> CheckDLCNG</span>
+                <span class="supported-addon-badge">DLC Tracker</span>
+              </div>
+              <p class="supported-addon-desc">Verifies owned downloadable content directly within the controller-driven game details popup.</p>
+              <div class="supported-addon-controls">Controls: CheckDlc_PluginButton</div>
+            </div>
+            <div class="supported-addon-card">
+              <div class="supported-addon-head">
+                <span class="supported-addon-name"><i class="fa-solid fa-music"></i> UniPlaySong</span>
+                <span class="supported-addon-badge">Audio Engine</span>
+              </div>
+              <p class="supported-addon-desc">Plays background OST soundtrack music smoothly during gamepad browsing and library navigation.</p>
+              <div class="supported-addon-controls">Controls: UniPlaySong DataTrigger</div>
+            </div>
+          </div>
         `
       }
     ]
@@ -1870,16 +2226,44 @@ const docsSearchInput = document.getElementById("docsSearchInput");
 
 // Initialize on DOM Ready
 document.addEventListener("DOMContentLoaded", () => {
-  renderCatalog();
-  renderDocsNav();
-  renderDocContent(currentDocTopic);
+  const isDocsPage = window.location.pathname.endsWith("docs.html") || window.location.pathname.endsWith("/docs");
+
+  // If on index.html and URL has #docs, redirect to docs.html cleanly
+  if (!isDocsPage && window.location.hash.startsWith("#docs")) {
+    const params = new URLSearchParams(window.location.hash.split("?")[1] || "");
+    const topic = params.get("topic") || "";
+    window.location.replace(`docs.html${topic ? '?topic=' + topic : ''}`);
+    return;
+  }
+
+  // If on docs.html, resolve initial topic from search params or hash
+  if (isDocsPage) {
+    const searchParams = new URLSearchParams(window.location.search);
+    const topicParam = searchParams.get("topic");
+    const hash = window.location.hash.replace("#", "").split("?")[0];
+    const initialTopic = topicParam || (DOCS_DATA[hash] ? hash : "penumbra-dawn");
+    if (DOCS_DATA[initialTopic]) {
+      currentDocTopic = initialTopic;
+    }
+  }
+
+  if (itemsGrid) {
+    renderCatalog();
+  }
+  if (docsNav) {
+    renderDocsNav();
+  }
+  if (docsReader) {
+    renderDocContent(currentDocTopic);
+  }
   setupEventListeners();
   setupSmoothAnchorLinks();
   setupKeyboardShortcuts();
-  checkUrlHashForDocs();
 });
 
 function renderCatalog() {
+  if (!itemsGrid) return;
+
   const filtered = ADDONS.filter(item => {
     const matchesCategory =
       currentFilter === "all" ||
@@ -1946,6 +2330,18 @@ function createCardHTML(item) {
           `).join("")}
         </ul>
 
+        ${(item.supportedAddons && item.supportedAddons.length > 0) ? `
+          <div class="card-supported-addons">
+            <div class="card-supported-addons-header">
+              <span><i class="fa-solid fa-puzzle-piece"></i> Supported Add-ons (${item.supportedAddons.length})</span>
+            </div>
+            <div class="card-supported-addons-chips">
+              ${item.supportedAddons.slice(0, 4).map(a => `<span class="addon-chip">${a.name}</span>`).join("")}
+              ${item.supportedAddons.length > 4 ? `<span class="addon-chip more-chip" onclick="openDetailsModal('${item.id}', 'addons')">+${item.supportedAddons.length - 4} more</span>` : ''}
+            </div>
+          </div>
+        ` : ''}
+
         <div class="card-actions">
           <div class="actions-primary-row">
             ${(item.addonDbUrl && item.addonDbUrl.includes("playnite.link/addons.html")) ? `
@@ -1973,9 +2369,9 @@ function createCardHTML(item) {
             <button class="btn btn-outline btn-sm" onclick="openDetailsModal('${item.id}', 'overview')">
               <i class="fa-solid fa-circle-info"></i> Details
             </button>
-            <button class="btn btn-outline btn-sm btn-guide-link" onclick="openDetailsModal('${item.id}', 'docs')" title="Read integrated guide & documentation">
+            <a href="docs.html?topic=${item.docId}" class="btn btn-outline btn-sm btn-guide-link" title="Read integrated guide & documentation">
               <i class="fa-solid fa-book-open"></i> Docs &amp; Guide
-            </button>
+            </a>
             <div class="secondary-links">
               <a href="${item.githubUrl}" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
                 <i class="fa-brands fa-github"></i>
@@ -2152,24 +2548,36 @@ function renderDocContent(topicId) {
 
 window.selectDocTopic = function(topicId) {
   renderDocContent(topicId);
-  window.history.replaceState(null, "", `#docs?topic=${topicId}`);
+  const isDocsPage = window.location.pathname.endsWith("docs.html") || window.location.pathname.endsWith("/docs");
+  if (isDocsPage) {
+    window.history.replaceState(null, "", `?topic=${topicId}`);
+  } else {
+    window.location.href = `docs.html?topic=${topicId}`;
+  }
 };
 
 window.openDocTopic = function(topicId) {
-  selectDocTopic(topicId);
-  const docsSection = document.getElementById("docs");
-  if (docsSection) {
-    docsSection.scrollIntoView({ behavior: "smooth" });
+  const isDocsPage = window.location.pathname.endsWith("docs.html") || window.location.pathname.endsWith("/docs");
+  if (isDocsPage && docsReader) {
+    selectDocTopic(topicId);
+    const docsSection = document.getElementById("docs");
+    if (docsSection) {
+      docsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  } else {
+    window.location.href = `docs.html?topic=${topicId}`;
   }
 };
 
 function checkUrlHashForDocs() {
-  const hash = window.location.hash;
-  if (hash.startsWith("#docs")) {
-    const params = new URLSearchParams(hash.split("?")[1]);
-    const topic = params.get("topic");
-    if (topic && DOCS_DATA[topic]) {
-      selectDocTopic(topic);
+  const isDocsPage = window.location.pathname.endsWith("docs.html") || window.location.pathname.endsWith("/docs");
+  if (isDocsPage) {
+    const searchParams = new URLSearchParams(window.location.search);
+    const topicFromSearch = searchParams.get("topic");
+    const hash = window.location.hash.replace("#", "").split("?")[0];
+    const targetTopic = topicFromSearch || (DOCS_DATA[hash] ? hash : null);
+    if (targetTopic && DOCS_DATA[targetTopic]) {
+      currentDocTopic = targetTopic;
     }
   }
 }
@@ -2180,29 +2588,35 @@ function checkUrlHashForDocs() {
 
 function setupEventListeners() {
   // Category tabs
-  filterTabs.addEventListener("click", (e) => {
-    const tab = e.target.closest(".filter-tab");
-    if (!tab) return;
-    document.querySelectorAll(".filter-tab").forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-    currentFilter = tab.dataset.filter;
-    renderCatalog();
-  });
+  if (filterTabs) {
+    filterTabs.addEventListener("click", (e) => {
+      const tab = e.target.closest(".filter-tab");
+      if (!tab) return;
+      document.querySelectorAll(".filter-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      currentFilter = tab.dataset.filter;
+      renderCatalog();
+    });
+  }
 
   // Search input for Showcase
-  searchInput.addEventListener("input", (e) => {
-    searchQuery = e.target.value.trim().toLowerCase();
-    searchClear.style.display = searchQuery ? "block" : "none";
-    renderCatalog();
-  });
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      if (searchClear) searchClear.style.display = searchQuery ? "block" : "none";
+      renderCatalog();
+    });
+  }
 
-  searchClear.addEventListener("click", () => {
-    searchInput.value = "";
-    searchQuery = "";
-    searchClear.style.display = "none";
-    searchInput.focus();
-    renderCatalog();
-  });
+  if (searchClear) {
+    searchClear.addEventListener("click", () => {
+      if (searchInput) searchInput.value = "";
+      searchQuery = "";
+      searchClear.style.display = "none";
+      if (searchInput) searchInput.focus();
+      renderCatalog();
+    });
+  }
 
   // Search input for Docs
   if (docsSearchInput) {
@@ -2213,28 +2627,34 @@ function setupEventListeners() {
   }
 
   // View Mode toggles
-  viewGridBtn.addEventListener("click", () => {
-    viewGridBtn.classList.add("active");
-    viewListBtn.classList.remove("active");
-    itemsGrid.classList.remove("list-view");
-  });
+  if (viewGridBtn && viewListBtn && itemsGrid) {
+    viewGridBtn.addEventListener("click", () => {
+      viewGridBtn.classList.add("active");
+      viewListBtn.classList.remove("active");
+      itemsGrid.classList.remove("list-view");
+    });
 
-  viewListBtn.addEventListener("click", () => {
-    viewListBtn.classList.add("active");
-    viewGridBtn.classList.remove("active");
-    itemsGrid.classList.add("list-view");
-  });
+    viewListBtn.addEventListener("click", () => {
+      viewListBtn.classList.add("active");
+      viewGridBtn.classList.remove("active");
+      itemsGrid.classList.add("list-view");
+    });
+  }
 
   // Modal close
-  modalClose.addEventListener("click", closeDetailsModal);
-  detailsModal.addEventListener("click", (e) => {
-    if (e.target === detailsModal) closeDetailsModal();
-  });
+  if (modalClose && detailsModal) {
+    modalClose.addEventListener("click", closeDetailsModal);
+    detailsModal.addEventListener("click", (e) => {
+      if (e.target === detailsModal) closeDetailsModal();
+    });
+  }
 
   // Mobile nav toggle
-  mobileNavToggle.addEventListener("click", () => {
-    mainNav.classList.toggle("open");
-  });
+  if (mobileNavToggle && mainNav) {
+    mobileNavToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("open");
+    });
+  }
 
   // Quick filter links in footer
   document.querySelectorAll(".quick-filter-link").forEach(link => {
@@ -2377,6 +2797,11 @@ function renderModalContent() {
       <button class="modal-tab-btn ${currentModalTab === 'overview' ? 'active' : ''}" data-tab="overview" onclick="switchModalTab('overview')">
         <i class="fa-solid fa-circle-info"></i> Overview &amp; Media
       </button>
+      ${(item.supportedAddons && item.supportedAddons.length > 0) ? `
+        <button class="modal-tab-btn ${currentModalTab === 'addons' ? 'active' : ''}" data-tab="addons" onclick="switchModalTab('addons')">
+          <i class="fa-solid fa-puzzle-piece"></i> Supported Add-ons (${item.supportedAddons.length})
+        </button>
+      ` : ''}
       <button class="modal-tab-btn ${currentModalTab === 'docs' ? 'active' : ''}" data-tab="docs" onclick="switchModalTab('docs')">
         <i class="fa-solid fa-book-open"></i> Documentation &amp; Setup
       </button>
@@ -2414,6 +2839,18 @@ function renderModalContent() {
               <li><i class="fa-solid fa-circle-check"></i> <span>${f}</span></li>
             `).join("")}
           </ul>
+
+          ${(item.supportedAddons && item.supportedAddons.length > 0) ? `
+            <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-subtle);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <h3 style="margin: 0; font-size: 1.05rem;"><i class="fa-solid fa-puzzle-piece"></i> Supported Add-ons (${item.supportedAddons.length})</h3>
+                <button class="btn btn-outline btn-sm" onclick="switchModalTab('addons')">View Details &rarr;</button>
+              </div>
+              <div class="card-supported-addons-chips">
+                ${item.supportedAddons.map(a => `<span class="addon-chip">${a.name}</span>`).join("")}
+              </div>
+            </div>
+          ` : ''}
         </div>
 
         <div class="modal-sidebar-col">
@@ -2443,6 +2880,30 @@ function renderModalContent() {
       </div>
     </div>
 
+    <!-- TAB: Supported Add-ons -->
+    ${(item.supportedAddons && item.supportedAddons.length > 0) ? `
+      <div class="modal-tab-panel ${currentModalTab === 'addons' ? 'active' : ''}" data-panel="addons">
+        <div class="modal-card-box">
+          <h4>Supported Add-ons &amp; Companion Extensions (${item.supportedAddons.length})</h4>
+          <p class="modal-text" style="margin-bottom: 16px;">
+            <strong>${item.name}</strong> is pre-configured with dedicated custom controls, telemetry tabs, and 8px rounded card styles for the following extensions:
+          </p>
+          <div class="supported-addons-grid">
+            ${item.supportedAddons.map(a => `
+              <div class="supported-addon-card">
+                <div class="supported-addon-head">
+                  <span class="supported-addon-name"><i class="fa-solid fa-puzzle-piece"></i> ${a.name}</span>
+                  <span class="supported-addon-badge">${a.badge}</span>
+                </div>
+                <p class="supported-addon-desc">${a.role}</p>
+                <div class="supported-addon-controls">Controls: ${a.controls}</div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    ` : ''}
+
     <!-- TAB 2: Documentation & Setup Guide -->
     <div class="modal-tab-panel ${currentModalTab === 'docs' ? 'active' : ''}" data-panel="docs">
       <div class="modal-doc-wrapper">
@@ -2461,7 +2922,7 @@ function renderModalContent() {
               <i class="fa-solid fa-file-arrow-down"></i> Download Package (${item.fileSize})
             </a>
           </div>
-          <button class="btn btn-outline btn-sm" onclick="closeDetailsModal(); openDocTopic('${item.docId}')">
+          <button class="btn btn-outline btn-sm" onclick="closeDetailsModal(); window.location.href = 'docs.html?topic=' + item.docId;">
             <i class="fa-solid fa-book-bookmark"></i> Open in Dedicated Docs Hub
           </button>
         </div>

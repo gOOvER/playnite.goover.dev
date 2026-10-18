@@ -1640,9 +1640,174 @@ kbd {
    Documentation & Guide Hub Section
    ========================================================================== */
 
+.docs-hero-bar {
+  padding: 42px 0 28px;
+  background: linear-gradient(180deg, rgba(234, 128, 36, 0.05) 0%, transparent 100%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.docs-hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.docs-hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+.docs-hero-subtitle {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.55;
+}
+
 .docs-section {
-  padding: 60px 0 80px;
+  padding: 48px 0 80px;
   position: relative;
+}
+
+/* ==========================================================================
+   Theme Supported Addons Components (Strict 8px Corners)
+   ========================================================================== */
+
+.card-supported-addons {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-base);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-supported-addons-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-playnite);
+}
+
+.card-supported-addons-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.addon-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-base);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.addon-chip:hover {
+  border-color: var(--accent-playnite);
+  background: var(--accent-playnite-subtle);
+  color: #ffffff;
+}
+
+.addon-chip.more-chip {
+  background: var(--accent-playnite-subtle);
+  border-color: var(--border-accent);
+  color: var(--accent-playnite-light);
+  cursor: pointer;
+}
+
+.supported-addons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.supported-addon-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-base);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.supported-addon-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.supported-addon-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.supported-addon-name {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.supported-addon-name i {
+  color: var(--accent-playnite);
+}
+
+.supported-addon-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: var(--radius-base);
+  background: var(--accent-cyan-subtle);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  color: var(--accent-cyan);
+}
+
+.supported-addon-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.supported-addon-controls {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  background: var(--bg-darkest);
+  padding: 4px 8px;
+  border-radius: var(--radius-base);
+  border: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .docs-layout {

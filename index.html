@@ -47,7 +47,7 @@
 
       <nav class="nav-links" id="mainNav">
         <a href="#catalog" class="nav-link active"><i class="fa-solid fa-shapes"></i> Showcase</a>
-        <a href="#docs" class="nav-link"><i class="fa-solid fa-book-bookmark"></i> Guides &amp; Docs</a>
+        <a href="docs.html" class="nav-link"><i class="fa-solid fa-book-bookmark"></i> Guides &amp; Docs</a>
         <a href="#support" class="nav-link"><i class="fa-solid fa-mug-hot"></i> Donate</a>
         <a href="https://github.com/gOOvER" target="_blank" rel="noopener noreferrer" class="nav-link external">
           <i class="fa-brands fa-github"></i> GitHub <i class="fa-solid fa-arrow-up-right-from-square mini-icon"></i>
@@ -85,7 +85,7 @@
           <i class="fa-solid fa-gamepad"></i>
           <span>Explore Add-ons</span>
         </a>
-        <a href="#docs" class="btn btn-secondary btn-lg">
+        <a href="docs.html" class="btn btn-secondary btn-lg">
           <i class="fa-solid fa-book-open"></i>
           <span>Guides &amp; Documentation</span>
         </a>
@@ -175,39 +175,6 @@
     </div>
   </section>
 
-  <!-- Guides & Documentation Section -->
-  <section class="docs-section" id="docs">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-book-open"></i> Knowledge Base</span>
-        <h2 class="section-title">Guides &amp; Documentation</h2>
-        <p class="section-subtitle">Comprehensive manuals, setup workflows, hardware telemetry guides, and pro-tips for all Penumbra themes and NG extensions.</p>
-      </div>
-
-      <div class="docs-layout">
-        <!-- Docs Sidebar / Topic Selector -->
-        <aside class="docs-sidebar">
-          <div class="docs-sidebar-header">
-            <div class="docs-search-box">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" id="docsSearchInput" placeholder="Filter documentation..." autocomplete="off">
-            </div>
-          </div>
-
-          <nav class="docs-nav" id="docsNav">
-            <!-- Rendered via JavaScript -->
-          </nav>
-        </aside>
-
-        <!-- Docs Main Content Reader -->
-        <main class="docs-reader" id="docsReader">
-          <!-- Rendered via JavaScript -->
-        </main>
-      </div>
-    </div>
-  </section>
-
-
   <!-- Support & Donation Section -->
   <section class="support-section" id="support">
     <div class="container">
@@ -272,19 +239,19 @@
       <div class="footer-nav-col">
         <h4>Extensions &amp; Themes</h4>
         <ul>
-          <li><a href="#docs" onclick="openDocTopic('penumbra-dawn')">Penumbra Dawn</a></li>
-          <li><a href="#docs" onclick="openDocTopic('penumbra-night')">Penumbra Night</a></li>
-          <li><a href="#docs" onclick="openDocTopic('penumbra-blur')">Penumbra Blur</a></li>
-          <li><a href="#docs" onclick="openDocTopic('duplicatehider-ng')">DuplicateHiderNG</a></li>
-          <li><a href="#docs" onclick="openDocTopic('gameactivity-ng')">GameActivityNG</a></li>
-          <li><a href="#docs" onclick="openDocTopic('startpage-ng')">StartPageNG</a></li>
-          <li><a href="#docs" onclick="openDocTopic('themeextras-ng')">ThemeExtrasNG</a></li>
-          <li><a href="#docs" onclick="openDocTopic('quicksearch-ng')">QuickSearchNG</a></li>
-          <li><a href="#docs" onclick="openDocTopic('steamgriddb-ng')">SteamGridDB Metadata Provider NG</a></li>
-          <li><a href="#docs" onclick="openDocTopic('checkdlc-ng')">CheckDLCNG</a></li>
-          <li><a href="#docs" onclick="openDocTopic('playeractivities-ng')">PlayerActivitiesNG</a></li>
-          <li><a href="#docs" onclick="openDocTopic('starcitizen-library')">RSI Star Citizen Library</a></li>
-          <li><a href="#docs" onclick="openDocTopic('starcitizen-companion')">Star Citizen Companion</a></li>
+          <li><a href="docs.html?topic=penumbra-dawn">Penumbra Dawn</a></li>
+          <li><a href="docs.html?topic=penumbra-night">Penumbra Night</a></li>
+          <li><a href="docs.html?topic=penumbra-blur">Penumbra Blur</a></li>
+          <li><a href="docs.html?topic=duplicatehider-ng">DuplicateHiderNG</a></li>
+          <li><a href="docs.html?topic=gameactivity-ng">GameActivityNG</a></li>
+          <li><a href="docs.html?topic=startpage-ng">StartPageNG</a></li>
+          <li><a href="docs.html?topic=themeextras-ng">ThemeExtrasNG</a></li>
+          <li><a href="docs.html?topic=quicksearch-ng">QuickSearchNG</a></li>
+          <li><a href="docs.html?topic=steamgriddb-ng">SteamGridDB Metadata Provider NG</a></li>
+          <li><a href="docs.html?topic=checkdlc-ng">CheckDLCNG</a></li>
+          <li><a href="docs.html?topic=playeractivities-ng">PlayerActivitiesNG</a></li>
+          <li><a href="docs.html?topic=starcitizen-library">RSI Star Citizen Library</a></li>
+          <li><a href="docs.html?topic=starcitizen-companion">Star Citizen Companion</a></li>
         </ul>
       </div>
 
@@ -320,6 +287,6 @@
   <!-- Toast Notification -->
   <div class="toast-container" id="toastContainer"></div>
 
-  <script src="js/app.js?v=2.1.0"></script>
+  <script src="js/app.js?v=2.2.0"></script>
 </body>
 </html>
