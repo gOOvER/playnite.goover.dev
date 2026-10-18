@@ -36,11 +36,13 @@ const ADDONS = [
       "95% reflection elimination and thread-safe icon caching on duplicate sorting hotpaths"
     ],
     changelog: [
-      "v1.0.0 — Initial DuplicateHiderNG release by gOOvER",
+      "v1.0.0 — Initial DuplicateHiderNG production release by gOOvER",
       "Modernized SDK-style project targeting .NET 4.6.2 and Playnite SDK 6.18.0",
-      "Fixed #92: Priority arrow crash with bounds guards",
-      "Fixed #127: Graceful recovery on corrupted settings.json",
-      "Fixed #56: Resolved {SourceName} placeholder replacement"
+      "Fixed #92: Priority arrow crash with index out-of-bounds guards",
+      "Fixed #127: Graceful recovery and backup on corrupted settings.json",
+      "Fixed #56: Resolved {SourceName} placeholder replacement in UI templates",
+      "Replaced custom theme source control with native ContentControl wrapper",
+      "Optimized tag matching and automatic library scan performance"
     ],
     docId: "duplicatehider-ng"
   },
@@ -188,9 +190,11 @@ const ADDONS = [
       "Integrated Penumbra theme custom controls and rounded card styling"
     ],
     changelog: [
-      "v1.0.0 — Rebranded to CheckDLCNG by gOOvER",
-      "Modernized SDK-style project targeting .NET 4.6.2 and Playnite SDK 6.18.0",
-      "Added official SteamKit2 & Web API integration with safe async token caching",
+      "v1.0.3 — Fixed Playnite freeze when opening settings caused by synchronous CEF browser cookies",
+      "Made GOG currency loading non-blocking by refreshing store currencies asynchronously",
+      "Fixed NullReferenceException in GogApi.GetDlcInfos() when DLC descriptions are empty",
+      "Hardened RemoveDescriptionPromos() HTML parsing with safe fallbacks",
+      "v1.0.2 — Modernized SDK-style project targeting .NET 4.6.2 & SDK 6.18.0",
       "Integrated Common library submodules with hardened error handling and memory optimizations"
     ],
     docId: "checkdlc-ng"
@@ -264,9 +268,12 @@ const ADDONS = [
       "Non-destructive transparent fallbacks for games without rotating media"
     ],
     changelog: [
-      "v1.4.0 — Polished tabs and full rounded corner consistency",
+      "v1.4.0 — Polished tabs and full rounded corner consistency (strict 8px radius)",
       "Integrated fast-path ImageRotater_Cover and BackgroundChanger_PluginCoverImage",
-      "Enhanced responsive grid view layout and details sidebar"
+      "Added UniPlaySong media player button and animated 'Now Playing' track toast",
+      "Separated subtitle and tag/genre capsule system in game details header",
+      "Directional text drop shadows for enhanced legibility over bright fanart",
+      "High-contrast rounded top panel global progress bar"
     ],
     supportedAddons: [
       { name: "ThemeExtrasNG", role: "5-Star ratings, dynamic platform/store banners & link favicons", badge: "Core Companion", controls: "ThemeExtras_UserRating, Banner" },
@@ -316,8 +323,11 @@ const ADDONS = [
     ],
     changelog: [
       "v1.4.0 — Telemetry & modern achievements milestone integration",
-      "Enhanced high-contrast card styling for OLED displays",
-      "Updated search and filter bar visual styles"
+      "Frosted segmented pills for Last Activity, Time Played, and Completion Status",
+      "Added UniPlaySong top bar player controls and animated 'Now Playing' glass toast",
+      "Enhanced high-contrast obsidian card styling for OLED displays",
+      "Directional text drop shadows on titles and metadata",
+      "Rounded filter pill and dynamic top panel progress bar"
     ],
     supportedAddons: [
       { name: "ThemeExtrasNG", role: "OLED-styled store & platform banners, ratings & favicons", badge: "Core Companion", controls: "ThemeExtras_UserRating, Banner" },
@@ -367,9 +377,12 @@ const ADDONS = [
       "Couch-ready details overlay with synopsis, trailers, and playtime statistics"
     ],
     changelog: [
-      "v1.4.0 — Performance optimizations for handheld devices",
-      "Smooth blur transitions and improved D-Pad navigational focus",
-      "Unified 8px corner radii on all fullscreen UI panels"
+      "v1.4.0 — Handheld and 10-foot console experience optimizations",
+      "Segmented InfoBox metadata card grid (Time Played, Last Activity, Status, Platform)",
+      "Integrated Achievements card with real-time stats (Unlocked/Total) and rounded progress bar",
+      "Added UniPlaySong fullscreen media player overlay and track change notifications",
+      "Auto-focus redirection back to Context Play button on game session exit",
+      "Unified 8px corner radii across all fullscreen UI panels"
     ],
     supportedAddons: [
       { name: "ThemeModifier", role: "Real-time frosted glass backdrop blur & opacity slider control", badge: "Blur Engine", controls: "ThemeModifier Frosted Glass Engine" },
@@ -520,13 +533,12 @@ const ADDONS = [
       "Intelligent HTTP 429 rate-limiting with exponential backoff retry"
     ],
     changelog: [
-      "v1.0.0 — Re-engineered Next-Generation release by gOOvER",
-      "Full API v2 implementation aligned with official SteamGridDB OpenAPI 3.1.0 specifications",
-      "Upgraded to modern SDK-style architecture targeting .NET 4.6.2 and Playnite SDK 6.18.0",
-      "Added multi-platform ID resolution for Epic Games, Origin, Battle.net, and Ubisoft Connect",
-      "Fixed hero background 404 URL resolution and fuzzy search IndexOutOfRangeException",
-      "Added Epilepsy safety filter and static/animated image preferences",
-      "Implemented automatic HTTP 429 retry backoff and thread-safe caching"
+      "v1.0.1 — Multi-page pagination (up to 150 items) for manual artwork dialogs (resolves #30, #35, PR #32)",
+      "Added direct link to SteamGridDB game page in game links (resolves #25)",
+      "Fixed adult content & humor filter bug defaulting to false when selecting 'any' (resolves #31)",
+      "Hardened Steam AppId parsing with int.TryParse preventing mod crashes (resolves #22)",
+      "Handled non-JSON HTTP 404/500 responses gracefully without crashing (resolves #15, #24)",
+      "v1.0.0 — Re-engineered Next-Generation release by gOOvER with API v2 support, multi-platform IDs, and epilepsy safety filter"
     ],
     docId: "steamgriddb-ng"
   }
@@ -2468,6 +2480,9 @@ function renderDocContent(topicId) {
           <a href="${doc.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
             <i class="fa-brands fa-github"></i> GitHub Repository
           </a>
+          <a href="#changelog" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-clock-rotate-left"></i> Changelog
+          </a>
         </div>
       </header>
 
@@ -2478,6 +2493,32 @@ function renderDocContent(topicId) {
           This add-on was systematically audited, refactored, and performance-optimized using advanced Artificial Intelligence. Critical race conditions, memory leaks, API breaking changes, and thread safety issues from legacy codebases have been rigorously resolved to ensure rock-solid stability and peak performance.
         </div>
       </div>
+
+      ${(matchedAddon && matchedAddon.changelog && matchedAddon.changelog.length > 0) ? `
+        <section class="doc-section-card doc-changelog-card" id="changelog">
+          <div class="doc-changelog-header">
+            <div class="doc-changelog-title-group">
+              <h2 class="doc-section-title">
+                <i class="fa-solid fa-clock-rotate-left"></i> Recent Changelog &amp; Release Notes (v${doc.version})
+              </h2>
+              <span class="badge-version">v${doc.version}</span>
+            </div>
+            <a href="${doc.githubUrl}/releases" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-tag"></i> GitHub Releases
+            </a>
+          </div>
+          <div class="doc-section-content">
+            <ul class="changelog-list">
+              ${matchedAddon.changelog.map(entry => `
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  <span>${entry}</span>
+                </li>
+              `).join("")}
+            </ul>
+          </div>
+        </section>
+      ` : ''}
 
       <section class="doc-specs-box">
         <h3><i class="fa-solid fa-microchip"></i> Technical Specifications</h3>
@@ -2814,6 +2855,15 @@ function renderModalContent() {
               <li><i class="fa-solid fa-circle-check"></i> <span>${f}</span></li>
             `).join("")}
           </ul>
+
+          ${(item.changelog && item.changelog.length > 0) ? `
+            <h3 style="margin-top: 24px;"><i class="fa-solid fa-clock-rotate-left"></i> Latest Changelog (v${item.version})</h3>
+            <ul class="modal-changelog-list">
+              ${item.changelog.map(c => `
+                <li><i class="fa-solid fa-check"></i> <span>${c}</span></li>
+              `).join("")}
+            </ul>
+          ` : ''}
 
           ${(item.supportedAddons && item.supportedAddons.length > 0) ? `
             <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-subtle);">

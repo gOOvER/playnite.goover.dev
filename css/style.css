@@ -2297,6 +2297,80 @@ pre code {
 }
 
 /* ==========================================================================
+   Changelog & Release Notes Components
+   ========================================================================== */
+
+.doc-changelog-card {
+  background: rgba(229, 137, 23, 0.05);
+  border: 1px solid rgba(229, 137, 23, 0.25);
+  border-left: 4px solid var(--accent-playnite);
+  border-radius: var(--radius-base);
+  padding: 22px 26px;
+  margin-bottom: 24px;
+}
+
+.doc-changelog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(229, 137, 23, 0.15);
+}
+
+.doc-changelog-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.doc-changelog-title-group .doc-section-title {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.changelog-list,
+.modal-changelog-list {
+  list-style: none;
+  margin: 14px 0 0 0 !important;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.changelog-list li,
+.modal-changelog-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-base);
+  padding: 8px 12px;
+  margin-bottom: 0;
+}
+
+.changelog-list li i,
+.modal-changelog-list li i {
+  color: var(--accent-playnite);
+  margin-top: 3px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
 
