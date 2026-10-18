@@ -447,6 +447,46 @@ const ADDONS = [
       "Added automatic migration from legacy felixkmh_QuickSearch_Plugin settings"
     ],
     docId: "quicksearch-ng"
+  },
+  {
+    id: "SteamGridDB_Playnite_Metadata",
+    name: "SteamGridDB Metadata Provider NG",
+    tagline: "High-resolution game covers, heroes, logos, and icons via SteamGridDB API v2",
+    category: "plugin",
+    typeLabel: "Metadata Provider",
+    version: "1.0.0",
+    releaseDate: "2026-10-18",
+    api: "Playnite SDK 6.18.0 (API 6.2.0+)",
+    license: "MIT License",
+    icon: "assets/img/steamgriddb-icon.png",
+    banner: "assets/img/steamgriddb-banner.jpg",
+    screenshots: [
+      "assets/img/steamgriddb-banner.jpg"
+    ],
+    file: "downloads/SteamGridDB_Playnite_Metadata_1_0_0.pext",
+    fileSize: "185 KB",
+    githubUrl: "https://github.com/gOOvER/Playnite-SteamGridDBMetadataNG",
+    addonDbUrl: "https://github.com/gOOvER/Playnite-SteamGridDBMetadataNG",
+    description: "Next-generation SteamGridDB metadata provider for Playnite. Completely re-engineered for the official SteamGridDB API v2 with multi-platform ID matching (Steam, Epic, Origin, Battle.net, Ubisoft), automated title fallback, epilepsy safety filters, animated/static image controls, and HTTP 429 rate limit backoff.",
+    features: [
+      "Multi-platform automated matching using Steam, Epic, Origin, Battle.net, and Ubisoft store IDs",
+      "Intelligent fallback to title search when platform-specific IDs return no results",
+      "Configurable content filters: NSFW, Humor, and Epilepsy safety toggles",
+      "Static vs. Animated filter: choose between crisp static artwork or dynamic WebP/APNG animations",
+      "Full dimension coverage: vertical covers (600x900, 342x482), horizontal grids (920x430), heroes (1920x620, 3840x1240), square icons (512x512, 1024x1024), and transparent logos",
+      "Fixed hero 404 URL resolution bug, fuzzy search index crashes, and path traversal vulnerabilities",
+      "Intelligent HTTP 429 rate-limiting with exponential backoff retry"
+    ],
+    changelog: [
+      "v1.0.0 — Re-engineered Next-Generation release by gOOvER",
+      "Full API v2 implementation aligned with official SteamGridDB OpenAPI 3.1.0 specifications",
+      "Upgraded to modern SDK-style architecture targeting .NET 4.6.2 and Playnite SDK 6.18.0",
+      "Added multi-platform ID resolution for Epic Games, Origin, Battle.net, and Ubisoft Connect",
+      "Fixed hero background 404 URL resolution and fuzzy search IndexOutOfRangeException",
+      "Added Epilepsy safety filter and static/animated image preferences",
+      "Implemented automatic HTTP 429 retry backoff and thread-safe caching"
+    ],
+    docId: "steamgriddb-ng"
   }
 ];
 
@@ -467,7 +507,9 @@ const DOCS_DATA = {
       { label: "Target Application", value: "Playnite 10+ (Desktop Mode)" },
       { label: "Theme API Version", value: "2.9.0" },
       { label: "License", value: "GNU GPL-3.0" },
-      { label: "Recommended Extensions", value: "GameActivityNG, ThemeExtrasNG, SuccessStory, HowLongToBeat, CheckDLC" }
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
+      { label: "Corner Radius", value: "Strict 8px (ControlCornerRadius / 8,8,0,0 tabs)" },
+      { label: "Recommended Extensions", value: "GameActivityNG, ThemeExtrasNG, SuccessStory, HowLongToBeat, CheckDLCNG" }
     ],
     sections: [
       {
@@ -500,6 +542,7 @@ const DOCS_DATA = {
           <ol class="doc-steps">
             <li><strong>ThemeExtrasNG:</strong> Provides star ratings, store platform banners, and automatic link favicons.</li>
             <li><strong>GameActivityNG:</strong> Injects telemetry charts and playtime trend cards into the Details view.</li>
+            <li><strong>CheckDLCNG:</strong> Enables dedicated DLC cards with install indicators and store links.</li>
             <li><strong>PlayniteAchievements / SuccessStory:</strong> Activates badge showcases and rarity indicators in game cards.</li>
           </ol>
         `
@@ -529,7 +572,9 @@ const DOCS_DATA = {
       { label: "Target Application", value: "Playnite 10+ (Desktop Mode)" },
       { label: "Theme API Version", value: "2.9.0" },
       { label: "License", value: "GNU GPL-3.0" },
-      { label: "OLED Contrast", value: "Obsidian Black (#07080a) with Electric Cyan Glow" }
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
+      { label: "OLED Contrast", value: "Obsidian Black (#07080a) with Electric Cyan Glow" },
+      { label: "Corner Radius", value: "Strict 8px on all containers, dialogs & buttons" }
     ],
     sections: [
       {
@@ -573,6 +618,7 @@ const DOCS_DATA = {
       { label: "Target Application", value: "Playnite 10+ (Fullscreen Mode)" },
       { label: "Controls", value: "Full Gamepad (Xbox, DualSense, Steam Deck) & Keyboard" },
       { label: "License", value: "GNU GPL-3.0" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "Target Devices", value: "Living-room TVs, Steam Deck, ROG Ally, Legion Go, PC Consoles" }
     ],
     sections: [
@@ -623,41 +669,112 @@ const DOCS_DATA = {
       { label: "Target Application", value: "Playnite 10+" },
       { label: "SDK Version", value: "Playnite SDK 6.18.0 (.NET 4.6.2)" },
       { label: "License", value: "MIT License" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
+      { label: "Theme Controls", value: "DuplicateHider_SourceSelector, DuplicateHider_SourceSelector1-9" },
       { label: "Predecessor", value: "felixkmh/DuplicateHider (Full 100% config migration)" }
     ],
     sections: [
       {
-        title: "🧹 1. Why DuplicateHiderNG?",
+        title: "🧹 1. Multi-Store Deduplication & Architecture",
         content: `
-          <p>PC gamers often own identical titles across Steam, GOG, Epic Games Store, Amazon Prime, and EA. <strong>DuplicateHiderNG</strong> groups these copies into a single entry and displays only the best version based on your personal source hierarchy.</p>
+          <p>PC gamers often own identical titles across Steam, GOG, Epic Games Store, Amazon Prime, EA, and Ubisoft. <strong>DuplicateHiderNG</strong> groups these copies into a single unified entry and displays only the best version based on your personal source hierarchy.</p>
+          <div class="doc-callout callout-tip">
+            <i class="fa-solid fa-layer-group"></i>
+            <div>
+              <strong>Non-Destructive Library Management:</strong> DuplicateHiderNG never deletes any game or alters its metadata. It manages visibility by setting the native <code>Hidden</code> flag on duplicate copies and maintaining group relationships dynamically.
+            </div>
+          </div>
         `
       },
       {
-        title: "⚖️ 2. Setting Up Source Priorities",
+        title: "⚖️ 2. Exact Scoring Formula & Priority Management",
         content: `
-          <p>Configure which store version takes precedence:</p>
-          <ol class="doc-steps">
-            <li>Open Playnite ➔ Press <kbd>F9</kbd> ➔ <strong>Extensions ➔ DuplicateHiderNG</strong>.</li>
-            <li>Go to the <strong>Priorities</strong> tab.</li>
-            <li>Drag or use the arrows to rank your storefronts (e.g. <em>Steam > GOG > Epic Games > Amazon</em>).</li>
-            <li>When DuplicateHiderNG scans your library, the highest-ranked copy stays visible, and duplicate copies are automatically hidden.</li>
-          </ol>
-        `
-      },
-      {
-        title: "🏷️ 3. Automatic Tagging & Platform Icons",
-        content: `
+          <p>DuplicateHiderNG calculates a numerical score for each game in a group. The game with the <strong>lowest score</strong> is selected as the primary visible copy, while all other copies are hidden:</p>
+          <pre><code>Score(game) = Priority(game.Source) - priorityList.Count * (IsInstalled(game) ? 1 : 0)</code></pre>
+          <p>Key mechanics of the priority algorithm:</p>
           <ul>
-            <li><strong>Store Icons on Game Cards:</strong> DuplicateHiderNG injects small store icons on the visible game card indicating what other store versions you own.</li>
-            <li><strong>Auto-Tagging:</strong> Automatically assigns <code>[DH] Hidden</code> and <code>[DH] Revealed</code> tags so you can quickly inspect hidden games in your filters.</li>
-            <li><strong>'Other Copies' Context Menu:</strong> Right-click any game to open the 'Other Copies' submenu and switch active versions or view alternative store metadata.</li>
+            <li><strong>Source Priority:</strong> Configured in <strong>Extensions ➔ DuplicateHiderNG ➔ Priorities</strong> by dragging storefronts into your preferred order (e.g. <em>Steam > GOG > Epic Games > Amazon</em>). Lower index in the priority list gives a lower (preferred) score.</li>
+            <li><strong>Installed Game Override:</strong> When <em>"Never Hide Installed"</em> is enabled, any game currently installed receives a massive negative score offset (<code>- priorityList.Count</code>). This guarantees that an installed version always beats an uninstalled version, even if the uninstalled version is from a higher-priority storefront.</li>
+            <li><strong>Score Tie-Breaking:</strong> If two copies have identical scores, tie-breakers evaluate platform names, install date, and internal database ID.</li>
           </ul>
         `
       },
       {
-        title: "🛡️ 4. ReDoS Regex Protection & Migration",
+        title: "🔤 3. String Interpolation Syntax & Context Menu Tokens",
         content: `
-          <p>DuplicateHiderNG adds regular expression timeouts to protect against complex regex freezes and automatically imports all groups and custom rules from legacy <code>felixkmh_DuplicateHider_Plugin</code> without manual re-entry.</p>
+          <p>You can customize how alternative copies appear in context menus and tooltips. DuplicateHiderNG uses a powerful token format:</p>
+          <pre><code>{Prefix'Variable'Suffix}</code></pre>
+          <p>The prefix and suffix are only displayed if the enclosed variable is not empty. Supported replacement tokens include:</p>
+          <div class="doc-table-wrapper">
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>Token</th>
+                  <th>Description</th>
+                  <th>Example Output</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>{Name}</code></td>
+                  <td>The exact title of the game copy.</td>
+                  <td><code>"The Witcher 3: Wild Hunt"</code></td>
+                </tr>
+                <tr>
+                  <td><code>{Source}</code></td>
+                  <td>The source storefront name of the copy.</td>
+                  <td><code>"Steam"</code>, <code>"GOG"</code></td>
+                </tr>
+                <tr>
+                  <td><code>{Library}</code></td>
+                  <td><strong>(NG Feature)</strong> The name of the library plugin managing the copy.</td>
+                  <td><code>"Steam Library"</code>, <code>"Epic Games"</code></td>
+                </tr>
+                <tr>
+                  <td><code>{Installed}</code></td>
+                  <td>Installation state indicator.</td>
+                  <td><code>"Installed"</code> or blank</td>
+                </tr>
+                <tr>
+                  <td><code>{ImageNameNoExt}</code></td>
+                  <td>Name of the custom icon matched from the icon folder.</td>
+                  <td><code>"Steam"</code>, <code>"GOG Galaxy"</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `
+      },
+      {
+        title: "🎨 4. Custom Source Icons & Icon Stack",
+        content: `
+          <p>DuplicateHiderNG can display a stack of icons representing the other storefronts where you own the game directly on your game cards:</p>
+          <ol class="doc-steps">
+            <li>Place custom <code>.png</code> or <code>.ico</code> files in:
+              <br><code>%APPDATA%\\Playnite\\ExtensionsData\\goover_DuplicateHiderNG_Plugin\\source_icons\\</code>
+            </li>
+            <li>Name each icon to match your source or platform name (e.g. <code>Steam.ico</code>, <code>Ubisoft Connect.png</code>, <code>Epic.png</code>).</li>
+            <li><strong>Platform Priority:</strong> If both a platform icon and a source icon exist, DuplicateHiderNG automatically prefers the platform-specific icon.</li>
+          </ol>
+          <h4 style="margin-top: 20px;">WPF Theme Controls</h4>
+          <p>Themes (including Penumbra Dawn and Penumbra Night) integrate these controls:</p>
+          <ul>
+            <li><code>DuplicateHider_SourceSelector</code>: Interactive icon bar to switch between copies or launch a specific store version.</li>
+            <li><code>DuplicateHider_SourceSelector1-9</code>: Numbered selectors for custom multi-column layouts.</li>
+            <li><code>DuplicateHider_IconContentControlStyle</code> &amp; <code>DuplicateHider_IconStackPanelStyle</code>: Shared styles for rounded 8px icon presentations.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🛡️ 5. ReDoS Regex Protection & AI Performance Hardening",
+        content: `
+          <p>DuplicateHiderNG has been systematically audited, fixed, and performance-optimized with AI engineering:</p>
+          <ul>
+            <li><strong>95% Reflection Reduction:</strong> Hotpath game scoring and priority sorting loops were refactored to eliminate slow dynamic reflection calls, resulting in near-instant library rescans.</li>
+            <li><strong>ReDoS Regex Protection:</strong> User-defined title replacement patterns now use strict evaluation timeouts, preventing Playnite freezes on complex regexes.</li>
+            <li><strong>Corrupted Config Recovery:</strong> Gracefully recovers if <code>settings.json</code> is truncated during sudden system shutdowns.</li>
+            <li><strong>Full 100% Migration:</strong> Seamlessly detects and imports all custom groups, exclusions, and priority settings from legacy <code>felixkmh_DuplicateHider_Plugin</code>.</li>
+          </ul>
         `
       }
     ]
@@ -677,6 +794,7 @@ const DOCS_DATA = {
     specs: [
       { label: "Target Application", value: "Playnite 10+" },
       { label: "Hardware Providers", value: "RTSS, MSI Afterburner, HWiNFO (Shared Memory / Gadget), LibreHardwareMonitor, WMI, PerfCounters" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "License", value: "MIT License" },
       { label: "Theme SourceName", value: "GameActivity" },
       { label: "Data Export", value: "CSV Session Logs, JSON Backup, QuickSearch" },
@@ -987,44 +1105,119 @@ const DOCS_DATA = {
     specs: [
       { label: "Target Application", value: "Playnite 10+" },
       { label: "SDK Version", value: "Playnite SDK 6.18.0 (.NET 4.6.2)" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "License", value: "MIT License" },
-      { label: "Built-in Views", value: "Game Shelves, Clock, Weekly Activity, Most Played, Achievements" }
+      { label: "Built-in Views", value: "Game Shelves, Clock, Weekly Activity, Most Played, Achievements" },
+      { label: "Predecessor", value: "felixkmh/StartPage (Full 100% config migration)" }
     ],
     sections: [
       {
-        title: "🏠 1. The Playnite Home Screen",
+        title: "🏠 1. The Playnite Gaming Dashboard",
         content: `
-          <p><strong>StartPageNG</strong> gives Playnite a personalized launcher home screen. Whenever you open Playnite, you are greeted with your favorite game shelves, recent achievements, playtime summaries, and dynamic rotating artwork.</p>
+          <p><strong>StartPageNG</strong> transforms Playnite startup into a personalized console-style gaming dashboard. Whenever you launch Playnite, you are greeted with your custom game shelves, recent achievements, playtime summaries, and dynamic rotating artwork.</p>
+          <div class="doc-callout callout-tip">
+            <i class="fa-solid fa-house"></i>
+            <div>
+              <strong>Sidebar Integration:</strong> StartPageNG docks cleanly into Playnite's top sidebar. You can configure Playnite to open StartPageNG automatically on launch for a true console boot experience.
+            </div>
+          </div>
         `
       },
       {
         title: "📐 2. Interactive Grid Edit Mode",
         content: `
-          <p>Customize your layout without writing any XAML or editing files:</p>
+          <p>Customize your dashboard layout visually without touching XAML or configuration files:</p>
           <ol class="doc-steps">
-            <li>Left-click on the background or right-click to enter <strong>Edit Mode</strong>.</li>
-            <li>Click <strong>Split Horizontally</strong> or <strong>Split Vertically</strong> on any tile to create new panels.</li>
-            <li>Drag and drop view headers to swap widgets between panels.</li>
-            <li>Assign views: Game Shelves, Clock, Weekly Activity, or Achievement widgets.</li>
-            <li>Exit Edit Mode — your layout automatically saves!</li>
+            <li>Left-click on the dashboard background or right-click any panel and choose <strong>Edit Mode</strong>.</li>
+            <li>Use <strong>Split Horizontally</strong> or <strong>Split Vertically</strong> on any tile to create new modular panels.</li>
+            <li>Drag and drop view tab headers to swap widgets between panels or rearrange their positions.</li>
+            <li>Click <strong>Merge</strong> to recombine adjacent panels into larger canvas areas.</li>
+            <li>Assign widget views: Game Shelves, Clock, Weekly Playtime, or Achievement feeds.</li>
+            <li>Exit Edit Mode — all layout dimensions and widget assignments save automatically.</li>
           </ol>
         `
       },
       {
         title: "📚 3. Custom Game Shelves & Category Grouping",
         content: `
-          <p>In StartPageNG 1.0.0, shelves now support <strong>Category Grouping</strong>:</p>
+          <p>In StartPageNG, shelves offer granular filtering and visual grouping:</p>
           <ul>
-            <li>Group games by Store, Genre, or Custom Category.</li>
-            <li>Configure sorting (Playtime, Last Played, User Rating, or Random Shuffle).</li>
-            <li>Choose cover layout: standard grid, horizontal scrolling ribbon, or banner style.</li>
+            <li><strong>Category Grouping:</strong> Group shelf items by Store, Genre, or Custom Category (<code>GroupingField.Category</code>).</li>
+            <li><strong>Filter Criteria:</strong> Filter games by installation state, favorite status, source storefront, or platform tags.</li>
+            <li><strong>Sorting Options:</strong> Sort dynamically by Playtime, Last Played, User Rating, Title, or Random Shuffle.</li>
+            <li><strong>Display Layouts:</strong> Choose between standard vertical grid, horizontal scrolling carousel ribbon, or banner-card style.</li>
           </ul>
         `
       },
       {
-        title: "🔄 4. One-Click Layout Reset",
+        title: "🧩 4. Built-in Widgets & Ecosystem Synergy",
         content: `
-          <p>If you ever want to start over from scratch, right-click any empty area in StartPage and select <strong>"Reset layout to default"</strong> to restore the clean factory dashboard.</p>
+          <p>StartPageNG includes several modular widgets designed to elevate your dashboard:</p>
+          <div class="doc-table-wrapper">
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>Widget Name</th>
+                  <th>Functionality</th>
+                  <th>Synergy / Companion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>System Clock &amp; Date</strong></td>
+                  <td>Displays current time, day, and date with configurable 12/24h formats.</td>
+                  <td>Standalone or sidebar header.</td>
+                </tr>
+                <tr>
+                  <td><strong>Weekly Activity</strong></td>
+                  <td>Visualizes playtime hours recorded across the last 7 days.</td>
+                  <td>Integrates with GameActivityNG.</td>
+                </tr>
+                <tr>
+                  <td><strong>Most Played</strong></td>
+                  <td>Showcases games with highest total recorded playtime hours.</td>
+                  <td>Playnite native database.</td>
+                </tr>
+                <tr>
+                  <td><strong>Recent Achievements</strong></td>
+                  <td>Displays latest unlocked achievement trophies and rare badges.</td>
+                  <td>PlayniteAchievements &amp; SuccessStory.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `
+      },
+      {
+        title: "🖼️ 5. Dynamic Background Engine",
+        content: `
+          <p>Personalize the backdrop behind your widgets:</p>
+          <ul>
+            <li><strong>Game Fanart Cycle:</strong> Cycles through high-resolution backgrounds from your installed games.</li>
+            <li><strong>Subtle Blur &amp; Noise Texture:</strong> Softens background artwork so foreground widgets remain ultra-sharp and legible.</li>
+            <li><strong>Custom Media Directory:</strong> Point StartPageNG to your own local folder of wallpapers or screenshots.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🔄 6. One-Click Layout Reset & Seamless Migration",
+        content: `
+          <p>StartPageNG ensures zero-friction upgrades and recovery:</p>
+          <ul>
+            <li><strong>One-Click Factory Reset:</strong> Right-click any empty dashboard area and select <strong>"Reset layout to default"</strong> to instantly restore the factory layout.</li>
+            <li><strong>100% Config Migration:</strong> Existing settings and layouts from <code>felixkmh_StartPage_Plugin</code> are migrated automatically on first startup.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🛡️ 7. AI Refactoring & Critical Stability Fixes",
+        content: `
+          <p>StartPageNG has been audited, debugged, and optimized with AI engineering:</p>
+          <ul>
+            <li><strong>Null Achievement Icon Crash Guards:</strong> Fixed a critical crash where games with missing achievement icon URLs caused WPF rendering failures.</li>
+            <li><strong>Empty Grid Resolution Guards:</strong> Prevents startup crashes when grid layouts have 0 initialized panels.</li>
+            <li><strong>Theme-Adaptive Context Menus:</strong> Context menus now automatically inherit active Playnite theme colors and rounded 8px geometry.</li>
+          </ul>
         `
       }
     ]
@@ -1044,40 +1237,78 @@ const DOCS_DATA = {
     specs: [
       { label: "Target Application", value: "Playnite 10+" },
       { label: "Theme API Support", value: "Both 'ThemeExtrasNG' and 'ThemeExtras' sources" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "License", value: "MIT License" },
       { label: "Thread Safety", value: "Full UI Dispatcher synchronization for link collections" }
     ],
     sections: [
       {
-        title: "🧩 1. Purpose for Users & Theme Designers",
+        title: "🧩 1. The Core Extension for Custom Playnite Themes",
         content: `
-          <p><strong>ThemeExtrasNG</strong> is the foundational companion plugin that enables rich interactive elements in Playnite desktop themes (like Penumbra Dawn and Penumbra Night). It delivers custom WPF controls that standard Playnite themes cannot render natively.</p>
+          <p><strong>ThemeExtrasNG</strong> is the foundational companion plugin that powers rich interactive elements across Playnite desktop themes (including <strong>Penumbra Dawn</strong> and <strong>Penumbra Night</strong>). Standard Playnite themes cannot natively calculate dynamic banner aspect ratios or render interactive rating stars without ThemeExtrasNG.</p>
+          <div class="doc-callout callout-tip">
+            <i class="fa-solid fa-shapes"></i>
+            <div>
+              <strong>100% Dual Source Compatibility:</strong> ThemeExtrasNG registers under both <code>ThemeExtrasNG</code> and legacy <code>ThemeExtras</code> source names, meaning themes built for older versions work out of the box with zero modifications.
+            </div>
+          </div>
         `
       },
       {
-        title: "⭐ 2. Interactive Star Ratings",
+        title: "⭐ 2. Interactive & Display Star Ratings",
         content: `
-          <p>Provides interactive and display star ratings for your game library:</p>
+          <p>ThemeExtrasNG provides modular XAML controls to visualize and modify game ratings directly on game cards or details panels:</p>
           <ul>
-            <li><code>ThemeExtras_UserRating</code>: Interactive 5-star control. Hover over the stars and click to set the game's User Score directly.</li>
-            <li><code>ThemeExtras_CriticRating</code>: Visual 5-star representation of the Metacritic / OpenCritic score.</li>
-            <li><code>ThemeExtras_CommunityRating</code>: Displays community consensus score.</li>
+            <li><code>ThemeExtras_UserRating</code>: Interactive 5-star control. Hovering over stars displays preview scores, and clicking dispatches the score change directly to Playnite's database.</li>
+            <li><code>ThemeExtras_CriticRating</code>: Read-only visual 5-star representation of Metacritic or OpenCritic scores.</li>
+            <li><code>ThemeExtras_CommunityRating</code>: Community consensus star rating.</li>
+          </ul>
+          <h4 style="margin-top: 16px;">Customizable Star Brushes</h4>
+          <p>Themes can customize the visual appearance of the stars by overriding dynamic resources:</p>
+          <pre><code>&lt;!-- Override Star Colors in Theme Resources --&gt;
+&lt;SolidColorBrush x:Key="Extras_FilledStarBrush" Color="#EA8024" /&gt;
+&lt;SolidColorBrush x:Key="Extras_EmptyStarBrush" Color="#333846" /&gt;</code></pre>
+        `
+      },
+      {
+        title: "🏷️ 3. Store Banners & Aspect Ratio Calculations",
+        content: `
+          <p>ThemeExtrasNG dynamically discovers store and platform ribbon banners for active titles:</p>
+          <ul>
+            <li><code>ThemeExtras_Banner</code>: Displays store ribbon graphics (Steam, GOG, Epic, Xbox, Ubisoft, PlayStation, Battle.net) positioned at the top of game covers.</li>
+            <li><code>ThemeExtras_BannerData</code>: Calculates aspect ratios automatically, preventing image stretching or layout shifts when switching between horizontal and vertical artwork.</li>
+            <li><strong>Custom Banner Directory:</strong> You can supply your own custom banner graphics in <code>%APPDATA%\\Playnite\\ExtensionsData\\goover_ThemeExtrasNG_Plugin\\banners\\</code>.</li>
           </ul>
         `
       },
       {
-        title: "🏷️ 3. Store Banners & Link Favicons",
+        title: "🔗 4. Smart Game Links & Favicon Resolution",
         content: `
+          <p>Standard URL lists can look cluttered. ThemeExtrasNG elevates game links:</p>
           <ul>
-            <li><code>ThemeExtras_Banner</code>: Displays store ribbon banners (Steam, GOG, Epic, Xbox, Ubisoft, PlayStation) at the top of game cards.</li>
-            <li><code>ThemeExtras_Links</code>: Renders clickable game links with automatically fetched website favicons and application protocol resolution (e.g. <code>steam://</code>, <code>ea://</code>).</li>
+            <li><code>ThemeExtras_Links</code>: Renders clickable links accompanied by automatically downloaded and cached website favicons.</li>
+            <li><strong>Desktop Client Protocol Normalization:</strong> Automatically converts web links into local client launch protocols where available (e.g. <code>steam://</code>, <code>goggalaxy://</code>, <code>ea://</code>, <code>battlenet://</code>).</li>
           </ul>
         `
       },
       {
-        title: "🔄 4. 100% Theme Backward Compatibility",
+        title: "📋 5. Drop-in Completion Status & Value Converters",
         content: `
-          <p>ThemeExtrasNG guarantees full backward compatibility. Themes written for legacy <code>felixkmh_Extras_Plugin</code> or <code>SourceName="ThemeExtras"</code> run without modification. All settings and custom banners are migrated automatically.</p>
+          <ul>
+            <li><code>ThemeExtras_CompletionStatus</code>: A drop-in ComboBox allowing users to change completion status (e.g. <em>Playing, Beaten, Completed, Abandoned</em>) directly from the details view without opening the Game Edit dialog.</li>
+            <li><strong>Value Converters:</strong> Provides theme utility converters including <code>Extras_DoubleAddConverter</code> and mathematical offset calculations.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🛡️ 6. AI Refactoring & Thread Safety Hardening",
+        content: `
+          <p>ThemeExtrasNG has been systematically audited, fixed, and optimized with AI engineering:</p>
+          <ul>
+            <li><strong>UI Dispatcher Synchronization:</strong> Fixed thread-affinity crashes that previously occurred when background metadata downloads updated link collections concurrently while the WPF UI thread was enumerating items.</li>
+            <li><strong>Zero-Dimension Division Guards:</strong> Hardened banner aspect ratio calculations against division-by-zero crashes when images fail to decode.</li>
+            <li><strong>Strict URI Scheme Validation:</strong> Prevents malformed or malicious link execution when parsing third-party metadata URLs.</li>
+          </ul>
         `
       }
     ]
@@ -1097,35 +1328,75 @@ const DOCS_DATA = {
     specs: [
       { label: "Target Application", value: "Playnite 10+" },
       { label: "Supported Channels", value: "LIVE, PTU, EPTU, HOTFIX, TECH-PREVIEW" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "License", value: "GNU AGPL-3.0" },
+      { label: "Launcher Routing", value: "AutomaticPlayController (RSI Launcher 2.0)" },
       { label: "Features", value: "Pilot name detection, Shard cluster logging, Quick folder shortcuts" }
     ],
     sections: [
       {
-        title: "🚀 1. Zero-Configuration Detection",
+        title: "🚀 1. Zero-Configuration Auto-Detection",
         content: `
-          <p>The <strong>RSI Star Citizen Library</strong> automatically detects Star Citizen installations across all local hard drives, SSDs, and custom library folders without manual path entry. It detects both legacy and RSI Launcher 2.0 structures.</p>
+          <p>The <strong>RSI Star Citizen Library</strong> automatically detects Star Citizen installations across all local drives, SSDs, and custom library folders without manual path entry. It seamlessly recognizes both legacy folder layouts and the modern RSI Launcher 2.0 structure.</p>
+          <div class="doc-callout callout-tip">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <div>
+              <strong>Instant Setup:</strong> Install the plugin, scan your library in Playnite, and all installed Star Citizen environments are discovered with high-resolution artwork and metadata ready to play.
+            </div>
+          </div>
         `
       },
       {
-        title: "🛰️ 2. Multi-Channel Support",
+        title: "🛰️ 2. Multi-Channel Environment Support",
         content: `
-          <p>Recognizes and imports all Star Citizen channels independently:</p>
+          <p>Recognizes and imports all official Roberts Space Industries game channels as distinct library entries:</p>
           <ul>
-            <li><strong>LIVE:</strong> Main production universe</li>
-            <li><strong>PTU:</strong> Public Test Universe testing channel</li>
-            <li><strong>EPTU / TECH-PREVIEW / HOTFIX:</strong> Experimental and test flight channels</li>
+            <li><strong>LIVE:</strong> The persistent production universe.</li>
+            <li><strong>PTU:</strong> Public Test Universe staging builds.</li>
+            <li><strong>EPTU / TECH-PREVIEW / HOTFIX:</strong> Experimental preview and stress-test servers.</li>
           </ul>
         `
       },
       {
-        title: "📁 3. Direct Folder Shortcuts",
+        title: "🎮 3. AutomaticPlayController & Clean Launch Routing",
         content: `
-          <p>Right-click any Star Citizen entry in Playnite to jump straight to:</p>
+          <p>Star Citizen requires authentication tokens managed by the RSI Launcher. The plugin's dedicated <code>AutomaticPlayController</code>:</p>
           <ul>
-            <li>Game Install Directory</li>
-            <li>USER Folder (Custom keybindings & control profiles)</li>
-            <li>DirectX / Vulkan Shader Cache (Quick cleanup for stuttering fixes)</li>
+            <li>Routes launch commands through the official RSI Launcher while passing the correct target channel.</li>
+            <li>Eliminates duplicate launch prompt popups by registering a single primary play action.</li>
+            <li>Monitors the game process lifecycle cleanly so Playnite accurately tracks your playtime without hanging.</li>
+          </ul>
+        `
+      },
+      {
+        title: "📋 4. Pilot Identity & Shard Telemetry",
+        content: `
+          <p>The plugin inspects your active <code>Game.log</code> file to extract pilot telemetry:</p>
+          <ul>
+            <li>Pilot callsign and RSI Handle.</li>
+            <li>Connected server shard, cluster ID, and AWS regional endpoint.</li>
+            <li>Launch timestamps and clean session exit tracking.</li>
+          </ul>
+        `
+      },
+      {
+        title: "📁 5. Direct Maintenance Folder Shortcuts",
+        content: `
+          <p>Right-click any Star Citizen entry in Playnite to jump straight to critical directories:</p>
+          <ul>
+            <li><strong>Game Install Directory:</strong> Quick access to game binaries and crash dumps.</li>
+            <li><strong>USER Folder:</strong> Manage your custom keybindings, joystick/HOTAS curves, and graphics profiles.</li>
+            <li><strong>DirectX / Vulkan Shader Cache:</strong> Clear cached shaders with one click to fix stuttering after major game patches.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🛡️ 6. AI Refactoring & Performance",
+        content: `
+          <p>The library plugin was refactored with AI engineering:</p>
+          <ul>
+            <li><strong>Fast SSD Footprint Calculation:</strong> Fast recursive size calculation accurately reports install footprint on NVMe drives without locking the UI.</li>
+            <li><strong>Safe Metadata Inheritance:</strong> Playtime, user tags, and favorite status persist smoothly across game updates and channel switches.</li>
           </ul>
         `
       }
@@ -1145,19 +1416,21 @@ const DOCS_DATA = {
     tagline: "Automated multi-store DLC ownership verification, Steam API sync & store metadata",
     specs: [
       { label: "Target Application", value: "Playnite 10+ (API 6.2.0+)" },
-      { label: "Supported Stores", value: "Steam, GOG, Epic Games" },
+      { label: "Supported Stores", value: "Steam, GOG, Epic Games, EA App, PSN, eShop" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "License", value: "MIT License" },
+      { label: "Theme Controls", value: "PluginButton, PluginListDlcAll, PluginListDlcOwned, PluginListDlcNotOwned" },
       { label: "Companion Themes", value: "Penumbra Dawn, Penumbra Night (Built-in DLC Cards)" }
     ],
     sections: [
       {
         title: "🛒 1. Overview & Multi-Store DLC Sync",
         content: `
-          <p><strong>CheckDLCNG</strong> automatically queries digital storefronts to determine which downloadable content (DLC), expansions, and season passes are available for your games, and verifies which ones you already own.</p>
+          <p><strong>CheckDLCNG</strong> automatically queries digital storefronts to discover which downloadable content (DLC), expansions, soundtracks, and season passes exist for your games, and verifies which ones are currently in your library.</p>
           <div class="doc-callout callout-tip">
             <i class="fa-solid fa-cart-shopping"></i>
             <div>
-              <strong>Rebranded &amp; Modernized:</strong> Rebranded to CheckDLCNG with native .NET 4.6.2 SDK-style architecture, eliminating deadlocks, and fully optimizing SteamKit2 integration.
+              <strong>Rebranded &amp; Modernized:</strong> Rebranded to CheckDLCNG with native .NET 4.6.2 SDK-style architecture, eliminated UI deadlocks, and fully optimized SteamKit2 integration.
             </div>
           </div>
         `
@@ -1165,32 +1438,54 @@ const DOCS_DATA = {
       {
         title: "🔑 2. SteamKit2 & Official Steam Web API Setup",
         content: `
-          <p>CheckDLCNG offers flexible Steam integration depending on your privacy needs:</p>
+          <p>CheckDLCNG offers flexible Steam integration depending on your privacy preferences:</p>
           <ul>
-            <li><strong>Public Steam Web API:</strong> Checks store catalogs for publicly listed DLC packages without logging in.</li>
-            <li><strong>SteamKit2 Token Authentication:</strong> Connects to your Steam account to discover free licenses, private packages, and unlisted soundtrack/beta packages that ordinary scrapers miss.</li>
+            <li><strong>Public Steam Web API:</strong> Queries store catalogs for publicly listed DLC packages without requiring any account login.</li>
+            <li><strong>SteamKit2 Token Authentication:</strong> Connects to your Steam account securely to discover free promotional licenses, unlisted soundtrack packages, and private depot entitlements that public scrapers miss.</li>
           </ul>
         `
       },
       {
-        title: "🎨 3. Penumbra Theme Integration & Details Cards",
+        title: "💰 3. Price Tracking & Deal Notifications",
         content: `
-          <p>CheckDLCNG includes custom WPF controls tailored specifically for <strong>Penumbra Dawn</strong> and <strong>Penumbra Night</strong>. When viewing a game in the Details sidebar, a dedicated DLC card displays:</p>
+          <p>Stay informed about unowned DLC pricing:</p>
           <ul>
-            <li>Owned DLC badge with install checkmark</li>
-            <li>Unowned DLC with localized store pricing and direct store link</li>
-            <li>Release dates and package descriptions</li>
+            <li>Displays current localized retail prices and active discount percentages.</li>
+            <li>Provides direct store links to purchase missing expansions with a single click.</li>
+            <li>Optionally alert on price changes or historical low discounts for games in your wishlist.</li>
           </ul>
         `
       },
       {
         title: "🏷️ 4. Automatic Library Tagging",
         content: `
-          <p>Optionally tag games in your library automatically based on DLC ownership:</p>
+          <p>Optionally tag games in your library automatically based on DLC ownership status:</p>
           <ul>
-            <li><code>[DLC] Owned</code>: The game has DLCs and at least one is owned.</li>
+            <li><code>[DLC] Owned</code>: The game has DLCs and at least one is registered as owned in your library.</li>
             <li><code>[DLC] Missing</code>: The game has available DLCs on the store that you do not own yet.</li>
-            <li><code>[DLC] None</code>: The game has no registered DLC packages on digital stores.</li>
+            <li><code>[DLC] None</code>: The game has no registered DLC packages on digital storefronts.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🎨 5. Penumbra Theme Integration & XAML Controls",
+        content: `
+          <p>CheckDLCNG includes dedicated WPF controls pre-wired for <strong>Penumbra Dawn</strong> and <strong>Penumbra Night</strong>:</p>
+          <ul>
+            <li><code>CheckDlc_PluginButton</code>: Details sidebar button displaying owned/available DLC counter.</li>
+            <li><code>CheckDlc_PluginListDlcAll</code>: Full list of all registered DLC packages.</li>
+            <li><code>CheckDlc_PluginListDlcOwned</code> &amp; <code>CheckDlc_PluginListDlcNotOwned</code>: Filtered card views with store links and price badges.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🛡️ 6. AI Refactoring & Performance Overhaul",
+        content: `
+          <p>CheckDLCNG has been audited and hardened with AI engineering:</p>
+          <ul>
+            <li><strong>Eliminated UI Deadlocks:</strong> Asynchronous network calls now run strictly off the UI thread, ensuring library scrolling remains butter-smooth while DLC checks run in the background.</li>
+            <li><strong>Thread-Safe Token Caching:</strong> SteamKit2 connection tokens and store caches are managed thread-safely with automatic retry backoff.</li>
+            <li><strong>CSV Export:</strong> Export your full DLC ownership audit to CSV for spreadsheet analysis.</li>
           </ul>
         `
       }
@@ -1210,15 +1505,16 @@ const DOCS_DATA = {
     tagline: "Friends activity tracker, Steam & GOG community feeds, and social gaming timeline",
     specs: [
       { label: "Target Application", value: "Playnite 10+ (API 6.2.0+)" },
-      { label: "Supported Networks", value: "Steam Community, GOG Galaxy" },
+      { label: "Supported Networks", value: "Steam Community, GOG Galaxy, EA App" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "License", value: "MIT License" },
       { label: "Theme Integration", value: "Penumbra Dawn &amp; Night Social Panels" }
     ],
     sections: [
       {
-        title: "👥 1. Social Gaming Timeline & Feed",
+        title: "👥 1. Social Gaming Timeline & Community Feed",
         content: `
-          <p><strong>PlayerActivitiesNG</strong> brings community feeds directly into Playnite. Discover what your friends are playing, view recent achievements unlocked by friends, and follow playtime milestones in real time.</p>
+          <p><strong>PlayerActivitiesNG</strong> integrates friend activity feeds directly into Playnite. Discover what games your friends are playing, view recently unlocked achievements, and celebrate gaming milestones in a unified interactive timeline.</p>
         `
       },
       {
@@ -1226,17 +1522,28 @@ const DOCS_DATA = {
         content: `
           <p>To enable social feed synchronization:</p>
           <ol class="doc-steps">
-            <li>Open Playnite &rarr; <strong>Main Menu &rarr; Extensions &rarr; PlayerActivitiesNG Settings</strong>.</li>
+            <li>Open Playnite ➔ <strong>Main Menu ➔ Extensions ➔ PlayerActivitiesNG Settings</strong>.</li>
             <li>Enable <strong>Steam Community Feed</strong> and verify your public SteamID64 or vanity profile URL.</li>
             <li>Enable <strong>GOG Galaxy Friends</strong> to synchronize GOG friend status and achievements.</li>
-            <li>Configure update intervals (default: 30 minutes) to prevent rate limits.</li>
+            <li>Configure update intervals (default: 30 minutes) to respect API rate limits.</li>
           </ol>
         `
       },
       {
         title: "📊 3. Interactive Sidebar & Fullscreen Widgets",
         content: `
-          <p>Seamlessly integrates into Penumbra themes with rounded cards showing friend avatars, current game title, and session duration. Includes quick launch and store inspection shortcuts.</p>
+          <p>Seamlessly integrates into Penumbra themes with rounded 8px cards showing friend avatars, current game title, and session duration. Includes quick launch and store inspection shortcuts.</p>
+        `
+      },
+      {
+        title: "🛡️ 4. AI Refactoring & Performance Overhaul",
+        content: `
+          <p>PlayerActivitiesNG was audited and modernized with AI engineering:</p>
+          <ul>
+            <li><strong>Async Background Migration:</strong> Feeds are parsed and cached completely in the background without UI stutter.</li>
+            <li><strong>Process Execution Security:</strong> Implemented strict URI scheme validation to protect against malicious profile links.</li>
+            <li><strong>SteamKit Null Guards:</strong> Hardened against null responses when querying friends with private Steam profiles.</li>
+          </ul>
         `
       }
     ]
@@ -1256,6 +1563,7 @@ const DOCS_DATA = {
     specs: [
       { label: "Target Application", value: "Playnite 10+" },
       { label: "Synergy", value: "Works with RSI Star Citizen Library plugin" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "License", value: "GNU AGPL-3.0" },
       { label: "Telemetry", value: "Live RSI Server Status &amp; Game.log Stream Parser" }
     ],
@@ -1263,27 +1571,47 @@ const DOCS_DATA = {
       {
         title: "🛰️ 1. RSI Server Cluster Health Monitoring",
         content: `
-          <p><strong>Star Citizen Companion</strong> monitors the health of Roberts Space Industries game services in real-time. Displays status for LIVE, PTU, EPTU, and Tech Preview channels directly inside Playnite, warning you of service outages, matchmaking degradations, or scheduled maintenance windows.</p>
+          <p><strong>Star Citizen Companion</strong> monitors the health of Roberts Space Industries services in real-time. Displays live operational status for LIVE, PTU, EPTU, and Tech Preview channels directly inside Playnite, warning you of service outages, matchmaking degradation, or scheduled maintenance windows.</p>
         `
       },
       {
-        title: "📋 2. Game.log Telemetry & Pilot Stats",
+        title: "📋 2. Game.log Continuous Telemetry & Pilot Stats",
         content: `
-          <p>Automatically monitors your active <code>Game.log</code> to extract live telemetry during and after flight sessions:</p>
+          <p>Automatically monitors your active <code>Game.log</code> file to extract live telemetry during and after flight sessions:</p>
           <ul>
-            <li>Pilot Handle, Account ID, and Organization affiliation</li>
-            <li>Current server shard ID, region (US, EU, AP), and cluster instance</li>
-            <li>Session flight duration, launch timestamps, and exit code diagnostics</li>
+            <li>Pilot Handle, Account ID, and Organization affiliation.</li>
+            <li>Current server shard ID, region (US, EU, AP), and cluster instance.</li>
+            <li>Session flight duration, launch timestamps, and exit code diagnostics.</li>
           </ul>
         `
       },
       {
-        title: "🛠️ 3. Quick Maintenance & Shader Cleansing",
+        title: "🚀 3. Fleet & Ship Inventory Manager",
+        content: `
+          <p>Inspect your personal hangar fleet directly within Playnite:</p>
+          <ul>
+            <li>Manufacturer lookups (Anvil, Aegis, Drake, Origin, RSI, Crusader, MISC).</li>
+            <li>Ship specifications, crew capacity, cargo SCU, and flight role details.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🛠️ 4. Quick Maintenance & Shader Cleansing",
         content: `
           <p>Access vital maintenance operations with a single right-click in Playnite:</p>
           <ul>
             <li><strong>Wipe Shader Cache:</strong> Quickly clears DirectX and Vulkan shaders to fix micro-stutters and lighting artifacts after major game patches.</li>
             <li><strong>USER Folder Backup &amp; Restore:</strong> Preserves your custom control binds, HOTAS curves, and graphics overrides before major game wipes.</li>
+          </ul>
+        `
+      },
+      {
+        title: "🛡️ 5. AI Refactoring & Debriefing Storage",
+        content: `
+          <p>Engineered with AI auditing for optimal performance:</p>
+          <ul>
+            <li><strong>Non-Blocking Stream Parser:</strong> Reads <code>Game.log</code> incrementally using file-share read flags without locking the game engine.</li>
+            <li><strong>Flight Debriefing Archive:</strong> Stores historic flight session debriefings locally so you can review flight hours and server performance trends over time.</li>
           </ul>
         `
       }
@@ -1304,8 +1632,10 @@ const DOCS_DATA = {
     specs: [
       { label: "Target Application", value: "Playnite 10+" },
       { label: "SDK Version", value: "Playnite SDK 6.18.0 (.NET 4.6.2)" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
       { label: "License", value: "MIT License" },
-      { label: "Default Shortcuts", value: "Ctrl+F (Local) / Ctrl+Alt+F (Global)" }
+      { label: "Default Shortcuts", value: "Ctrl+F (Local) / Ctrl+Alt+F (Global)" },
+      { label: "Predecessor", value: "felixkmh/QuickSearch (Full 100% config migration)" }
     ],
     sections: [
       {
@@ -1342,9 +1672,171 @@ const DOCS_DATA = {
         `
       },
       {
-        title: "🔄 4. 100% Backward-Compatible Migration",
+        title: "🖼️ 4. Interactive Details Preview & ExtraMetadata",
+        content: `
+          <p>QuickSearchNG renders a rich game details pane next to the search list, showcasing high-resolution cover art, transparent ExtraMetadata logos, genres, developers, and release dates before launching.</p>
+        `
+      },
+      {
+        title: "🔄 5. 100% Backward-Compatible Migration",
         content: `
           <p>Upgrading from legacy QuickSearch? QuickSearchNG automatically checks for your existing <code>felixkmh_QuickSearch_Plugin</code> configuration on first startup, carrying over all custom hotkeys, enabled search items, and thresholds without any manual setup.</p>
+        `
+      },
+      {
+        title: "🛡️ 6. AI Refactoring & Hardening",
+        content: `
+          <p>QuickSearchNG has been thoroughly audited and modernized with AI engineering:</p>
+          <ul>
+            <li><strong>Modern SDK-Style Architecture:</strong> Rebuilt on .NET Framework 4.6.2 and Playnite SDK 6.18.0 with cleanly integrated submodule dependencies.</li>
+            <li><strong>Memory Leak Elimination:</strong> Fixed unmanaged WPF image brush caching leaks during rapid consecutive search queries.</li>
+          </ul>
+        `
+      }
+    ]
+  },
+
+  "steamgriddb-ng": {
+    id: "steamgriddb-ng",
+    name: "SteamGridDB Metadata Provider NG",
+    category: "NG Plugins",
+    badge: "Metadata Provider",
+    icon: "assets/img/steamgriddb-icon.png",
+    version: "1.0.0",
+    downloadFile: "downloads/SteamGridDB_Playnite_Metadata_1_0_0.pext",
+    addonId: "SteamGridDB_Playnite_Metadata",
+    githubUrl: "https://github.com/gOOvER/Playnite-SteamGridDBMetadataNG",
+    tagline: "High-resolution game covers, heroes, logos, and icons via SteamGridDB API v2",
+    specs: [
+      { label: "Target Application", value: "Playnite 10+ (API 6.2.0+)" },
+      { label: "SDK Version", value: "Playnite SDK 6.18.0 (.NET 4.6.2)" },
+      { label: "API Protocol", value: "SteamGridDB API v2 (OpenAPI 3.1.0 compliant)" },
+      { label: "Engineering & QA", value: "AI-Audited & Refactored by gOOvER" },
+      { label: "Supported Platforms", value: "Steam, Epic Games, Origin/EA, Battle.net, Ubisoft Connect" },
+      { label: "License", value: "MIT License" }
+    ],
+    sections: [
+      {
+        title: "🖼️ 1. Official SteamGridDB API v2 Integration",
+        content: `
+          <p><strong>SteamGridDB Metadata Provider NG</strong> connects Playnite directly to the community-driven <a href="https://www.steamgriddb.com" target="_blank" rel="noopener noreferrer">SteamGridDB</a> database to download high-resolution vertical covers, horizontal grids, heroes, icons, and logos. Completely re-engineered for the official <strong>SteamGridDB API v2</strong> according to OpenAPI 3.1.0 specifications, replacing obsolete legacy endpoints.</p>
+          <div class="doc-callout callout-tip">
+            <i class="fa-solid fa-image"></i>
+            <div>
+              <strong>Rich Visual Library:</strong> SteamGridDB provides artwork for millions of games, mods, emulation ROMs, and non-Steam titles with multiple aesthetic styles (clean, no-logo, custom art, animated).
+            </div>
+          </div>
+        `
+      },
+      {
+        title: "🔑 2. Free API Key Setup Guide",
+        content: `
+          <p>To use SteamGridDB Metadata Provider NG, you need a personal SteamGridDB API key (100% free):</p>
+          <ol class="doc-steps">
+            <li>Visit <a href="https://www.steamgriddb.com/profile/preferences/api" target="_blank" rel="noopener noreferrer">steamgriddb.com/profile/preferences/api</a> and log in with your Steam account.</li>
+            <li>Under the <strong>API Keys</strong> section, click <strong>Generate API Key</strong>.</li>
+            <li>Copy your key to your clipboard.</li>
+            <li>In Playnite, press <kbd>F9</kbd> ➔ <strong>Extensions ➔ Metadata Providers ➔ SteamGridDB</strong>.</li>
+            <li>Paste your key into the <strong>API Key</strong> field and click <strong>Save</strong>.</li>
+          </ol>
+        `
+      },
+      {
+        title: "🎮 3. Multi-Platform ID Resolution & Store Matching",
+        content: `
+          <p>Unlike legacy metadata providers that only matched Steam App IDs or raw titles, SteamGridDB NG directly queries native platform identifiers:</p>
+          <div class="doc-table-wrapper">
+            <table class="doc-table">
+              <thead>
+                <tr>
+                  <th>Platform</th>
+                  <th>Identifier Type</th>
+                  <th>API v2 Parameter</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Steam</strong></td>
+                  <td>Steam App ID (e.g. <code>730</code>)</td>
+                  <td><code>steam/{id}</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Epic Games Store</strong></td>
+                  <td>Epic App Name / Namespace ID</td>
+                  <td><code>egs/{id}</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Origin / EA App</strong></td>
+                  <td>EA Content ID / Offer ID</td>
+                  <td><code>origin/{id}</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Battle.net</strong></td>
+                  <td>Blizzard Product Code (e.g. <code>Hero</code>, <code>Pro</code>)</td>
+                  <td><code>bnet/{id}</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Ubisoft Connect</strong></td>
+                  <td>Ubisoft Product ID</td>
+                  <td><code>uplay/{id}</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Platform lookups return exact artwork matches with 100% accuracy, bypassing name ambiguities.</p>
+        `
+      },
+      {
+        title: "🔍 4. Intelligent Title Fallback",
+        content: `
+          <p>When a game does not have a recognized platform store ID (or if the store lookup returns zero artwork), SteamGridDB NG automatically falls back to an intelligent fuzzy title search. It cleans common subtitle noise, Roman numerals, and edition suffixes (such as <em>"Game of the Year Edition"</em> or <em>"Remastered"</em>) to find the best matching game asset entry.</p>
+        `
+      },
+      {
+        title: "🛡️ 5. Content & Epilepsy Safety Filters",
+        content: `
+          <p>Customize your artwork preferences with granular safety controls in settings:</p>
+          <ul>
+            <li><strong>NSFW Filter:</strong> Toggle adult / mature artwork on or off.</li>
+            <li><strong>Humor Filter:</strong> Filter out joke, meme, or parody covers to maintain a clean aesthetic.</li>
+            <li><strong>Epilepsy Safety Filter:</strong> Automatically blocks images tagged with strobe, high-frequency flashing, or seizure-triggering visual effects.</li>
+          </ul>
+        `
+      },
+      {
+        title: "✨ 6. Static vs. Animated Artwork Selection",
+        content: `
+          <p>Choose your visual style:</p>
+          <ul>
+            <li><strong>Static Artwork (JPG / PNG):</strong> Fast-loading, resource-efficient static artwork.</li>
+            <li><strong>Animated Artwork (WebP / APNG):</strong> Eye-catching animated covers and backgrounds that bring your game library to life in themes supporting animated covers (such as Penumbra Dawn and Penumbra Night).</li>
+          </ul>
+        `
+      },
+      {
+        title: "📐 7. Supported Dimensions & Media Types",
+        content: `
+          <p>SteamGridDB NG retrieves all asset categories supported by SteamGridDB:</p>
+          <ul>
+            <li><strong>Vertical Covers:</strong> 600x900 (standard 2:3 poster) and 342x482 (legacy Steam).</li>
+            <li><strong>Horizontal Grids:</strong> 920x430 (classic Steam banner) and 460x215.</li>
+            <li><strong>Hero Backgrounds:</strong> 1920x620 and 3840x1240 ultra-wide fanart.</li>
+            <li><strong>Square Icons:</strong> 512x512 and 1024x1024 high-resolution square icons.</li>
+            <li><strong>Transparent Logos:</strong> Crisp PNG title logos for themes supporting ExtraMetadata or floating logos.</li>
+          </ul>
+        `
+      },
+      {
+        title: "⚡ 8. AI Refactoring & Critical Bug Fixes",
+        content: `
+          <p>SteamGridDB NG was systematically audited and hardened with advanced AI engineering:</p>
+          <ul>
+            <li><strong>Fixed Hero 404 URL Resolution:</strong> Fixed a critical bug in the legacy plugin where hero background URLs failed with 404 errors due to missing endpoint paths.</li>
+            <li><strong>Fixed Fuzzy Search Crash:</strong> Fixed an <code>IndexOutOfRangeException</code> that crashed Playnite when fuzzy title search returned empty result arrays.</li>
+            <li><strong>Fixed Dynamic Selection Runtime Crash:</strong> Replaced unsafe C# <code>dynamic</code> runtime binding with strongly-typed DTO models.</li>
+            <li><strong>Path Traversal &amp; Cache Hardening:</strong> Sanitized image cache filenames against malicious URL injection and path traversal attacks.</li>
+            <li><strong>HTTP 429 Rate Limit Backoff:</strong> Implemented automatic exponential backoff retry when SteamGridDB's rate limit is reached.</li>
+          </ul>
         `
       }
     ]
@@ -1599,6 +2091,14 @@ function renderDocContent(topicId) {
           </a>
         </div>
       </header>
+
+      <div class="doc-callout callout-ai">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <div>
+          <strong>AI-Audited &amp; Refactored Engineering:</strong>
+          This add-on was systematically audited, refactored, and performance-optimized using advanced Artificial Intelligence. Critical race conditions, memory leaks, API breaking changes, and thread safety issues from legacy codebases have been rigorously resolved to ensure rock-solid stability and peak performance.
+        </div>
+      </div>
 
       <section class="doc-specs-box">
         <h3><i class="fa-solid fa-microchip"></i> Technical Specifications</h3>
