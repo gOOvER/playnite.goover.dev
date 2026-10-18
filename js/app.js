@@ -2264,6 +2264,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (itemsGrid) {
     renderCatalog();
+    // Auto-open details modal if URL has ?addon=... or #addon=...
+    if (!isDocsPage) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const directAddon = urlParams.get("addon") || urlParams.get("id") || (window.location.hash.startsWith("#addon=") ? window.location.hash.replace("#addon=", "") : null);
+      if (directAddon) {
+        const matched = ADDONS.find(a => a.id === directAddon || a.docId === directAddon);
+        if (matched) {
+          setTimeout(() => openDetailsModal(matched.id, "overview"), 120);
+        }
+      }
+    }
   }
   if (docsNav) {
     renderDocsNav();
@@ -2379,6 +2390,9 @@ function createCardHTML(item) {
           <div class="actions-secondary-row">
             <button class="btn btn-outline btn-sm" onclick="openDetailsModal('${item.id}', 'overview')">
               <i class="fa-solid fa-circle-info"></i> Details
+            </button>
+            <button class="btn btn-outline btn-sm btn-share" onclick="shareAddon('${item.id}', event)" title="Share direct link to ${item.name}">
+              <i class="fa-solid fa-share-nodes"></i> Share
             </button>
             <a href="docs.html?topic=${item.docId}" class="btn btn-outline btn-sm btn-guide-link" title="Read integrated guide & documentation">
               <i class="fa-solid fa-book-open"></i> Docs &amp; Guide
@@ -2499,6 +2513,9 @@ function renderDocContent(topicId) {
           <a href="#changelog" class="btn btn-outline btn-sm">
             <i class="fa-solid fa-clock-rotate-left"></i> Changelog
           </a>
+          <button class="btn btn-outline btn-sm" onclick="shareDoc('${doc.id || doc.addonId}')" title="Share Guide Link">
+            <i class="fa-solid fa-share-nodes"></i> Share
+          </button>
         </div>
       </header>
 
@@ -2778,7 +2795,7 @@ window.switchModalTab = function(tabName) {
 
 // Details Modal
 window.openDetailsModal = function(addonId, initialTab = "overview") {
-  const item = ADDONS.find(a => a.id === addonId);
+  const item = ADDONS.find(a => a.id === addonId || a.docId === addonId);
   if (!item) return;
 
   currentModalItem = item;
@@ -2789,6 +2806,13 @@ window.openDetailsModal = function(addonId, initialTab = "overview") {
   detailsModal.classList.add("active");
   detailsModal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+
+  // Deep-link: update URL with ?addon=...
+  try {
+    const url = new URL(window.location);
+    url.searchParams.set("addon", item.id);
+    history.replaceState(null, "", url.toString());
+  } catch (e) {}
 };
 
 window.closeDetailsModal = function() {
@@ -2796,6 +2820,17 @@ window.closeDetailsModal = function() {
   detailsModal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
   currentModalItem = null;
+
+  // Clear ?addon=... from URL
+  try {
+    const url = new URL(window.location);
+    if (url.searchParams.has("addon") || url.searchParams.has("id")) {
+      url.searchParams.delete("addon");
+      url.searchParams.delete("id");
+      const cleanPath = url.pathname + (url.search ? url.search : "") + url.hash;
+      history.replaceState(null, "", cleanPath);
+    }
+  } catch (e) {}
 };
 
 function renderModalContent() {
@@ -2815,6 +2850,9 @@ function renderModalContent() {
           <span class="badge-version">v${item.version}</span>
           <span style="font-size: 0.84rem; color: var(--text-muted);">Released ${item.releaseDate}</span>
           <span style="font-size: 0.84rem; color: var(--accent-playnite); font-weight: 600;">${item.license}</span>
+          <button class="btn-share-modal" onclick="shareAddon('${item.id}')" title="Share direct link to this add-on">
+            <i class="fa-solid fa-share-nodes"></i> Share
+          </button>
         </div>
       </div>
     </div>
@@ -2910,6 +2948,10 @@ function renderModalContent() {
             <button class="btn btn-outline btn-block" onclick="switchModalTab('docs')">
               <i class="fa-solid fa-book-open"></i>
               <span>Read Full Documentation</span>
+            </button>
+            <button class="btn btn-outline btn-block" onclick="shareAddon('${item.id}')">
+              <i class="fa-solid fa-share-nodes"></i>
+              <span>Share Add-on Link</span>
             </button>
           </div>
         </div>
@@ -3079,3 +3121,64 @@ function showToast(message, iconClass = "fa-circle-check") {
     setTimeout(() => toast.remove(), 250);
   }, 3500);
 }
+
+// Share Add-on Link (Direct to Details Modal)
+window.shareAddon = function(addonId, event) {
+  if (event && event.stopPropagation) event.stopPropagation();
+  const item = ADDONS.find(a => a.id === addonId || a.docId === addonId);
+  if (!item) return;
+
+  const origin = window.location.origin;
+  const basePath = window.location.pathname.replace(/\/docs\.html$/, '') || '/';
+  const cleanBase = basePath.endsWith('/') ? basePath : basePath + '/';
+  const shareUrl = `${origin}${cleanBase}?addon=${encodeURIComponent(item.id)}`;
+
+  const shareData = {
+    title: `${item.name} — Playnite Add-on`,
+    text: `Check out ${item.name} (${item.typeLabel} v${item.version}) on playnite.goover.dev:`,
+    url: shareUrl
+  };
+
+  if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+    navigator.share(shareData).catch(() => {});
+  } else if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      showToast(`Direct link to ${item.name} copied to clipboard!`, 'fa-share-nodes');
+    }).catch(() => fallbackCopy(shareUrl, item.name));
+  } else {
+    fallbackCopy(shareUrl, item.name);
+  }
+};
+
+function fallbackCopy(text, itemName) {
+  const temp = document.createElement("input");
+  temp.value = text;
+  document.body.appendChild(temp);
+  temp.select();
+  document.execCommand("copy");
+  document.body.removeChild(temp);
+  showToast(`Direct link to ${itemName} copied to clipboard!`, 'fa-share-nodes');
+}
+
+// Share Documentation Link
+window.shareDoc = function(topicId) {
+  const doc = DOCS_DATA[topicId];
+  const origin = window.location.origin;
+  const shareUrl = `${origin}/docs.html?topic=${encodeURIComponent(topicId)}`;
+
+  const shareData = {
+    title: `${doc ? doc.name : 'Playnite'} Setup Guide — playnite.goover.dev`,
+    text: `Official documentation and setup guide for ${doc ? doc.name : 'Playnite Add-on'}:`,
+    url: shareUrl
+  };
+
+  if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+    navigator.share(shareData).catch(() => {});
+  } else if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      showToast(`Guide link copied to clipboard!`, 'fa-share-nodes');
+    }).catch(() => fallbackCopy(shareUrl, doc ? doc.name : 'Guide'));
+  } else {
+    fallbackCopy(shareUrl, doc ? doc.name : 'Guide');
+  }
+};
