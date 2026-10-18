@@ -757,6 +757,26 @@ kbd {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.card-title-group h3:hover,
+.card-title-clickable:hover {
+  color: var(--accent-playnite);
+}
+
+.card-banner-clickable {
+  cursor: pointer;
+}
+
+.card-icon-clickable {
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.card-icon-clickable:hover {
+  transform: scale(1.05);
 }
 
 .card-author {

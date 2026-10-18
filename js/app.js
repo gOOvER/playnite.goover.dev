@@ -2330,7 +2330,7 @@ function createCardHTML(item) {
 
   return `
     <article class="addon-card" data-id="${item.id}">
-      <div class="card-banner">
+      <div class="card-banner card-banner-clickable" onclick="openDetailsModal('${item.id}', 'overview')" title="View details for ${item.name}">
         <img src="${item.banner}" alt="${item.name} Banner" loading="lazy" decoding="async">
         <div class="card-banner-overlay"></div>
         <div class="card-badges">
@@ -2341,9 +2341,9 @@ function createCardHTML(item) {
 
       <div class="card-body">
         <div class="card-header-row">
-          <img src="${item.icon}" alt="${item.name} Icon" class="card-icon" loading="lazy">
+          <img src="${item.icon}" alt="${item.name} Icon" class="card-icon card-icon-clickable" loading="lazy" onclick="openDetailsModal('${item.id}', 'overview')" title="View details for ${item.name}">
           <div class="card-title-group">
-            <h3>${item.name}</h3>
+            <h3 class="card-title-clickable" onclick="openDetailsModal('${item.id}', 'overview')" title="View details for ${item.name}">${item.name}</h3>
             <span class="card-author">by <strong>gOOvER</strong> • ${item.license}</span>
           </div>
         </div>
